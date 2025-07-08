@@ -41,11 +41,15 @@ def kirim_email():
     try:
         with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
             smtp.starttls()
-            smtp.login(os.getenv("ahsandzikra@gmail.com"), os.getenv("ylxu ipxg rkkl dgtm"))
+            smtp.login(
+                os.getenv("ahsandzikra@gmail.com"), 
+                os.getenv("ylxu ipxg rkkl dgtm")
+            )
             smtp.send_message(msg)
         return redirect(url_for('kontak', status='success'))
     except Exception as e:
         return redirect(url_for('kontak', status='error'))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host='0.0.0.0', port=port)
