@@ -1,1 +1,1 @@
-web: gunicorn python.send_email:app
+web: python python/send_email.py
