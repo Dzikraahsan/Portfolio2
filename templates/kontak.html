@@ -105,7 +105,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="profile.html">Profil</a></li>
                 <li class="nav-item"><a class="nav-link" href="project.html">Project</a></li>
-                <li class="nav-item"><a class="nav-link" href="templates/kontak.html">Kontak</a></li>
+                <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
             </ul>
             <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
         </div>
@@ -118,7 +118,7 @@
         <section id="kontak" class="py-5 text-body" data-aos="fade-up">
             <div class="container">
                 <h2 class="section-title text-center" style="margin-top: -2.25rem;">HUBUNGI SAYA</h2>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center" style="margin-top: -1rem;">
                     <div class="col-md-8">
                         <div id="notif-placeholder" class="mb-4"></div>
                         <form action="http://127.0.0.1:5000/kirim" method="POST">
@@ -221,10 +221,14 @@
       setTimeout(() => {
         const alertEl = document.querySelector('.alert');
         if (alertEl) {
-          alertEl.classList.remove('show');
-          alertEl.classList.add('fade');
+            alertEl.classList.remove('show');
+            alertEl.classList.add('fade');
+            // Tunggu animasi fade selesai, lalu hapus elemen
+            setTimeout(() => {
+            alertEl.remove();
+            }, 300); // 300ms = durasi animasi Bootstrap
         }
-      }, 5000);
+        }, 5000);
     }
   });
 </script>
