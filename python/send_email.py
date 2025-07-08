@@ -1,27 +1,36 @@
 from flask import Flask, request, redirect, render_template, url_for
 import smtplib
 from email.message import EmailMessage
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
-# ⬇️ Route untuk halaman utama (index.html)
 @app.route('/')
 def home():
     return render_template('index.html')
 
-# ⬇️ Route untuk halaman kontak
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+@app.route('/project')
+def project():
+    return render_template('project.html')
+
 @app.route('/kontak')
 def kontak():
     return render_template('kontak.html')
 
-# ⬇️ Proses pengiriman email
 @app.route('/kirim', methods=['POST'])
 def kirim_email():
     nama = request.form['nama']
     email_pengirim = request.form['email']
     pesan = request.form['message']
 
-    email_tujuan = 'ahsandzikra@gmail.com'
+    email_tujuan = os.getenv("EMAIL_APP")
 
     msg = EmailMessage()
     msg['Subject'] = f'Pesan dari {nama}'
@@ -32,7 +41,7 @@ def kirim_email():
     try:
         with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
             smtp.starttls()
-            smtp.login('ahsandzikra@gmail.com', 'ylxu ipxg rkkl dgtm')  # ⛔ Ganti ke ENV nanti ya bro
+            smtp.login(os.getenv("ahsandzikra@gmail.com"), os.getenv("ylxu ipxg rkkl dgtm"))
             smtp.send_message(msg)
         return redirect(url_for('kontak', status='success'))
     except Exception as e:
