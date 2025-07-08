@@ -105,7 +105,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="profile.html">Profil</a></li>
                 <li class="nav-item"><a class="nav-link" href="project.html">Project</a></li>
-                <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                <li class="nav-item"><a class="nav-link" href="templates/kontak.html">Kontak</a></li>
             </ul>
             <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
         </div>
@@ -117,10 +117,11 @@
         <!-- Kontak Section -->
         <section id="kontak" class="py-5 text-body" data-aos="fade-up">
             <div class="container">
-                <h2 class="section-title text-center" style="margin-top: -2.25rem;">KONTAK</h2>
+                <h2 class="section-title text-center" style="margin-top: -2.25rem;">HUBUNGI SAYA</h2>
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <form action="/kirim-email" method="POST">
+                        <div id="notif-placeholder" class="mb-4"></div>
+                        <form action="http://127.0.0.1:5000/kirim" method="POST">
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Nama</label>
                                 <input type="text" class="form-control" id="nama" name="nama" required>
@@ -182,6 +183,52 @@
         });
 
   </script>
+
+  <!-- script untuk send message from python -->
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get('status');
+    const notif = document.getElementById('notif-placeholder');
+
+
+    // Hapus query string dari URL tanpa reload
+    if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.pathname);
+    }
+
+    if (status === 'success') {
+      notif.innerHTML = `
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          ✅ Pesan berhasil dikirim!
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>`;
+    } else if (status === 'error') {
+      notif.innerHTML = `
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          ❌ Gagal mengirim pesan. Coba lagi nanti.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>`;
+    }
+
+    // ❌ Hapus query dari URL setelah notifikasi muncul
+    if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.pathname);
+    }
+
+    // ⏱️ Auto close notifikasi setelah 5 detik
+    if (status) {
+      setTimeout(() => {
+        const alertEl = document.querySelector('.alert');
+        if (alertEl) {
+          alertEl.classList.remove('show');
+          alertEl.classList.add('fade');
+        }
+      }, 5000);
+    }
+  });
+</script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
