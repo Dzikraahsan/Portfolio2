@@ -42,7 +42,7 @@ def kirim_email():
     try:
         with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
             smtp.starttls()
-            smtp.login(ahsandzikra@gmail.com, ylxu ipxg rkkl dgtm)  # Diperbaiki di sini
+            smtp.login(email_tujuan, email_password)
             smtp.send_message(msg)
         return redirect(url_for('kontak', status='success'))
     except Exception as e:
