@@ -12,9 +12,9 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/profil')
+@app.route('/profile')
 def profile():
-    return render_template('profil.html')
+    return render_template('profile.html')
 
 @app.route('/project')
 def project():
