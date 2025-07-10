@@ -31,6 +31,7 @@ def kirim_email():
     pesan = request.form['message']
 
     email_tujuan = os.getenv("EMAIL_APP")
+    email_password = os.getenv("EMAIL_PASSWORD")  # Ambil dari .env / Railway
 
     msg = EmailMessage()
     msg['Subject'] = f'Pesan dari {nama}'
@@ -41,13 +42,11 @@ def kirim_email():
     try:
         with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
             smtp.starttls()
-            smtp.login(
-                os.getenv("ahsandzikra@gmail.com"), 
-                os.getenv("ylxu ipxg rkkl dgtm")
-            )
+            smtp.login(ahsandzikra@gmail.com, ylxu ipxg rkkl dgtm)  # Diperbaiki di sini
             smtp.send_message(msg)
         return redirect(url_for('kontak', status='success'))
     except Exception as e:
+        print(f"Email gagal dikirim: {e}")  # Buat debug log di Railway
         return redirect(url_for('kontak', status='error'))
 
 if __name__ == '__main__':
