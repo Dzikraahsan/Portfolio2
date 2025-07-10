@@ -1,1 +1,1 @@
-web: python python/send_email.py
+web: python app.py
