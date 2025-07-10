@@ -121,7 +121,7 @@
                 <div class="row justify-content-center" style="margin-top: -1rem;">
                     <div class="col-md-8">
                         <div id="notif-placeholder" class="mb-4"></div>
-                        <form action="http://127.0.0.1:5000/kirim" method="POST">
+                        <form action="{{ url_for('kirim_email') }}" method="POST">
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Nama</label>
                                 <input type="text" class="form-control" id="nama" name="nama" required>
