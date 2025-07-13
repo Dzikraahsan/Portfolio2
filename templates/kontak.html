@@ -133,9 +133,13 @@
           }
 
           .pesan {
-                max-width: 450px;
+                max-width: 445px;
                 margin-top: 1rem;
                 margin-top: 3rem;
+          }
+
+          .atur {
+            margin-top: 5px;
           }
 
         }
@@ -145,19 +149,31 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body sticky-top">
-      <div class="container">
-        <a href="{{ url_for('home') }}" class="btn dynamic-btn mt-0">Kembali</a>
-        <div class="navbar-collapse navbarr d-flex justify-content-end align-items-center" id="navbarNav">
-          <ul class="navbar-nav d-flex flex-row">
-            <li class="nav-item box me-3"><a class="nav-link" href="{{ url_for('profile') }}">Profil</a></li>
-            <li class="nav-item box me-3"><a class="nav-link" href="{{ url_for('project') }}">Project</a></li>
-            <li class="nav-item box me-3"><a class="nav-link" href="{{ url_for('kontak') }}">Kontak</a></li>
-          </ul>
-          <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
+    <nav class="navbar bg-body sticky-top">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+
+            <!-- Tombol Kembali -->
+            <a href="{{ url_for('home') }}" class="btn dynamic-btn mb-2 mb-lg-0">Kembali</a>
+
+            <!-- Navigation Menu -->
+            <div class="d-flex align-items-center flex-wrap justify-content-end">
+            <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
+                <li class="nav-item box me-3">
+                <a class="nav-link" href="{{ url_for('profile') }}">Profil</a>
+                </li>
+                <li class="nav-item box me-3">
+                <a class="nav-link" href="{{ url_for('project') }}">Project</a>
+                </li>
+                <li class="nav-item box me-3">
+                <a class="nav-link" href="{{ url_for('kontak') }}">Kontak</a>
+                </li>
+            </ul>
+            <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
+            </div>
+
         </div>
-      </div>
     </nav>
+
 
     <div class="container shadow p-5 mb-5 bg-body-tertiary rounded pesan" style="margin-top: 1.85rem; width: 925px; margin-bottom: 3rem;">
 

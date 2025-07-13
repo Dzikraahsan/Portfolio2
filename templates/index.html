@@ -109,27 +109,12 @@
             list-style: none;
         }
 
-          /* Tambahan spacing antar item */
-        .navbar-nav .nav-item {
-            margin-right: 1rem;
-        }
-        
-         .navbar-collapse.navbarr {
-            display: flex !important;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 10px;
-            font-size: 13px;
-            margin-top: -35.5px;
+          .navv {
+            font-size: 15px;
           }
 
-          .navbar-collapse.navbarr ul.navbar-nav {
-            flex-direction: row;
-            gap: 10px;
-          }
-
-          .navbar-collapse.navbarr .dynamic-btn {
-            margin-left: 20px;
+          .atur {
+            margin-top: 5px;
           }
         }
         
@@ -140,18 +125,28 @@
 <body>
 
   <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body sticky-top">
-      <div class="container">
-        <a class="navbar-brand fw-light">Dzikra Ahsan Imawan</a>
-        <div class="navbar-collapse navbarr d-flex justify-content-end align-items-center" id="navbarNav">
-          <ul class="navbar-nav d-flex flex-row">
-            <li class="nav-item box me-3"><a class="nav-link" href="{{ url_for('profile') }}">Profil</a></li>
-            <li class="nav-item box me-3"><a class="nav-link" href="{{ url_for('project') }}">Project</a></li>
-            <li class="nav-item box me-3"><a class="nav-link" href="{{ url_for('kontak') }}">Kontak</a></li>
-          </ul>
-          <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
+    <nav class="navbar bg-body sticky-top">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+
+            <a class="navbar-brand fw-light navv">Dzikra Ahsan Imawan</a>
+
+            <!-- Navigation Menu -->
+            <div class="d-flex align-items-center flex-wrap justify-content-end">
+            <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
+                <li class="nav-item box me-3">
+                <a class="nav-link" href="{{ url_for('profile') }}">Profil</a>
+                </li>
+                <li class="nav-item box me-3">
+                <a class="nav-link" href="{{ url_for('project') }}">Project</a>
+                </li>
+                <li class="nav-item box me-3">
+                <a class="nav-link" href="{{ url_for('kontak') }}">Kontak</a>
+                </li>
+            </ul>
+            <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
+            </div>
+
         </div>
-      </div>
     </nav>
 
   <!-- Hero Section -->
