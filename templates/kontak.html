@@ -69,50 +69,97 @@
 
         /* Default: terang */
         .dynamic-btn {
-        color: #212529;
-        border: 1px solid #212529;
-        background-color: transparent;
+            color: #212529;
+            border: 1px solid #212529;
+            background-color: transparent;
         }
+
         .dynamic-btn:hover {
-        background-color: #212529;
-        color: #fff;
+            background-color: #212529;
+            color: #fff;
         }
 
         /* Mode gelap, jika pakai Bootstrap 5.3 */
         [data-bs-theme="dark"] .dynamic-btn {
-        color: #f8f9fa;
-        border: 1px solid #f8f9fa;
-        background-color: transparent;
+            color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            background-color: transparent;
         }
+
         [data-bs-theme="dark"] .dynamic-btn:hover {
-        background-color: #f8f9fa;
-        color: #000;
+            background-color: #f8f9fa;
+            color: #000;
+        }
+
+        /* kode responsive */
+        @media (max-width: 768px) { 
+        body {
+            font-size: 14px;
+            padding: 0px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+        }
+
+          /* Tambahan spacing antar item */
+        .navbar-nav .nav-item {
+            margin-right: 1rem;
+        }
+        
+         .navbar-collapse.navbarr {
+            display: flex !important;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            font-size: 13px;
+            margin-top: -35.5px;
+          }
+
+          .navbar-collapse.navbarr ul.navbar-nav {
+            flex-direction: row;
+            gap: 10px;
+          }
+
+          .navbar-collapse.navbarr .dynamic-btn {
+            margin-left: 20px;
+          }
+
+          .pesan {
+                max-width: 500px;
+                margin-top: 1rem;
+                margin-top: 3rem;
+          }
+
         }
 
     </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-body sticky-top">
-    <div class="container">
-      <a href="{{ url_for('home') }}" class="btn dynamic-btn mt-0">Kembali</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <h5 class="fw-light" style="position: absolute; left: 50%; transform: translateX(-50%); margin: 0;">Dzikra Ahsan Imawan</h5>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="{{ url_for('profile') }}">Profil</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url_for('project') }}">Project</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url_for('kontak') }}">Kontak</a></li>
-            </ul>
-            <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body sticky-top">
+      <div class="container">
+        <a href="{{ url_for('home') }}" class="btn dynamic-btn mt-0">Kembali</a>
+        <div class="navbar-collapse navbarr d-flex justify-content-end align-items-center" id="navbarNav">
+          <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item box me-3"><a class="nav-link" href="{{ url_for('profile') }}">Profil</a></li>
+            <li class="nav-item box me-3"><a class="nav-link" href="{{ url_for('project') }}">Project</a></li>
+            <li class="nav-item box me-3"><a class="nav-link" href="{{ url_for('kontak') }}">Kontak</a></li>
+          </ul>
+          <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-    <div class="container shadow p-5 mb-5 bg-body-tertiary rounded" style="margin-top: 1.85rem; width: 925px;">
+    <div class="container shadow p-5 mb-5 bg-body-tertiary rounded pesan" style="margin-top: 1.85rem; width: 925px; margin-bottom: 3rem;">
 
         <!-- Kontak Section -->
         <section id="kontak" class="py-5 text-body" data-aos="fade-up">

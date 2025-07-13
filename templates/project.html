@@ -96,38 +96,76 @@
       color: #000;
     }
 
+    /* kode responsive */
+        @media (max-width: 768px) { 
+        body {
+            font-size: 14px;
+            padding: 0px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+        }
+
+          /* Tambahan spacing antar item */
+        .navbar-nav .nav-item {
+            margin-right: 1rem;
+        }
+        
+         .navbar-collapse.navbarr {
+            display: flex !important;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            font-size: 13px;
+            margin-top: -35.5px;
+          }
+
+          .navbar-collapse.navbarr ul.navbar-nav {
+            flex-direction: row;
+            gap: 10px;
+          }
+
+          .navbar-collapse.navbarr .dynamic-btn {
+            margin-left: 20px;
+          }
+        }
+
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-body sticky-top">
-    <div class="container">
-      <a href="{{ url_for('home') }}" class="btn dynamic-btn mt-0">Kembali</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-         <h5 class="fw-light" style="position: absolute; left: 50%; transform: translateX(-50%); margin: 0;">Dzikra Ahsan Imawan</h5>
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('profile') }}">Profil</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('project') }}">Project</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('kontak') }}">Kontak</a></li>
-        </ul>
-        <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
+ <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body sticky-top">
+      <div class="container">
+        <a href="{{ url_for('home') }}" class="btn dynamic-btn mt-0">Kembali</a>
+        <div class="navbar-collapse navbarr d-flex justify-content-end align-items-center" id="navbarNav">
+          <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item box me-3"><a class="nav-link" href="{{ url_for('profile') }}">Profil</a></li>
+            <li class="nav-item box me-3"><a class="nav-link" href="{{ url_for('project') }}">Project</a></li>
+            <li class="nav-item box me-3"><a class="nav-link" href="{{ url_for('kontak') }}">Kontak</a></li>
+          </ul>
+          <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
   <!-- Project Section -->
-  <section id="project" class="py-5 bg-body" data-aos="fade-up">
+  <section id="project" class="py-5 mb-3 bg-body" data-aos="fade-up" style="margin-bottom: 1rem;">
     <div class="container">
       <h2 class="section-title text-center">PROJECT</h2>
       <div class="row g-4">
         <!-- Project 1 -->
         <div class="col-md-6 col-lg-4" data-aos="zoom-in">
           <div class="card project-card h-100">
-            <img src="https://1000logos.net/wp-content/uploads/2017/05/Manchester-City-Logo-1997-768x512.jpg" class="card-img-top" alt="Project 1" style="width: 200px; display: block; margin: 0 auto;">
+            <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752393690/karyawan_foto/nb5gpq9sb3bf6opshjq8.png" class="card-img-top" alt="Project 1" style="width: 200px; display: block; margin: 0 auto; margin-top: 10px;">
             <div class="card-body">
               <h5 class="card-title">Sistem Management Gaji</h5>
               <p class="card-text">Membuat sistem manajemen gaji dengan menggunakan database dan php native.</p>
