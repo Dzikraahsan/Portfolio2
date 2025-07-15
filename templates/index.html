@@ -66,29 +66,34 @@
             font-size: 1.25rem;
         }
 
-        /* Style untuk tombol */
-
         /* Default: terang */
         .dynamic-btn {
-        color: #212529;
-        border: 1px solid #212529;
-        background-color: transparent;
+          color: #212529;
+          border: 1px solid #212529;
+          background-color: transparent;
         }
         .dynamic-btn:hover {
-        background-color: #212529;
-        color: #fff;
+          background-color: #212529;
+          color: #fff;
         }
 
         /* Mode gelap, jika pakai Bootstrap 5.3 */
         [data-bs-theme="dark"] .dynamic-btn {
-        color: #f8f9fa;
-        border: 1px solid #f8f9fa;
-        background-color: transparent;
+          color: #f8f9fa;
+          border: 1px solid #f8f9fa;
+          background-color: transparent;
         }
 
         [data-bs-theme="dark"] .dynamic-btn:hover {
-        background-color: #f8f9fa;
-        color: #000;
+          background-color: #f8f9fa;
+          color: #000;
+        }
+
+        /* style photo */
+
+        .photo {
+          margin-bottom: 1.25rem;
+          margin-top: -6.5rem;
         }
 
         /* kode responsive */
@@ -109,13 +114,24 @@
             list-style: none;
         }
 
-          .navv {
+        .navv {
             font-size: 15px;
-          }
+        }
 
-          .atur {
-            margin-top: 10px;
-          }
+        .atur {
+            margin-top: 9px;
+        }
+
+        .dynamic-btn.e {
+          width: 200px;
+          margin: 0 auto;
+          margin-top: 0.75rem;
+        }
+
+        .footer {
+          margin-top: -2rem;
+        }
+
         }
         
 
@@ -134,7 +150,7 @@
             <div class="d-flex align-items-center flex-wrap justify-content-end">
             <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
                 <li class="nav-item box me-3">
-                <a class="nav-link" href="{{ url_for('profile') }}">Profil</a>
+                <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
                 </li>
                 <li class="nav-item box me-3">
                 <a class="nav-link" href="{{ url_for('project') }}">Project</a>
@@ -152,17 +168,28 @@
   <!-- Hero Section -->
   <section class="hero bg-body text-body" style="margin-top: 5rem;" data-aos="fade-up">
     <div class="container">
+      <div class="rounded-circle overflow-hidden shadow border border-dark mx-auto photo" style="width: 220px; height: 220px;">
+        <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752578913/karyawan_foto/me9qq3kyopr0le7yica8.png" class="w-100 h-100 object-fit-cover" alt="">
+      </div>
+
+      <hr class="border border-dark border-1 opacity-50 mx-auto" style="width: 60%; margin-top: 2.25rem; margin-bottom: 1.75rem;">
+
       <h2 style="font-weight: 700;">Hallo, I Am Dzikra Ahsan Imawan</h2>
       <p class="lead text-body-secondary">Web Developer | UI/UX Enthusiast</p>
-      <a href="{{ url_for('profile') }}" class="btn dynamic-btn mt-3">Lihat Profile Saya</a>
-      <a href="{{ url_for('project') }}" class="btn dynamic-btn mt-3">Lihat Proyek Saya</a>
-      <a href="{{ url_for('kontak') }}" class="btn dynamic-btn mt-3">Hubungi Saya</a>
+      </div>
     </div>
+
+    <div class="d-flex flex-column flex-md-row justify-content-center gap-2">
+      <a href="{{ url_for('profile') }}" class="btn dynamic-btn e mt-3">Lihat Profile</a>
+      <a href="{{ url_for('project') }}" class="btn dynamic-btn e mt-3">Lihat Project</a>
+      <a href="{{ url_for('kontak') }}" class="btn dynamic-btn e mt-3">Kontak</a>
+    </div>
+        
   </section>
 
   <!-- Footer -->
-  <footer style="margin-top: 9rem;">
-    <div class="container">
+  <footer class="footer" style="margin-top: 2rem;">
+    <div class="container foot">
       <div class="mb-3">
         <p class="mb-1">Hubungi saya di: <a href="mailto:ahsandzikra@email.com">ahsandzikra@gmail.com</a></p>
       </div>
