@@ -114,10 +114,43 @@
 
         /* style photo */
 
+        .foto {
+          margin-top: -5.7rem;
+        }
+
         .photo {
           margin-bottom: 1.25rem;
           margin-top: -6.5rem;
         }
+
+        .glow-ring {
+          width: 240px;
+          height: 240px;
+          border-radius: 50%;
+          padding: 8px;
+          background: linear-gradient(45deg, red, orange, yellow, lime, cyan, blue, magenta, red);
+          background-size: 400% 400%;
+          animation: glowingRing 6s linear infinite;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+        }
+
+        .photo-inner {
+          width: 220px;
+          height: 220px;
+          overflow: hidden;
+          border-radius: 50%;
+          background-color: white;
+        }
+
+        @keyframes glowingRing {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+
 
         /* kode responsive */
         @media (max-width: 768px) { 
@@ -200,8 +233,10 @@
   <!-- Hero Section -->
   <section class="hero bg-body text-body" style="margin-top: 5rem;" data-aos="fade-up">
     <div class="container">
-      <div class="rounded-circle overflow-hidden shadow border border-dark mx-auto photo" style="width: 220px; height: 220px;">
-        <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752578913/karyawan_foto/me9qq3kyopr0le7yica8.png" class="w-100 h-100 object-fit-cover" alt="">
+      <div class="glow-ring mx-auto foto">
+        <div class="photo-inner">
+          <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752578913/karyawan_foto/me9qq3kyopr0le7yica8.png" class="w-100 h-100 object-fit-cover rounded-circle" alt="">
+        </div>
       </div>
 
       <hr class="border border-1 opacity-100 mx-auto burdir" style="width: 50%; margin-top: 2.25rem; margin-bottom: 1.75rem;">
