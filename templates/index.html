@@ -130,19 +130,22 @@
           padding: 8px;
           background: linear-gradient(45deg, red, orange, yellow, lime, cyan, blue, magenta, red);
           background-size: 400% 400%;
-          animation: glowingRing 6s linear infinite;
+          animation: glowingRing 5s linear infinite;
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+
+          box-shadow:
+            0 0 10px #fff,
+            0 0 20px #0ff;
         }
 
         .photo-inner {
-          width: 220px;
-          height: 220px;
-          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
           border-radius: 50%;
-          background-color: white;
+          overflow: hidden;
         }
 
         @keyframes glowingRing {
@@ -150,7 +153,6 @@
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
-
 
         /* kode responsive */
         @media (max-width: 768px) { 
@@ -208,7 +210,7 @@
     <nav class="navbar bg-body sticky-top">
         <div class="container d-flex justify-content-between align-items-center flex-wrap">
 
-            <a class="navbar-brand fw-light navv">Dzii27</a>
+            <a class="navbar-brand fw-bold navv">Dzii27</a>
 
             <!-- Navigation Menu -->
             <div class="d-flex align-items-center flex-wrap justify-content-end">
