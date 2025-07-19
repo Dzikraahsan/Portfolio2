@@ -17,8 +17,11 @@
   <!-- Link Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- AOS CSS -->
+  <!-- AOS bootstrap icon -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- link AOS css -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <!-- Link untuk animasi teks -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
@@ -139,6 +142,28 @@
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
     }
 
+    /* untuk tulisan navbar */
+    .nav-link.active {
+      position: relative;
+      font-weight: bold;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 6px;
+      height: 2px;
+      background-color: #000; /* default terang */
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    [data-bs-theme="dark"] .nav-link.active::after {
+      background-color: #fff;
+    }
+
     /* kode responsive */
         @media (max-width: 768px) { 
         body {
@@ -201,13 +226,13 @@
             <div class="d-flex align-items-center flex-wrap justify-content-end">
             <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
                 <li class="nav-item box me-3">
-                <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
+                  <a class="nav-link {% if request.endpoint == 'profile' %}active{% endif %}" href="{{ url_for('profile') }}">Profile</a>
                 </li>
                 <li class="nav-item box me-3">
-                <a class="nav-link" href="{{ url_for('project') }}">Project</a>
+                  <a class="nav-link {% if request.endpoint == 'project' %}active{% endif %}" href="{{ url_for('project') }}">Project</a>
                 </li>
                 <li class="nav-item box me-3">
-                <a class="nav-link" href="{{ url_for('kontak') }}">Kontak</a>
+                  <a class="nav-link {% if request.endpoint == 'kontak' %}active{% endif %}" href="{{ url_for('kontak') }}">Kontak</a>
                 </li>
             </ul>
             <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
@@ -229,58 +254,86 @@
   </section>
 
   <!-- Riwayat sekolah -->
-  <div class="container">
+  <div class="container" data-aos="fade-up">
 
-     <div class="container shadow p-5 mb-5 bg-body-tertiary rounded">
+     <div class="container shadow p-5 mb-3 bg-body-tertiary rounded" data-aos="fade-up">
         <section class="py-5 text-body" id="riwayat">
-          <div class="container">
-            <h2 class="text-center mb-5" style="font-weight: 700;">RIWAYAT SEKOLAH</h2>
+          <div class="container" data-aos="fade-up">
+            <h2 class="text-center mb-5" style="font-weight: 700;" data-aos="fade-up">RIWAYAT SEKOLAH</h2>
             <div class="row g-4 justify-content-center">
 
               <!-- Card TK -->
-              <div class="col-sm-6 col-md-3">
+              <div class="col-sm-6 col-md-3" data-aos="fade-up">
                 <div class="card h-100 shadow-sm border-0 text-center transition">
-                  <div class="card-body">
-                    <div class="display-4 mb-3">🏫</div>
-                    <h5 class="card-title fw-semibold">TK</h5>
-                    <h6 class="card-title fw-medium" style="opacity: 80%;">2013</h6>
-                    <span class="badge dynamic-btn mt-2 px-3 py-2">Nurul Falah</span>
+                  <div class="card-body" data-aos="fade-up">
+                    <div class="display-4 mb-3">
+                      <i class="fa-solid fa-school" data-aos="fade-up"></i>
+                    </div>
+                    <h5 class="card-title fw-semibold" data-aos="fade-up">TK</h5>
+                    <h6 class="card-title fw-medium" style="opacity: 80%;" data-aos="fade-up">2013</h6>
+                    <a href="https://maps.app.goo.gl/LV4gHGaqjazBFdbg7" 
+                      target="_blank" 
+                      class="badge dynamic-btn mt-2 px-3 py-2 text-decoration-none"
+                      data-aos="fade-up">
+                      Nurul Falah
+                    </a>
                   </div>
                 </div>
               </div>
 
               <!-- Card SD -->
-              <div class="col-sm-6 col-md-3">
+              <div class="col-sm-6 col-md-3" data-aos="fade-up">
                 <div class="card h-100 shadow-sm border-0 text-center transition">
-                  <div class="card-body">
-                    <div class="display-4 mb-3">🏫</div>
-                    <h5 class="card-title fw-semibold">SD</h5>
-                    <h6 class="card-title fw-medium" style="opacity: 80%;">2014 - 2020</h6>
-                    <span class="badge dynamic-btn mt-2 px-3 py-2">SDN Sindangkerta</span>
+                  <div class="card-body" data-aos="fade-up">
+                    <div class="display-4 mb-3">
+                      <i class="fa-solid fa-school" data-aos="fade-up"></i>
+                    </div>
+                    <h5 class="card-title fw-semibold" data-aos="fade-up">SD</h5>
+                    <h6 class="card-title fw-medium" style="opacity: 80%;" data-aos="fade-up">2014 - 2020</h6>
+                    <a href="https://maps.app.goo.gl/dfaojuAPrE98m6sK8" 
+                      target="_blank" 
+                      class="badge dynamic-btn mt-2 px-3 py-2 text-decoration-none"
+                      data-aos="fade-up">
+                      SDN Sindangkerta
+                    </a>
                   </div>
                 </div>
               </div>
 
               <!-- Card SMP -->
-              <div class="col-sm-6 col-md-3">
+              <div class="col-sm-6 col-md-3" data-aos="fade-up">
                 <div class="card h-100 shadow-sm border-0 text-center transition">
-                  <div class="card-body">
-                    <div class="display-4 mb-3">🏫</div>
-                    <h5 class="card-title fw-semibold">SMP</h5>
-                    <h6 class="card-title fw-medium" style="opacity: 80%;">2020 - 2023</h6>
-                    <span class="badge dynamic-btn mt-2 px-3 py-2">SMPN 2 Majaengka</span>
+                  <div class="card-body" data-aos="fade-up">
+                    <div class="display-4 mb-3">
+                      <i class="fa-solid fa-school" data-aos="fade-up"></i>
+                    </div>
+                    <h5 class="card-title fw-semibold" data-aos="fade-up">SMP</h5>
+                    <h6 class="card-title fw-medium" style="opacity: 80%;" data-aos="fade-up">2020 - 2023</h6>
+                    <a href="https://maps.app.goo.gl/TaKQpU1QXV2cUmMH8" 
+                      target="_blank" 
+                      class="badge dynamic-btn mt-2 px-3 py-2 text-decoration-none"
+                      data-aos="fade-up">
+                      SMPN 2 Majalengka
+                    </a>
                   </div>
                 </div>
               </div>
 
               <!-- Card SMK -->
-              <div class="col-sm-6 col-md-3">
+              <div class="col-sm-6 col-md-3" data-aos="fade-up">
                 <div class="card h-100 shadow-sm border-0 text-center transition">
-                  <div class="card-body">
-                    <div class="display-4 mb-3">🏫</div>
-                    <h5 class="card-title fw-semibold">SMK</h5>
-                    <h6 class="card-title fw-medium" style="opacity: 80%;">2023 - Sekarang</h6>
-                    <span class="badge dynamic-btn mt-2 px-3 py-2">SMKN 1 Maja</span>
+                  <div class="card-body" data-aos="fade-up">
+                    <div class="display-4 mb-3">
+                      <i class="fa-solid fa-school" data-aos="fade-up"></i>
+                    </div>
+                    <h5 class="card-title fw-semibold" data-aos="fade-up">SMK</h5>
+                    <h6 class="card-title fw-medium" style="opacity: 80%;" data-aos="fade-up">2023 - Sekarang</h6>
+                    <a href="https://maps.app.goo.gl/zRz3DkhrrAgyYV9NA" 
+                      target="_blank" 
+                      class="badge dynamic-btn mt-2 px-3 py-2 text-decoration-none"
+                      data-aos="fade-up">
+                      SMKN 1 Maja
+                    </a>
                   </div>
                 </div>
               </div>
@@ -292,23 +345,24 @@
   </div>
  
   <!-- skills -->
-   <div class="container">
+   <div class="container" data-aos="fade-up">
 
       <div class="container shadow p-5 mb-0 bg-body-tertiary rounded  ">
         <div class="text-center mb-0 mt-3">
-          <h2 style="font-weight: 700; margin-top: -1rem;">SKILLS</h2>
+          <h2 style="font-weight: 700; margin-top: -1rem;" data-aos="fade-up">SKILLS</h2>
         </div>
-        <div class="chart-container mt-5">
-          <canvas id="barChart"></canvas>
+        <div class="chart-container mt-5" data-aos="fade-up">
+          <canvas id="barChart" data-aos="fade-up"></canvas>
         </div>
       </div>
 
    </div>
 
-   <div class="container">
+   <!-- sertifikat -->
+   <div class="container" data-aos="fade-up">
       <div class="container shadow p-5 mb-5 mt-5 bg-body-tertiary rounded">
         <div class="text-center ">
-          <h2 style="font-weight: 700;">SERTIFIKAT</h2>
+          <h2 style="font-weight: 700;" data-aos="fade-up">SERTIFIKAT</h2>
         </div>
 
         <!-- Sertifikat Grid Start -->
@@ -326,13 +380,13 @@
               </div>
             </div>
 
-            <div class="col">
+            <div class="col" data-aos="fade-up">
               <div class="card h-100 shadow-sm border-0">
                 <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898089/PENGENALAN_DATABASE_vjuluf.jpg" class="card-img-top object-fit-contain p-3" alt="Sertifikat 3">
               </div>
             </div>
 
-            <div class="col">
+            <div class="col" data-aos="fade-up">
               <div class="card h-100 shadow-sm border-0">
                 <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898101/PENGGUNAAN_DATABASE_wq6k1k.jpg" class="card-img-top object-fit-contain p-3" alt="Sertifikat 4">
               </div>
@@ -347,7 +401,7 @@
 
 
   <!-- Footer -->
-  <footer style="margin-top: 5rem;">
+  <footer style="margin-top: 5rem;" data-aos="fade-up">
     <div class="container">
       <div class="mb-3">
         <p>Hubungi saya di: <a href="mailto:ahsandzikra@email.com">ahsandzikra@gmail.com</a></p>
@@ -390,7 +444,7 @@
   <!-- script untuk diagram -->
   <script>
    const ctx = document.getElementById('barChart').getContext('2d');
-  const barChart = new Chart(ctx, {
+   const barChart = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: ['HTML', 'CSS', 'JAVASCRIPT', 'PHP', 'SQL', 'FIGMA', 'CANVA'],
@@ -414,6 +468,18 @@
             }
           }
         },
+        tooltip: {
+          titleFont: {
+            family: 'Organetto',
+            size: 14,
+            weight: 'bold'
+          },
+          bodyFont: {
+            family: 'Organetto',
+            size: 12,
+            weight: 'normal'
+          }
+        }
       },
       scales: {
         y: {
@@ -447,6 +513,7 @@
       }
     }
   });
+
 
   </script>
 

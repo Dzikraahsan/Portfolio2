@@ -48,21 +48,25 @@
     .hero {
       padding: 6rem 0;
       text-align: center;
+      transition: background-color 0.3s ease-in-out;
     }
 
     .hero h1 {
       font-size: 3rem;
       font-weight: 700;
+      transition: background-color 0.3s ease-in-out;
     }
 
     .section-title {
       font-size: 2rem;
       font-weight: 600;
       margin-bottom: 2rem;
+      transition: 0.3s ease-in-out;
     }
 
     .project-card img {
       border-radius: 0.5rem;
+      transition:  0.3s ease-in-out;
     }
 
     footer {
@@ -117,6 +121,42 @@
 
     [data-bs-theme="dark"] .burdir {
       border-color: #bbb !important; /* terang tapi gak nyilauin */
+    }
+
+    .zoom-on-load {
+      opacity: 0;
+      transform: scale(0.8);
+      animation: zoomIn 0.35s ease-out forwards;
+      animation-delay: 0.2s;
+    }
+
+    @keyframes zoomIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* untuk tulisan navbar */
+    .nav-link.active {
+      position: relative;
+      font-weight: bold;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 6px;
+      height: 2px;
+      background-color: #000; /* default terang */
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    [data-bs-theme="dark"] .nav-link.active::after {
+      background-color: #fff;
     }
 
     /* kode responsive */
@@ -185,13 +225,13 @@
             <div class="d-flex align-items-center flex-wrap justify-content-end">
             <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
                 <li class="nav-item box me-3">
-                <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
+                  <a class="nav-link {% if request.endpoint == 'profile' %}active{% endif %}" href="{{ url_for('profile') }}">Profile</a>
                 </li>
                 <li class="nav-item box me-3">
-                <a class="nav-link" href="{{ url_for('project') }}">Project</a>
+                  <a class="nav-link {% if request.endpoint == 'project' %}active{% endif %}" href="{{ url_for('project') }}">Project</a>
                 </li>
                 <li class="nav-item box me-3">
-                <a class="nav-link" href="{{ url_for('kontak') }}">Kontak</a>
+                  <a class="nav-link {% if request.endpoint == 'kontak' %}active{% endif %}" href="{{ url_for('kontak') }}">Kontak</a>
                 </li>
             </ul>
             <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
@@ -201,12 +241,12 @@
     </nav>
 
   <!-- Project Section -->
-  <section id="project" class="py-5 mb-3 bg-body pro" data-aos="fade-up" style="margin-bottom: 1rem;">
-    <div class="container">
-      <h2 class="section-title text-center mb-4">PROJECT</h2>
+  <section id="project" class="py-5 mb-3 bg-body pro" style="margin-bottom: 1rem;">
+    <div class="container zoom-on-load">
+      <h2 class="section-title text-center mb-5">PROJECT</h2>
       <div class="row g-4">
         <!-- Project 1 -->
-        <div class="container col-lg-4" style="display: block; margin: 0 auto; margin-top: 1rem;" data-aos="zoom-in">
+        <div class="container col-lg-4" style="display: block; margin: 0 auto; margin-top: 0.5rem;">
           <div class="card project-card h-100">
             <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752393690/karyawan_foto/nb5gpq9sb3bf6opshjq8.png" class="card-img-top" alt="Project 1" style="width: 200px; display: block; margin: 0 auto; margin-top: 10px;">
             <div class="card-body">
@@ -221,37 +261,38 @@
     </div>
   </section>
 
-  <hr class="border dynamic-btn border-1 opacity-100 mx-auto burdir" style="width: 88.5%; margin-top: 0rem; margin-bottom: 4rem;">
+  <hr class="border dynamic-btn border-1 opacity-100 mx-auto burdir" data-aos="fade-up" style="width: 88.5%; margin-top: 0rem; margin-bottom: 5rem;">
 
+  <!-- design diary -->
   <div class="container">
-      <div class="container shadow p-5 mb-5 mt-5 bg-body-tertiary rounded">
-        <div class="text-center ">
-          <h2 style="font-weight: 700;">DESIGN DIARY</h2>
+      <div class="container shadow p-5 mb-5 mt-5 bg-body-tertiary rounded" data-aos="fade-up">
+        <div class="text-center">
+          <h2 style="font-weight: 700;" data-aos="fade-up">DESIGN DIARY</h2>
         </div>
 
         <!-- Design Diary Start -->
-          <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+          <div class="row row-cols-1 row-cols-md-2 g-4 mt-4" data-aos="fade-up">
 
-            <div class="col">
+            <div class="col" data-aos="fade-up">
               <div class="card h-100 shadow-sm border-0">
                 <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752901525/First_design_hpeuu6.png" class="card-img-top object-fit-contain p-3" alt="Design 1">
               </div>
             </div>
 
-            <div class="col">
+            <div class="col" data-aos="fade-up">
               <div class="card h-100 shadow-sm border-0">
                 <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752901550/Second_design_ov9ckx.png" class="card-img-top object-fit-contain p-3" alt="Design 2">
               </div>
             </div>
 
-            <div class="col">
-              <div class="card h-100 shadow-sm border-0">
+            <div class="col" data-aos="fade-up">
+              <div class="card h-100 shadow-sm border-0" data-aos="fade-up">
                 <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752902244/Kevin_De_Bruyne_Man_City_Stats_1_cweonz.png" class="card-img-top object-fit-contain p-3" alt="Design 3">
               </div>
             </div>
 
-            <div class="col">
-              <div class="card h-100 shadow-sm border-0">
+            <div class="col" data-aos="fade-up">
+              <div class="card h-100 shadow-sm border-0" data-aos="fade-up">
                 <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752901538/Fixtures_tgg2un.png" class="card-img-top object-fit-contain p-3" alt="Design 4">
               </div>
             </div>
@@ -263,7 +304,7 @@
    </div>
 
   <!-- Footer -->
-  <footer>
+  <footer data-aos="fade-up">
     <div class="container">
       <div class="mb-3">
         <p>Hubungi saya di: <a href="mailto:ahsandzikra@gmail.com">ahsandzikra@gmail.com</a></p>
