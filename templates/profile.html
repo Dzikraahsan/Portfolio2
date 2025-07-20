@@ -53,6 +53,14 @@
       font-display: swap;
     }
 
+    @font-face {
+      font-family: 'Organetto UltraBold SemiExt';
+      src: url('/static/fonts/Organetto-UltraBoldSemiExt.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+
     .navbar {
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       transition: background-color 0.3s ease-in-out;
@@ -176,6 +184,50 @@
       box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* kasih bayangan */
     }
 
+    /* biodata */
+    .biodata-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 1.2rem 1.5rem;
+        padding: 2rem;
+        background-color: var(--bs-body-bg); 
+        border-radius: 12px;
+        color: #212529; /* Warna teks untuk light mode (hitam keabu) */
+      }
+
+      .biodata-grid .label {
+        font-weight: 600;
+        color: #495057; /* Label agak gelap di light mode */
+      }
+
+      .biodata-grid .value {
+        font-weight: 400;
+        color: #212529;
+      }
+
+      .biodata-grid a {
+        color: #0d6efd;
+        text-decoration: underline;
+      }
+
+      /* Dark Mode Styling */
+      [data-bs-theme="dark"] .biodata-grid {
+        background-color: #212529;
+        color: #f8f9fa;
+      }
+
+      [data-bs-theme="dark"] .biodata-grid .label {
+        color: #adb5bd;
+      }
+
+      [data-bs-theme="dark"] .biodata-grid .value {
+        color: #f8f9fa;
+      }
+
+      [data-bs-theme="dark"] .biodata-grid a {
+        color: #4dd0e1;
+      }
+
     /* kode responsive */
         @media (max-width: 768px) { 
         body {
@@ -221,6 +273,18 @@
             margin-top: 5px;
           }
 
+          .biodata-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .biodata-grid .label {
+            margin-bottom: 0.2rem;
+          }
+
+          .biodata-grid .value {
+            margin-bottom: 0.9rem;
+          }
+
         }
 
   </style>
@@ -260,46 +324,46 @@
 
       <!-- Biodata Start -->
       <div class="row justify-content-center mt-4">
-        <div class="col-md-10">
-          <div class="mb-3 d-flex">
-            <div class="fw-bold col-4">Nama Lengkap</div>
-            <div class="col-8">Dzikra Ahsan Imawan</div>
+        <div class="col-md-10 biodata-grid">
+          <div class="biodata-item">
+            <div class="label">NAMA LENGKAP</div>
+            <div class="value">DZIKRA AHSAN IMAWAN</div>
           </div>
-          <div class="mb-3 d-flex">
-            <div class="fw-bold col-4">Tempat, Tanggal Lahir</div>
-            <div class="col-8">Majalengka, 27 September 2008</div>
+          <div class="biodata-item">
+            <div class="label">Tempat, Tanggal Lahir</div>
+            <div class="value">Majalengka, 27 September 2008</div>
           </div>
-          <div class="mb-3 d-flex">
-            <div class="fw-bold col-4">Alamat</div>
-            <div class="col-8">Desa Sindangkerta, Kec. Maja, Kab. Majalengka, Jawa Barat</div>
+          <div class="biodata-item">
+            <div class="label">Alamat</div>
+            <div class="value">Desa Sindangkerta, Kec. Maja, Kab. Majalengka, Jawa Barat</div>
           </div>
-          <div class="mb-3 d-flex">
-            <div class="fw-bold col-4">Email</div>
-            <div class="col-8">ahsandzikra@email.com</div>
+          <div class="biodata-item">
+            <div class="label">Email</div>
+            <div class="value">ahsandzikra@email.com</div>
           </div>
-          <div class="mb-3 d-flex">
-            <div class="fw-bold col-4">Status</div>
-            <div class="col-8">Pelajar (Kelas 12)</div>
+          <div class="biodata-item">
+            <div class="label">Status</div>
+            <div class="value">Pelajar (Kelas 12)</div>
           </div>
-          <div class="mb-3 d-flex">
-            <div class="fw-bold col-4">Minat</div>
-            <div class="col-8">Web Development, UI/UX Design, Front-End Performance</div>
+          <div class="biodata-item">
+            <div class="label">Minat</div>
+            <div class="value">Web Development, UI/UX Design, Front-End Performance</div>
           </div>
-          <div class="mb-3 d-flex">
-            <div class="fw-bold col-4">Skill</div>
-            <div class="col-8">HTML, CSS, JavaScript, PHP, Python, Flask</div>
+          <div class="biodata-item">
+            <div class="label">Skill</div>
+            <div class="value">HTML, CSS, JavaScript, PHP, Python, Flask</div>
           </div>
-          <div class="mb-3 d-flex">
-            <div class="fw-bold col-4">Tools</div>
-            <div class="col-8">VS Code, Git, Figma, Railway</div>
+          <div class="biodata-item">
+            <div class="label">Tools</div>
+            <div class="value">VS Code, Git, Figma, Railway</div>
           </div>
-          <div class="mb-3 d-flex">
-            <div class="fw-bold col-4">Bahasa Pemrograman</div>
-            <div class="col-8">JavaScript, PHP, Python</div>
+          <div class="biodata-item">
+            <div class="label">Bahasa Pemrograman</div>
+            <div class="value">JavaScript, PHP, Python</div>
           </div>
-          <div class="mb-3 d-flex">
-            <div class="fw-bold col-4">GitHub</div>
-            <div class="col-8"><a href="https://github.com/Dzikraahsan" target="_blank">https://github.com/Dzikraahsan</a></div>
+          <div class="biodata-item">
+            <div class="label">GitHub</div>
+            <div class="value"><a href="https://github.com/Dzikraahsan" target="_blank">https://github.com/Dzikraahsan</a></div>
           </div>
         </div>
       </div>
@@ -402,12 +466,12 @@
   <!-- skills -->
    <div class="container" data-aos="fade-up">
 
-      <div class="container shadow p-5 mb-0 bg-body-tertiary rounded  ">
+      <div class="container shadow p-5 mb-0 bg-body-tertiary rounded" data-aos="fade-up">
         <div class="text-center mb-0 mt-3">
           <h2 style="font-weight: 700; margin-top: -1rem;" data-aos="fade-up">SKILLS</h2>
         </div>
         <div class="chart-container mt-5" data-aos="fade-up">
-          <canvas id="barChart" data-aos="fade-up"></canvas>
+          <canvas id="barChart" width="400" height="200"  data-aos="zoom-in" data-aos-delay="200"></canvas>
         </div>
       </div>
 
@@ -498,76 +562,83 @@
 
   <!-- script untuk diagram -->
   <script>
-   const ctx = document.getElementById('barChart').getContext('2d');
-   const barChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['HTML', 'CSS', 'JAVASCRIPT', 'PHP', 'SQL', 'FIGMA', 'CANVA'],
-      datasets: [{
-        label: 'Persentase',
-        data: [91, 84, 72, 85, 87, 83, 94],
-        backgroundColor: '#0d6efd',
-        barThickness: 20 // 👈 atur lebar batang di sini
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          labels: {
-            font: {
+   // Inisialisasi AOS
+    AOS.init({
+      duration: 800
+    });
+
+    // Inisialisasi Chart.js
+    const ctx = document.getElementById('barChart').getContext('2d');
+    const barChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['HTML', 'CSS', 'JAVASCRIPT', 'PHP', 'PYTHON', 'SQL', 'FIGMA', 'CANVA'],
+        datasets: [{
+          label: 'Persentase',
+          data: [91, 84, 72, 85, 76, 87, 83, 94],
+          backgroundColor: '#0d6efd',
+          barThickness: 20
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            labels: {
+              font: {
+                family: 'Organetto',
+                size: 14,
+                weight: 'bold'
+              }
+            }
+          },
+          tooltip: {
+            titleFont: {
               family: 'Organetto',
               size: 14,
               weight: 'bold'
+            },
+            bodyFont: {
+              family: 'Organetto',
+              size: 12,
+              weight: 'normal'
             }
           }
         },
-        tooltip: {
-          titleFont: {
-            family: 'Organetto',
-            size: 14,
-            weight: 'bold'
-          },
-          bodyFont: {
-            family: 'Organetto',
-            size: 12,
-            weight: 'normal'
-          }
-        }
-      },
-      scales: {
-        y: {
-          beginAtZero: true,
-          suggestedMax: 100,
-          ticks: {
-            stepSize: 10,
-            font: {
-              family: 'Organetto',
-              size: 12,
-              weight: 'bold'
+        scales: {
+          y: {
+            beginAtZero: true,
+            suggestedMax: 100,
+            ticks: {
+              stepSize: 10,
+              padding: 10,
+              font: {
+                family: 'Organetto UltraBold SemiExt',
+                size: 12,
+                weight: 'normal'
+              }
+            },
+            grid: {
+              color: 'rgba(0, 0, 0, 0.1)',
+              borderDash: [5, 5]
             }
           },
-          grid: {
-            color: 'rgba(0, 0, 0, 0.1)',
-            borderDash: [5, 5]
-          }
-        },
-        x: {
-          ticks: {
-            font: {
-              family: 'Organetto',
-              size: 12,
-              weight: 'bold'
+          x: {
+            ticks: {
+              font: {
+                family: 'Organetto',
+                size: 12,
+                weight: 'bold'
+              }
+            },
+            grid: {
+              display: false
             }
-          },
-          grid: {
-            display: false
           }
         }
       }
-    }
-  });
+    });
 
 
   </script>
