@@ -567,6 +567,14 @@
       duration: 800
     });
 
+    // untuk ketebalan chart
+    function getResponsiveBarThickness() {
+      const width = window.innerWidth;
+      if (width >= 1200) return 30; // Desktop
+      if (width >= 768) return 15;  // Tablet
+      return 10;                    // HP
+    }
+
     // Inisialisasi Chart.js
     const ctx = document.getElementById('barChart').getContext('2d');
     const barChart = new Chart(ctx, {
@@ -640,6 +648,10 @@
       }
     });
 
+     window.addEventListener('resize', () => {
+      barChart.data.datasets[0].barThickness = getResponsiveBarThickness();
+      barChart.update();
+    });
 
   </script>
 
