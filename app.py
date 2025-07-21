@@ -11,8 +11,8 @@ load_dotenv()
 app = Flask(__name__)
 
 @app.route('/')
-def index():
-    return render_template('index.html') 
+def home():
+    return render_template('index.html')
 
 # 🔁 AJAX route untuk kirim email
 @app.route('/kirim-ajax', methods=['POST'])
