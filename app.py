@@ -1,3 +1,7 @@
+from flask import Flask
+
+app = Flask(__name__)
+
 @app.route('/kirim-ajax', methods=['POST'])
 def kirim_email_ajax():
     try:
