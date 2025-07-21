@@ -144,12 +144,12 @@
     }
 
     .chart-container {
+      background-color: var(--bs-body-bg); /* biar nyesuaiin sama Bootstrap theme */
+      border-radius: 12px;
       max-width: 1000px;
       height: 400px;
       margin: auto;
       padding: 2rem;
-      background: #ffffff;
-      border-radius: 12px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
     }
 
@@ -323,47 +323,47 @@
       <h2 class="section-title text-center" style="font-weight: 700;">PROFIL DIRI</h2>
 
       <!-- Biodata Start -->
-      <div class="row justify-content-center mt-4">
-        <div class="col-md-10 biodata-grid">
-          <div class="biodata-item">
-            <div class="label">NAMA LENGKAP</div>
-            <div class="value">DZIKRA AHSAN IMAWAN</div>
+      <div class="row justify-content-center mt-4" data-aos="fade-up">
+        <div class="col-md-10 biodata-grid"data-aos="fade-up">
+          <div class="biodata-item" data-aos="fade-up">
+            <div class="label" data-aos="fade-up">NAMA LENGKAP</div>
+            <div class="value" data-aos="fade-up">DZIKRA AHSAN IMAWAN</div>
           </div>
-          <div class="biodata-item">
-            <div class="label">Tempat, Tanggal Lahir</div>
-            <div class="value">Majalengka, 27 September 2008</div>
+          <div class="biodata-item" data-aos="fade-up">
+            <div class="label" data-aos="fade-up">Tempat, Tanggal Lahir</div>
+            <div class="value" data-aos="fade-up">Majalengka, 27 September 2008</div>
           </div>
-          <div class="biodata-item">
-            <div class="label">Alamat</div>
-            <div class="value">Desa Sindangkerta, Kec. Maja, Kab. Majalengka, Jawa Barat</div>
+          <div class="biodata-item" data-aos="fade-up">
+            <div class="label" data-aos="fade-up">Alamat</div>
+            <div class="value" data-aos="fade-up">Desa Sindangkerta, Kec. Maja, Kab. Majalengka, Jawa Barat</div>
           </div>
-          <div class="biodata-item">
-            <div class="label">Email</div>
-            <div class="value">ahsandzikra@email.com</div>
+          <div class="biodata-item" data-aos="fade-up">
+            <div class="label" data-aos="fade-up">Email</div>
+            <div class="value" data-aos="fade-up">ahsandzikra@email.com</div>
           </div>
-          <div class="biodata-item">
-            <div class="label">Status</div>
-            <div class="value">Pelajar (Kelas 12)</div>
+          <div class="biodata-item" data-aos="fade-up">
+            <div class="label" data-aos="fade-up">Status</div>
+            <div class="value" data-aos="fade-up">Pelajar (Kelas 12)</div>
           </div>
           <div class="biodata-item">
             <div class="label">Minat</div>
             <div class="value">Web Development, UI/UX Design, Front-End Performance</div>
           </div>
-          <div class="biodata-item">
-            <div class="label">Skill</div>
-            <div class="value">HTML, CSS, JavaScript, PHP, Python, Flask</div>
+          <div class="biodata-item" data-aos="fade-up">
+            <div class="label" data-aos="fade-up">Skill</div>
+            <div class="value" data-aos="fade-up">HTML, CSS, JavaScript, PHP, Python, Flask</div>
           </div>
-          <div class="biodata-item">
-            <div class="label">Tools</div>
-            <div class="value">VS Code, Git, Figma, Railway</div>
+          <div class="biodata-item" data-aos="fade-up">
+            <div class="label" data-aos="fade-up">Tools</div>
+            <div class="value" data-aos="fade-up">VS Code, Git, Figma, Railway</div>
           </div>
-          <div class="biodata-item">
-            <div class="label">Bahasa Pemrograman</div>
-            <div class="value">JavaScript, PHP, Python</div>
+          <div class="biodata-item" data-aos="fade-up">
+            <div class="label" data-aos="fade-up">Bahasa Pemrograman</div>
+            <div class="value" data-aos="fade-up">JavaScript, PHP, Python</div>
           </div>
-          <div class="biodata-item">
-            <div class="label">GitHub</div>
-            <div class="value"><a href="https://github.com/Dzikraahsan" target="_blank">https://github.com/Dzikraahsan</a></div>
+          <div class="biodata-item" data-aos="fade-up">
+            <div class="label" data-aos="fade-up">GitHub</div>
+            <div class="value" data-aos="fade-up"><a href="https://github.com/Dzikraahsan" target="_blank">https://github.com/Dzikraahsan</a></div>
           </div>
         </div>
       </div>
@@ -563,37 +563,37 @@
   <!-- script untuk diagram -->
   <script>
    // Inisialisasi AOS
-    AOS.init({
-      duration: 800
-    });
+    AOS.init({ duration: 800 });
 
-    // untuk ketebalan chart
+    // Fungsi ketebalan responsif chart
     function getResponsiveBarThickness() {
       const width = window.innerWidth;
-      if (width >= 1200) return 30; // Desktop
-      if (width >= 768) return 15;  // Tablet
-      return 10;                    // HP
+      if (width >= 1200) return 30;
+      if (width >= 768) return 15;
+      return 10;
     }
 
-    // Inisialisasi Chart.js
-    const ctx = document.getElementById('barChart').getContext('2d');
-    const barChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['HTML', 'CSS', 'JAVASCRIPT', 'PHP', 'PYTHON', 'SQL', 'FIGMA', 'CANVA'],
-        datasets: [{
-          label: 'Persentase',
-          data: [91, 84, 72, 85, 76, 87, 83, 94],
-          backgroundColor: '#0d6efd',
-          barThickness: 20
-        }]
-      },
-      options: {
+    // Ambil tema Bootstrap aktif
+    function getCurrentTheme() {
+      return document.documentElement.getAttribute('data-bs-theme') || 'light';
+    }
+
+    // Update warna background canvas langsung via DOM
+    function updateCanvasBackground(theme) {
+      const canvas = document.getElementById('barChart');
+      canvas.style.backgroundColor = theme === 'dark' ? '#212529' : '#ffffff'; // sesuai Bootstrap bg-dark
+    }
+
+    // Fungsi styling chart berdasarkan tema
+    function getChartOptionsByTheme(theme) {
+      const isDark = theme === 'dark';
+      return {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
           legend: {
             labels: {
+              color: isDark ? '#ffffff' : '#000000',
               font: {
                 family: 'Organetto',
                 size: 14,
@@ -602,6 +602,9 @@
             }
           },
           tooltip: {
+            backgroundColor: isDark ? '#333' : '#fff',
+            titleColor: isDark ? '#fff' : '#000',
+            bodyColor: isDark ? '#fff' : '#000',
             titleFont: {
               family: 'Organetto',
               size: 14,
@@ -621,6 +624,7 @@
             ticks: {
               stepSize: 10,
               padding: 10,
+              color: isDark ? '#ffffff' : '#000000',
               font: {
                 family: 'Organetto UltraBold SemiExt',
                 size: 12,
@@ -628,12 +632,13 @@
               }
             },
             grid: {
-              color: 'rgba(0, 0, 0, 0.1)',
+              color: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
               borderDash: [5, 5]
             }
           },
           x: {
             ticks: {
+              color: isDark ? '#ffffff' : '#000000',
               font: {
                 family: 'Organetto',
                 size: 12,
@@ -645,13 +650,57 @@
             }
           }
         }
-      }
-    });
+      };
+    }
 
-     window.addEventListener('resize', () => {
+    // Data Chart
+    const chartLabels = ['HTML', 'CSS', 'JAVASCRIPT', 'PHP', 'PYTHON', 'SQL', 'FIGMA', 'CANVA'];
+    const chartDataValues = [91, 84, 72, 85, 76, 87, 83, 94];
+
+    // Inisialisasi chart
+    const ctx = document.getElementById('barChart').getContext('2d');
+    let barChart;
+
+    function createChart(theme) {
+      updateCanvasBackground(theme);
+      const isDark = theme === 'dark';
+
+      barChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: chartLabels,
+          datasets: [{
+            label: 'Persentase',
+            data: chartDataValues,
+            backgroundColor: isDark ? '#ffffff' : '#0d6efd',
+            barThickness: getResponsiveBarThickness()
+          }]
+        },
+        options: getChartOptionsByTheme(theme)
+      });
+    }
+
+    // Pertama kali load
+    createChart(getCurrentTheme());
+
+    // Resize bar thickness saat layar berubah
+    window.addEventListener('resize', () => {
       barChart.data.datasets[0].barThickness = getResponsiveBarThickness();
       barChart.update();
     });
+
+    // Perhatikan perubahan data-bs-theme dan update chart
+    const observer = new MutationObserver(() => {
+      const theme = getCurrentTheme();
+      barChart.destroy();
+      createChart(theme);
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-bs-theme']
+    });
+
 
   </script>
 
