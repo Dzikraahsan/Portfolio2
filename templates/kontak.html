@@ -233,7 +233,7 @@
                 <div id="notif-placeholder" class="mb-4"></div>
 
                 <!-- Form ini ngarah ke BACKEND Flask yang udah dideploy di Railway -->
-                <form action="https://web-production-0b5d.up.railway.app/kirim" method="POST">
+                <form id="KontakForm">
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
                     <input type="text" class="form-control" id="nama" name="nama" required>
@@ -344,6 +344,35 @@
             }, 300); // 300ms = durasi animasi Bootstrap
         }
         }, 5000);
+    }
+  });
+</script>
+
+<!-- AJAX for sen message -->
+<script>
+  document.getElementById('kontakForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    
+    try {
+      const response = await fetch('/kirim-ajax', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.status === 'success') {
+        Swal.fire('Sukses!', 'Pesan berhasil dikirim 😎', 'success');
+        this.reset();
+      } else {
+        alert('Gagal mengirim pesan 😢 Coba lagi nanti.');
+      }
+
+    } catch (err) {
+      alert('Terjadi kesalahan saat mengirim 😬');
+      console.error(err);
     }
   });
 </script>
