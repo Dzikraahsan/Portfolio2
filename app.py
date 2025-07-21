@@ -54,9 +54,9 @@ def kirim_email():
 @app.route('/kirim-ajax', methods=['POST'])
 def kirim_email_ajax():
     data = request.get_json()
-    nama = data.get('nama')
-    email_pengirim = data.get('email')
-    pesan = data.get('message')
+    nama = data['nama']
+    email_pengirim = data['email']
+    pesan = data['message']
 
     email_tujuan = os.getenv("EMAIL_APP")
     email_password = os.getenv("EMAIL_PASSWORD")
@@ -68,14 +68,15 @@ def kirim_email_ajax():
     msg.set_content(pesan)
 
     try:
-    with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
-        smtp.starttls()
-        smtp.login(email_tujuan, email_password)
-        smtp.send_message(msg)
-            return jsonify({'status': 'success'})
-            except Exception as e:
-                print(f"Email gagal dikirim: {e}")
-                return jsonify({'status': 'error'}), 500
+        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:  # ← INI HARUS DALAM BLOK TRY
+            smtp.starttls()
+            smtp.login(email_tujuan, email_password)
+            smtp.send_message(msg)
+        return jsonify({'status': 'success'})
+    except Exception as e:
+        print(f"Email gagal dikirim (AJAX): {e}")
+        return jsonify({'status': 'error'})
+
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
