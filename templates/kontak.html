@@ -302,58 +302,11 @@
 
   </script>
 
-  <!-- script untuk send message from python -->
-  <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const status = params.get('status');
-    const notif = document.getElementById('notif-placeholder');
+  
 
-
-    // Hapus query string dari URL tanpa reload
-    if (window.history.replaceState) {
-    window.history.replaceState(null, null, window.location.pathname);
-    }
-
-    if (status === 'success') {
-      notif.innerHTML = `
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          ✅ Pesan berhasil dikirim!
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>`;
-    } else if (status === 'error') {
-      notif.innerHTML = `
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          ❌ Gagal mengirim pesan. Coba lagi nanti.
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>`;
-    }
-
-    // ❌ Hapus query dari URL setelah notifikasi muncul
-    if (window.history.replaceState) {
-      window.history.replaceState(null, null, window.location.pathname);
-    }
-
-    // ⏱️ Auto close notifikasi setelah 5 detik
-    if (status) {
-      setTimeout(() => {
-        const alertEl = document.querySelector('.alert');
-        if (alertEl) {
-            alertEl.classList.remove('show');
-            alertEl.classList.add('fade');
-            // Tunggu animasi fade selesai, lalu hapus elemen
-            setTimeout(() => {
-            alertEl.remove();
-            }, 300); // 300ms = durasi animasi Bootstrap
-        }
-        }, 5000);
-    }
-  });
-</script>
-
-<!-- AJAX for sen message -->
+<!-- AJAX for send message -->
 <script>
-    document.getElementById('formKontak').addEventListener('submit', function(e) {
+    document.getElementById('KontakForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const nama = document.getElementById('nama').value;
@@ -383,31 +336,6 @@
     });
     });
 
-  document.getElementById('kontakForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(this);
-    
-    try {
-      const response = await fetch('/kirim-ajax', {
-        method: 'POST',
-        body: formData
-      });
-
-      const result = await response.json();
-
-      if (result.status === 'success') {
-        Swal.fire('Sukses!', 'Pesan berhasil dikirim 😎', 'success');
-        this.reset();
-      } else {
-        alert('Gagal mengirim pesan 😢 Coba lagi nanti.');
-      }
-
-    } catch (err) {
-      alert('Terjadi kesalahan saat mengirim 😬');
-      console.error(err);
-    }
-  });
 </script>
 
 
