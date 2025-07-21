@@ -336,6 +336,16 @@
             if (alertEl) alertEl.remove();
         }, 5000);
     })
+    .then(data => {
+        console.log(data); // ← biar tahu respon yang diterima
+        const notif = document.getElementById('notif-placeholder');
+        if (data.status === 'success') {
+            notif.innerHTML = '<div class="alert alert-success">Pesan berhasil dikirim!</div>';
+            document.getElementById('formKontak').reset();
+        } else {
+            notif.innerHTML = '<div class="alert alert-danger">Gagal mengirim pesan. Coba lagi nanti!</div>';
+        }
+    })
     .catch(error => {
         document.getElementById('notif-placeholder').innerHTML = '<div class="alert alert-danger" id="notif">Terjadi kesalahan jaringan!</div>';
         console.error('AJAX error:', error);

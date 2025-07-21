@@ -67,6 +67,8 @@ def kirim_email_ajax():
     msg['To'] = email_tujuan
     msg.set_content(pesan)
 
+    return jsonify({'status': 'success'}), 200
+
     try:
         with smtplib.SMTP('smtp.gmail.com', 587) as smtp:  # ← INI HARUS DALAM BLOK TRY
             smtp.starttls()
@@ -75,7 +77,7 @@ def kirim_email_ajax():
         return jsonify({'status': 'success'})
     except Exception as e:
         print(f"Email gagal dikirim (AJAX): {e}")
-        return jsonify({'status': 'error'})
+        return jsonify({'status': 'error'}), 500
 
 
 if __name__ == '__main__':
