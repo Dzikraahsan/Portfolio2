@@ -316,7 +316,7 @@
     fetch('/kirim-ajax', {
         method: 'POST',
         headers: {
-        'Content-Type': 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({ nama, email, message })
     })
@@ -324,17 +324,28 @@
     .then(data => {
         const notif = document.getElementById('notif-placeholder');
         if (data.status === 'success') {
-        notif.innerHTML = '<div class="alert alert-success">Pesan berhasil dikirim!</div>';
-        document.getElementById('formKontak').reset();
+            notif.innerHTML = '<div class="alert alert-success" id="notif">Pesan berhasil dikirim!</div>';
+            document.getElementById('formKontak').reset();
         } else {
-        notif.innerHTML = '<div class="alert alert-danger">Gagal mengirim pesan. Coba lagi nanti!</div>';
+            notif.innerHTML = '<div class="alert alert-danger" id="notif">Gagal mengirim pesan. Coba lagi nanti!</div>';
         }
+
+        // ⏱️ Hilangkan notifikasi setelah 5 detik
+        setTimeout(() => {
+            const alertEl = document.getElementById('notif');
+            if (alertEl) alertEl.remove();
+        }, 5000);
     })
     .catch(error => {
-        document.getElementById('notif-placeholder').innerHTML = '<div class="alert alert-danger">Terjadi kesalahan jaringan!</div>';
+        document.getElementById('notif-placeholder').innerHTML = '<div class="alert alert-danger" id="notif">Terjadi kesalahan jaringan!</div>';
         console.error('AJAX error:', error);
+
+        setTimeout(() => {
+            const alertEl = document.getElementById('notif');
+            if (alertEl) alertEl.remove();
+        }, 5000);
     });
-    });
+});
 
 </script>
 
