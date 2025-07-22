@@ -192,7 +192,7 @@
 
           .navbar-collapse.navbarr ul.navbar-nav {
             flex-direction: row;
-            gap: 0.625rem;
+            gap: 0.4rem;
           }
 
           .navbar-collapse.navbarr .dynamic-btn {
@@ -219,6 +219,10 @@
             font-size: clamp(0.9rem, 3vw, 1.1rem);
           }
 
+          .pon {
+            font-size: 0.75rem;
+          }
+
         }
 
   </style>
@@ -227,7 +231,7 @@
 
  <!-- Navbar -->
     <nav class="navbar bg-body sticky-top">
-        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap pon">
 
             <!-- Tombol Kembali -->
             <a href="{{ url_for('home') }}" class="btn dynamic-btn mb-2 mb-lg-0">Kembali</a>
