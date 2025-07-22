@@ -186,110 +186,110 @@
 
     /* biodata */
     .biodata-grid {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 1.2rem 1.5rem;
-        padding: 2rem;
-        background-color: var(--bs-body-bg); 
-        border-radius: 12px;
-        color: #212529; /* Warna teks untuk light mode (hitam keabu) */
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1.2rem 1.5rem;
+      padding: 2rem;
+      background-color: var(--bs-body-bg); 
+      border-radius: 12px;
+      color: #212529; /* Warna teks untuk light mode (hitam keabu) */
+    }
+
+    .biodata-grid .label {
+      font-weight: 600;
+      color: #495057; /* Label agak gelap di light mode */
+    }
+
+    .biodata-grid .value {
+      font-weight: 400;
+      color: #212529;
+    }
+
+    .biodata-grid a {
+      color: #0d6efd;
+      text-decoration: underline;
+     }
+
+     /* Dark Mode Styling */
+    [data-bs-theme="dark"] .biodata-grid {
+      background-color: #212529;
+      color: #f8f9fa;
+    }
+
+    [data-bs-theme="dark"] .biodata-grid .label {
+      color: #adb5bd;
+    }
+
+    [data-bs-theme="dark"] .biodata-grid .value {
+      color: #f8f9fa;
+    }
+
+    [data-bs-theme="dark"] .biodata-grid a {
+      color: #4dd0e1;
+    }
+
+    /* kode responsive */
+    @media (max-width: 768px) { 
+      body {
+          font-size: 14px;
+          padding: 0px; 
+          width: 90%;
+          margin: 0 auto;
+      }
+
+      .navbar-nav {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding-left: 0;
+          margin-bottom: 0;
+          list-style: none;
+      }
+
+    /* Tambahan spacing antar item */
+      .navbar-nav .nav-item {
+        margin-right: 1rem;
+      }
+        
+      .navbar-collapse.navbarr {
+        display: flex !important;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        font-size: 13px;
+        margin-top: -35.5px;
+      }
+
+      .navbar-collapse.navbarr ul.navbar-nav {
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      .navbar-collapse.navbarr .dynamic-btn {
+        margin-left: 20px;
+      }
+
+      .atur {
+        margin-top: 5px;
+      }
+
+      .biodata-grid {
+        grid-template-columns: 1fr;
       }
 
       .biodata-grid .label {
-        font-weight: 600;
-        color: #495057; /* Label agak gelap di light mode */
+        margin-bottom: 0.2rem;
       }
 
       .biodata-grid .value {
-        font-weight: 400;
-        color: #212529;
+        margin-bottom: 0.9rem;
       }
 
-      .biodata-grid a {
-        color: #0d6efd;
-        text-decoration: underline;
-      }
-
-      /* Dark Mode Styling */
-      [data-bs-theme="dark"] .biodata-grid {
-        background-color: #212529;
-        color: #f8f9fa;
-      }
-
-      [data-bs-theme="dark"] .biodata-grid .label {
-        color: #adb5bd;
-      }
-
-      [data-bs-theme="dark"] .biodata-grid .value {
-        color: #f8f9fa;
-      }
-
-      [data-bs-theme="dark"] .biodata-grid a {
-        color: #4dd0e1;
-      }
-
-    /* kode responsive */
-        @media (max-width: 768px) { 
-        body {
-            font-size: 14px;
-            padding: 0px;
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        .navbar-nav {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            padding-left: 0;
-            margin-bottom: 0;
-            list-style: none;
-        }
-
-          /* Tambahan spacing antar item */
-        .navbar-nav .nav-item {
-            margin-right: 1rem;
-        }
-        
-         .navbar-collapse.navbarr {
-            display: flex !important;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 20px;
-            font-size: 13px;
-            margin-top: -35.5px;
-          }
-
-          .navbar-collapse.navbarr ul.navbar-nav {
-            flex-direction: row;
-            gap: 10px;
-          }
-
-          .navbar-collapse.navbarr .dynamic-btn {
-            margin-left: 20px;
-          }
-
-          .atur {
-            margin-top: 5px;
-          }
-
-          .biodata-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .biodata-grid .label {
-            margin-bottom: 0.2rem;
-          }
-
-          .biodata-grid .value {
-            margin-bottom: 0.9rem;
-          }
-
-
-        }
+    }
 
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -301,18 +301,18 @@
 
             <!-- Navigation Menu -->
             <div class="d-flex align-items-center flex-wrap justify-content-end">
-            <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
-                <li class="nav-item box me-3">
-                  <a class="nav-link {% if request.endpoint == 'profile' %}active{% endif %}" href="{{ url_for('profile') }}">Profile</a>
-                </li>
-                <li class="nav-item box me-3">
-                  <a class="nav-link {% if request.endpoint == 'project' %}active{% endif %}" href="{{ url_for('project') }}">Project</a>
-                </li>
-                <li class="nav-item box me-3">
-                  <a class="nav-link {% if request.endpoint == 'kontak' %}active{% endif %}" href="{{ url_for('kontak') }}">Kontak</a>
-                </li>
-            </ul>
-            <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
+              <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
+                  <li class="nav-item box me-3">
+                    <a class="nav-link {% if request.endpoint == 'profile' %}active{% endif %}" href="{{ url_for('profile') }}">Profile</a>
+                  </li>
+                  <li class="nav-item box me-3">
+                    <a class="nav-link {% if request.endpoint == 'project' %}active{% endif %}" href="{{ url_for('project') }}">Project</a>
+                  </li>
+                  <li class="nav-item box me-3">
+                    <a class="nav-link {% if request.endpoint == 'kontak' %}active{% endif %}" href="{{ url_for('kontak') }}">Kontak</a>
+                  </li>
+              </ul>
+              <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
             </div>
 
         </div>
@@ -517,8 +517,6 @@
 
       </div>
    </div>
-    
-
 
   <!-- Footer -->
   <footer style="margin-top: 5rem;" data-aos="fade-up">

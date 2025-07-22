@@ -206,18 +206,18 @@
 
             <!-- Navigation Menu -->
             <div class="d-flex align-items-center flex-wrap justify-content-end">
-            <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
-                <li class="nav-item box me-3">
-                  <a class="nav-link {% if request.endpoint == 'profile' %}active{% endif %}" href="{{ url_for('profile') }}">Profile</a>
-                </li>
-                <li class="nav-item box me-3">
-                  <a class="nav-link {% if request.endpoint == 'project' %}active{% endif %}" href="{{ url_for('project') }}">Project</a>
-                </li>
-                <li class="nav-item box me-3">
-                  <a class="nav-link {% if request.endpoint == 'kontak' %}active{% endif %}" href="{{ url_for('kontak') }}">Kontak</a>
-                </li>
-            </ul>
-            <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
+                <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
+                    <li class="nav-item box me-3">
+                    <a class="nav-link {% if request.endpoint == 'profile' %}active{% endif %}" href="{{ url_for('profile') }}">Profile</a>
+                    </li>
+                    <li class="nav-item box me-3">
+                    <a class="nav-link {% if request.endpoint == 'project' %}active{% endif %}" href="{{ url_for('project') }}">Project</a>
+                    </li>
+                    <li class="nav-item box me-3">
+                    <a class="nav-link {% if request.endpoint == 'kontak' %}active{% endif %}" href="{{ url_for('kontak') }}">Kontak</a>
+                    </li>
+                </ul>
+                <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
             </div>
 
         </div>
@@ -227,32 +227,32 @@
     <div class="container shadow p-4 mt-1 mb-1 bg-body-tertiary rounded pesan" style="margin-top: 5rem; width: 90%; margin-bottom: 5rem;">
             <!-- Kontak Section -->
         <section id="kontak" class="py-5 text-body">
-        <div class="container zoom-on-load">
-            <div class="row justify-content-center" style="margin-top: -1rem;">
-            <div class="col-md-9">
-                <div id="notif-placeholder" class="mb-4"></div>
+            <div class="container zoom-on-load">
+                <div class="row justify-content-center" style="margin-top: -1rem;">
+                <div class="col-md-9">
+                    <div id="notif-placeholder" class="mb-4"></div>
 
-                <form action="https://web-production-0b5d.up.railway.app/kirim" method="POST">
-                <div class="mb-3">
-                    <label for="nama" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="nama" name="nama" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="mb-5">
-                    <label for="message" class="form-label">Pesan</label>
-                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tulis pesan Anda..." required></textarea>
-                </div>
-                <button type="submit" class="btn dynamic-btn" style="margin-bottom: -3rem; display: block; margin: 0 auto;">
-                    Kirim
-                </button>
-                </form>
+                    <form action="https://web-production-0b5d.up.railway.app/kirim" method="POST">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="message" class="form-label">Pesan</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tulis pesan Anda..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn dynamic-btn" style="margin-bottom: -3rem; display: block; margin: 0 auto;">
+                        Kirim
+                    </button>
+                    </form>
 
+                </div>
+                </div>
             </div>
-            </div>
-        </div>
         </section>
 
     </div>
