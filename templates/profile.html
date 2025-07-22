@@ -231,11 +231,11 @@
     /* kode responsive */
     @media (max-width: 768px) {
       html {
-        font-size: 100%;
+        font-size: 90%;
       } 
-      
+
       body {
-          font-size: 85%;
+          font-size: 0.9rem;
           padding: 0px; 
           width: 90%;
           margin: 0 auto;
@@ -261,7 +261,7 @@
         align-items: center;
         gap: 1.25rem;
         font-size: 0.8125rem;
-        margin-top: -35.5px;
+        margin-top: -2.09375rem;
       }
 
       .navbar-collapse.navbarr ul.navbar-nav {
@@ -274,21 +274,18 @@
       }
 
       .atur {
-        margin-top: 0.3125;
+        margin-top: 0.3125rem;
       }
 
       .biodata-grid {
         grid-template-columns: 1fr;
       }
 
-      .biodata-grid .label {
-        margin-bottom: 0.2rem;
-      }
-
+      .biodata-grid .label,
       .biodata-grid .value {
-        margin-bottom: 0.9rem;
+        grid-template-columns: 1fr;
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
       }
-
     }
 
   </style>

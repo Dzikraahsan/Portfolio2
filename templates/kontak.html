@@ -142,60 +142,66 @@
 
         /* kode responsive */
         @media (max-width: 768px) { 
-        html {
-            font-size: 100%;
-        }
+            html {
+                font-size: 90%;
+            }
 
-        body {
-            font-size: 85%;
-            padding: 0rem;
-            width: 90%;
-            margin: 0 auto;
-        }
+            body {
+                font-size: 1rem;
+                padding: 0rem;
+                width: 90%;
+                margin: 0 auto;
+            }
 
-        .navbar-nav {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            padding-left: 0;
-            margin-bottom: 0;
-            list-style: none;
-        }
+            .navbar-nav {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding-left: 0;
+                margin-bottom: 0;
+                list-style: none;
+            }
 
-          /* Tambahan spacing antar item */
-        .navbar-nav .nav-item {
-            margin-right: 1rem;
-        }
-        
-         .navbar-collapse.navbarr {
-            display: flex !important;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 1.25rem;
-            font-size: 0.8125rem;
-            margin-top: -35.5px;
-          }
+            /* Tambahan spacing antar item */
+            .navbar-nav .nav-item {
+                margin-right: 1rem;
+            }
+            
+            .navbar-collapse.navbarr {
+                display: flex !important;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 1rem;
+                font-size: 0.8125rem;
+                margin-top: 0;
+            }
 
-          .navbar-collapse.navbarr ul.navbar-nav {
-            flex-direction: row;
-            gap: 0.625rem;
-          }
+            .navbar-collapse.navbarr ul.navbar-nav {
+                flex-direction: row;
+                gap: 0.625rem;
+            }
 
-          .navbar-collapse.navbarr .dynamic-btn {
-            margin-left: 1.25rem;
-          }
+            .navbar-collapse.navbarr .dynamic-btn {
+                margin-left: 1.25rem;
+            }
 
-          .pesan {
-            max-width: 27.8125rem;
-            margin-top: 1rem;
-            margin-top: 3rem;
-          }
+            .pesan {
+                max-width: 90%;
+                margin-top: clamp(1rem, 4vw, 2rem);
+            }
 
-          .atur {
-            margin-top: 0.3125rem;
-          }
+            .atur {
+                margin-top: 0.3125rem;
+            }
 
-        }
+            form label,
+            form input,
+            form textarea,
+            form button {
+                font-size: clamp(0.9rem, 2.5vw, 1rem);
+            }
+
+            }
 
     </style>
 </head>
