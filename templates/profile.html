@@ -227,6 +227,75 @@
     [data-bs-theme="dark"] .biodata-grid a {
       color: #4dd0e1;
     }
+    
+    .skill-section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .skill {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .skill img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .skill span {
+      min-width: 80px;
+      font-weight: 600;
+    }
+
+    .bar {
+      flex: 1;
+      height: 12px;
+      background: #eee;
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .fill {
+      height: 100%;
+      width: 0%;
+      background: var(--bar-fill);
+      transition: width 1s ease-out;
+      border-radius: 2px;
+    }
+
+    .percent {
+      width: 50px;
+      text-align: right;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* Default (light mode) */
+    :root {
+      --bar-fill: #0d6efd;
+    }
+
+    /* Dark mode */
+    [data-bs-theme="dark"] {
+      --bar-fill: #0d6efd; 
+    }
+
+    /* Hanya aktif di dark mode */
+    [data-bs-theme="dark"] .dark-invert {
+      filter: invert(1);
+    }
 
     /* kode responsive */
     @media (max-width: 768px) {
@@ -235,19 +304,19 @@
       } 
 
       body {
-          font-size: 1rem;
-          padding: 0px; 
-          width: 90%;
-          margin: 0 auto;
+        font-size: 1rem;
+        padding: 0px; 
+        width: 90%;
+        margin: 0 auto;
       }
 
       .navbar-nav {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          padding-left: 0;
-          margin-bottom: 0;
-          list-style: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
       }
 
     /* Tambahan spacing antar item */
@@ -489,11 +558,82 @@
         <div class="text-center mb-0 mt-3">
           <h2 style="font-weight: 700; margin-top: -1rem;" data-aos="fade-up">SKILLS</h2>
         </div>
-        <div class="chart-container mt-5 p-4" data-aos="fade-up">
-          <canvas id="barChart" width="400" height="200"  data-aos="zoom-in" data-aos-delay="200"></canvas>
-        </div>
-      </div>
+          <div class="skill-section h-100 mb-0" data-aos="fade-up">
 
+              <div class="skill" data-percent="85" data-aos="fade-up">
+                <img class="icon dark-invert" src="https://api.iconify.design/ri:html5-fill.svg" alt="HTML">
+                <span>HTML</span>
+                <div class="bar">
+                  <div class="fill"></div>
+                </div>
+                <span class="percent">85%</span>
+              </div>
+
+              <div class="skill" data-percent="80" data-aos="fade-up">
+                <img class="icon dark-invert" src="https://api.iconify.design/ri:css3-fill.svg" alt="CSS">
+                <span>CSS</span>
+                <div class="bar">
+                  <div class="fill"></div>
+                </div>
+                <span class="percent">80%</span>
+              </div>
+
+              <div class="skill" data-percent="78" data-aos="fade-up">
+                <img src="https://api.iconify.design/logos:javascript.svg" alt="JavaScript">
+                <span>JS</span>
+                <div class="bar">
+                  <div class="fill"></div>
+                </div>
+                <span class="percent">78%</span>
+              </div>
+
+              <div class="skill" data-percent="70" data-aos="fade-up">
+                <img class="icon dark-invert" src="https://api.iconify.design/mdi:language-php.svg" alt="PHP">
+                <span>PHP</span>
+                <div class="bar">
+                  <div class="fill"></div>
+                </div>
+                <span class="percent">70%</span>
+              </div>
+
+              <div class="skill" data-percent="65" data-aos="fade-up">
+                <img src="https://api.iconify.design/logos:python.svg" alt="Python">
+                <span>Python</span>
+                <div class="bar">
+                  <div class="fill"></div>
+                </div>
+                <span class="percent">65%</span>
+              </div>
+
+              <div class="skill" data-percent="80" data-aos="fade-up">
+                <img src="https://api.iconify.design/logos:mysql.svg" alt="SQL">
+                <span>MYSQL</span>
+                <div class="bar">
+                  <div class="fill"></div>
+                </div>
+                <span class="percent">80%</span>
+              </div>
+
+              <div class="skill" data-percent="84" data-aos="fade-up">
+                <img src="https://api.iconify.design/logos:figma.svg" alt="Figma">
+                <span>Figma</span>
+                <div class="bar">
+                  <div class="fill"></div>
+                </div>
+                <span class="percent">84%</span>
+              </div>
+
+              <div class="skill" data-percent="87" data-aos="fade-up">
+                <img class="icon dark-invert" src="https://api.iconify.design/simple-icons:canva.svg" alt="Canva">
+                <span>Canva</span>
+                <div class="bar">
+                  <div class="fill"></div>
+                </div>
+                <span class="percent">87%</span>
+              </div>
+            </div>        
+          </div>
+      </div>
    </div>
 
    <!-- sertifikat -->
@@ -596,151 +736,19 @@
         themeToggle.textContent = newTheme === 'light' ? '🌙' : '🌟';
       });
 
-  </script>
-
-  <!-- script untuk diagram -->
-  <script>
-   // Inisialisasi AOS
-    AOS.init({ duration: 800 });
-
-    // Fungsi ketebalan responsif chart
-    function getResponsiveBarThickness() {
-      const width = window.innerWidth;
-      if (width >= 1200) return 30;
-      if (width >= 768) return 15;
-      return 10;
-    }
-
-    // Ambil tema Bootstrap aktif
-    function getCurrentTheme() {
-      return document.documentElement.getAttribute('data-bs-theme') || 'light';
-    }
-
-    // Update warna background canvas langsung via DOM
-    function updateCanvasBackground(theme) {
-      const canvas = document.getElementById('barChart');
-      canvas.style.backgroundColor = theme === 'dark' ? '#212529' : '#ffffff'; // sesuai Bootstrap bg-dark
-    }
-
-    // Fungsi styling chart berdasarkan tema
-    function getChartOptionsByTheme(theme) {
-      const isDark = theme === 'dark';
-      return {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            labels: {
-              color: isDark ? '#ffffff' : '#000000',
-              font: {
-                family: 'Organetto',
-                size: 14,
-                weight: 'bold'
-              }
-            }
-          },
-          tooltip: {
-            backgroundColor: isDark ? '#333' : '#fff',
-            titleColor: isDark ? '#fff' : '#000',
-            bodyColor: isDark ? '#fff' : '#000',
-            titleFont: {
-              family: 'Organetto',
-              size: 14,
-              weight: 'bold'
-            },
-            bodyFont: {
-              family: 'Organetto',
-              size: 12,
-              weight: 'normal'
-            }
-          }
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            suggestedMax: 100,
-            ticks: {
-              stepSize: 10,
-              padding: 10,
-              color: isDark ? '#ffffff' : '#000000',
-              font: {
-                family: 'Organetto UltraBold SemiExt',
-                size: 12,
-                weight: 'normal'
-              }
-            },
-            grid: {
-              color: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
-              borderDash: [5, 5]
-            }
-          },
-          x: {
-            ticks: {
-              color: isDark ? '#ffffff' : '#000000',
-              font: {
-                family: 'Organetto',
-                size: 12,
-                weight: 'bold'
-              }
-            },
-            grid: {
-              display: false
-            }
-          }
-        }
-      };
-    }
-
-    // Data Chart
-    const chartLabels = ['HTML', 'CSS', 'JAVASCRIPT', 'PHP', 'PYTHON', 'SQL', 'FIGMA', 'CANVA'];
-    const chartDataValues = [85, 80, 78, 70, 65, 80, 84, 87];
-
-    // Inisialisasi chart
-    const ctx = document.getElementById('barChart').getContext('2d');
-    let barChart;
-
-    function createChart(theme) {
-      updateCanvasBackground(theme);
-      const isDark = theme === 'dark';
-
-      barChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: chartLabels,
-          datasets: [{
-            label: 'Persentase',
-            data: chartDataValues,
-            backgroundColor: isDark ? '#ffffff' : '#0d6efd',
-            barThickness: getResponsiveBarThickness()
-          }]
-        },
-        options: getChartOptionsByTheme(theme)
+       window.addEventListener('DOMContentLoaded', () => {
+        const skills = document.querySelectorAll('.skill');
+        skills.forEach(skill => {
+          const fill = skill.querySelector('.fill');
+          const percent = skill.getAttribute('data-percent');
+          setTimeout(() => {
+            fill.style.width = percent + '%';
+          }, 200);
+        });
       });
-    }
-
-    // Pertama kali load
-    createChart(getCurrentTheme());
-
-    // Resize bar thickness saat layar berubah
-    window.addEventListener('resize', () => {
-      barChart.data.datasets[0].barThickness = getResponsiveBarThickness();
-      barChart.update();
-    });
-
-    // Perhatikan perubahan data-bs-theme dan update chart
-    const observer = new MutationObserver(() => {
-      const theme = getCurrentTheme();
-      barChart.destroy();
-      createChart(theme);
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['data-bs-theme']
-    });
-
 
   </script>
+
 
 </body>
 </html>
