@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Dzikra</title>
+    <title>Portfolio Dzikra</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -197,6 +197,16 @@
           100% { background-position: 300% 0%; }
         }
 
+        /* untuk multibahasa */
+        [data-i18n] {
+          transition: opacity 0.3s ease;
+          opacity: 1;
+        }
+
+        [data-i18n].fade-out {
+          opacity: 0;
+        }
+
         /* kode responsive */
         @media (max-width: 768px) { 
           html {
@@ -275,67 +285,71 @@
 <body>
 
   <!-- Navbar -->
+
     <nav class="navbar bg-body sticky-top" data-aos="zoom-in">
-        <div class="container d-flex justify-content-between align-items-center flex-wrap" data-aos="zoom-in">
+      <div class="container d-flex justify-content-between align-items-center flex-wrap" data-aos="zoom-in">
+        <a class="navbar-brand fw-bold navv" data-aos="zoom-in" data-i18n="brand">Dzii27</a>
 
-            <a class="navbar-brand fw-bold navv" data-aos="zoom-in">Dzii27</a>
+        <div class="d-flex align-items-center flex-wrap justify-content-end" data-aos="zoom-in">
+          <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur" data-aos="zoom-in">
+            <li class="nav-item box me-3" data-aos="zoom-in">
+              <a class="nav-link" href="{{ url_for('profile') }}" data-i18n="nav-profile">Profile</a>
+            </li>
+            <li class="nav-item box me-3" data-aos="zoom-in">
+              <a class="nav-link" href="{{ url_for('project') }}" data-i18n="nav-project">Project</a>
+            </li>
+            <li class="nav-item box me-3" data-aos="zoom-in">
+              <a class="nav-link" href="{{ url_for('kontak') }}" data-i18n="nav-contact">Kontak</a>
+            </li>
+          </ul>
 
-            <!-- Navigation Menu -->
-            <div class="d-flex align-items-center flex-wrap justify-content-end" data-aos="zoom-in">
-              <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur" data-aos="zoom-in">
-                <li class="nav-item box me-3" data-aos="zoom-in">
-                  <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
-                </li>
-                <li class="nav-item box me-3" data-aos="zoom-in">
-                  <a class="nav-link" href="{{ url_for('project') }}">Project</a>
-                </li>
-                <li class="nav-item box me-3" data-aos="zoom-in">
-                  <a class="nav-link" href="{{ url_for('kontak') }}">Kontak</a>
-                </li>
-              </ul>
-              <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3" data-aos="zoom-in">🌙</button>
+            <div class="lang-switcher text-end p-3">
+              <button class="dynamic-btn" onclick="setLanguage('id')">ID</button>
+              <button class="dynamic-btn" onclick="setLanguage('en')">EN</button>
             </div>
+
+          <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3" data-aos="zoom-in">🌙</button>
         </div>
+      </div>
     </nav>
 
-  <!-- Hero Section -->
-  <section class="hero bg-body text-body" style="margin-top: 5rem;" data-aos="fade-up">
-    <div class="container">
-      <div class="glow-ring mx-auto foto">
-        <div class="photo-inner">
-          <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752578913/karyawan_foto/me9qq3kyopr0le7yica8.png" class="w-100 h-100 object-fit-cover rounded-circle" alt="">
+    <section class="hero bg-body text-body" style="margin-top: 5rem;" data-aos="fade-up">
+      <div class="container">
+        <div class="glow-ring mx-auto foto">
+          <div class="photo-inner">
+            <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752578913/karyawan_foto/me9qq3kyopr0le7yica8.png" class="w-100 h-100 object-fit-cover rounded-circle" alt="">
+          </div>
         </div>
+
+        <hr class="border border-1 opacity-75 mx-auto burdir" style="width: 50%; margin-top: 2.25rem; margin-bottom: 1.75rem;">
+
+        <h2 class="container col-md-15 h2 text-center" style="font-weight: 700; margin: 0 auto;" data-i18n="hero-name">Dzikra Ahsan Imawan</h2>
+        <p class="lead text-body-secondary pe text-center" data-i18n="hero-title">Web Developer | UI/UX Enthusiast</p>
       </div>
 
-      <hr class="border border-1 opacity-75 mx-auto burdir" style="width: 50%; margin-top: 2.25rem; margin-bottom: 1.75rem;">
-
-      <h2 class=" container col-md-15 h2" style="font-weight: 700; margin: 0 auto;">Dzikra Ahsan Imawan</h2>
-      <p class="lead text-body-secondary pe">Web Developer | UI/UX Enthusiast</p>
+      <div class="d-flex flex-column flex-md-row justify-content-center gap-2">
+        <a href="{{ url_for('profile') }}" class="btn dynamic-btn e mt-3" data-i18n="btn-profile">Lihat Profile</a>
+        <a href="{{ url_for('project') }}" class="btn dynamic-btn e mt-3" data-i18n="btn-project">Lihat Project</a>
+        <a href="{{ url_for('kontak') }}" class="btn dynamic-btn e mt-3" data-i18n="btn-contact">Kontak</a>
       </div>
-    </div>
+    </section>
 
-    <div class="d-flex flex-column flex-md-row justify-content-center gap-2">
-      <a href="{{ url_for('profile') }}" class="btn dynamic-btn e mt-3">Lihat Profile</a>
-      <a href="{{ url_for('project') }}" class="btn dynamic-btn e mt-3">Lihat Project</a>
-      <a href="{{ url_for('kontak') }}" class="btn dynamic-btn e mt-3">Kontak</a>
-    </div>
-        
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container foot">
-      <div class="mb-3">
-        <p class="mb-1 pp">Hubungi saya di: <a href="mailto:ahsandzikra@email.com">ahsandzikra@gmail.com</a></p>
+    <footer>
+      <div class="container foot">
+        <div class="mb-3">
+          <p class="mb-1 pp">
+            <span data-i18n="footer-contact">Hubungi saya di:</span>
+            <a href="mailto:ahsandzikra@email.com" data-i18n="footer-email">ahsandzikra@gmail.com</a>
+          </p>
+        </div>
+        <div class="social-icons mb-2">
+          <a href="https://github.com/Dzikraahsan"><i class="bi bi-github"></i></a>
+          <a href="https://www.instagram.com/dzii27/?__pwa=1"><i class="bi bi-instagram"></i></a>
+          <a href="https://wa.me/6285703153305"><i class="bi bi-whatsapp"></i></a>
+        </div>
+        <small class="text-body-secondary d-block" data-i18n="footer-copy">© 2025 Dzikra Ahsan Imawan. Semua Hak Dilindungi.</small>
       </div>
-      <div class="social-icons mb-2">
-        <a href="https://github.com/Dzikraahsan"><i class="bi bi-github"></i></a>
-        <a href="https://www.instagram.com/dzii27/?__pwa=1"><i class="bi bi-instagram"></i></a>
-        <a href="https://wa.me/6285703153305"><i class="bi bi-whatsapp"></i></a>
-      </div>
-      <small class="text-body-secondary d-block">© 2025 Dzikra Ahsan Imawan. All Right Reserved.</small>
-    </div>
-  </footer>
+    </footer>
 
   <!-- Script -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -359,6 +373,62 @@
         localStorage.setItem('theme', newTheme); // Simpan preferensi tema
 
         themeToggle.textContent = newTheme === 'light' ? '🌙' : '🌟';
+      });
+
+      // script untuk multibahasa
+      const translations = {
+        "id": {
+          "nav-profile": "Profil",
+          "nav-project": "Projek",
+          "nav-contact": "Kontak",
+          "hero-name": "Dzikra Ahsan Imawan",
+          "hero-title": "Web Developer | UI/UX Enthusiast",
+          "btn-profile": "Lihat Profil",
+          "btn-project": "Lihat Projek",
+          "btn-contact": "Kontak",
+          "footer-contact": "Hubungi saya di:",
+          "footer-email": "ahsandzikra@gmail.com",
+          "footer-copy": "© 2025 Dzikra Ahsan Imawan. Semua Hak Dilindungi."
+        },
+        "en": {
+          "nav-profile": "Profile",
+          "nav-project": "Projects",
+          "nav-contact": "Contact",
+          "hero-name": "Dzikra Ahsan Imawan",
+          "hero-title": "Web Developer | UI/UX Enthusiast",
+          "btn-profile": "View Profile",
+          "btn-project": "View Projects",
+          "btn-contact": "Contact",
+          "footer-contact": "Contact me at:",
+          "footer-email": "ahsandzikra@gmail.com",
+          "footer-copy": "© 2025 Dzikra Ahsan Imawan. All Rights Reserved."
+        }
+      };
+
+      function setLanguage(lang) {
+        localStorage.setItem('lang', lang);
+        const elements = document.querySelectorAll('[data-i18n]');
+
+        // Step 1: Fade out
+        elements.forEach(el => {
+          el.classList.add('fade-out');
+        });
+
+        // Step 2: Tunggu transisi, lalu ganti isi dan fade in
+        setTimeout(() => {
+          elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key]) {
+              el.innerHTML = translations[lang][key];
+            }
+            el.classList.remove('fade-out');
+          });
+        }, 300); // waktu sesuai CSS transition
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('lang') || 'id';
+        setLanguage(savedLang);
       });
 
   </script>
