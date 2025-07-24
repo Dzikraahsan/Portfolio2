@@ -292,18 +292,18 @@
 
         <div class="d-flex align-items-center flex-wrap justify-content-end" data-aos="zoom-in">
           <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur" data-aos="zoom-in">
-            <li class="nav-item box me-3" data-aos="zoom-in">
+            <li class="nav-item box me-3 text-center" data-aos="zoom-in">
               <a class="nav-link" href="{{ url_for('profile') }}" data-i18n="nav-profile">Profile</a>
             </li>
-            <li class="nav-item box me-3" data-aos="zoom-in">
+            <li class="nav-item box me-3 text-center" data-aos="zoom-in">
               <a class="nav-link" href="{{ url_for('project') }}" data-i18n="nav-project">Project</a>
             </li>
-            <li class="nav-item box me-3" data-aos="zoom-in">
+            <li class="nav-item box me-3 text-center" data-aos="zoom-in">
               <a class="nav-link" href="{{ url_for('kontak') }}" data-i18n="nav-contact">Kontak</a>
             </li>
           </ul>
 
-            <div class="lang-switcher text-end p-3">
+            <div class="lang-switcher text-center p-3">
               <button class="dynamic-btn" onclick="setLanguage('id')">ID</button>
               <button class="dynamic-btn" onclick="setLanguage('en')">EN</button>
             </div>
@@ -328,9 +328,9 @@
       </div>
 
       <div class="d-flex flex-column flex-md-row justify-content-center gap-2">
-        <a href="{{ url_for('profile') }}" class="btn dynamic-btn e mt-3" data-i18n="btn-profile">Lihat Profile</a>
-        <a href="{{ url_for('project') }}" class="btn dynamic-btn e mt-3" data-i18n="btn-project">Lihat Project</a>
-        <a href="{{ url_for('kontak') }}" class="btn dynamic-btn e mt-3" data-i18n="btn-contact">Kontak</a>
+        <a href="{{ url_for('profile') }}" class="btn dynamic-btn e mt-3 text-center" data-i18n="btn-profile">Lihat Profile</a>
+        <a href="{{ url_for('project') }}" class="btn dynamic-btn e mt-3 text-center" data-i18n="btn-project">Lihat Project</a>
+        <a href="{{ url_for('kontak') }}" class="btn dynamic-btn e mt-3 text-center" data-i18n="btn-contact">Kontak</a>
       </div>
     </section>
 
@@ -338,8 +338,8 @@
       <div class="container foot">
         <div class="mb-3">
           <p class="mb-1 pp">
-            <span data-i18n="footer-contact">Hubungi saya di:</span>
-            <a href="mailto:ahsandzikra@email.com" data-i18n="footer-email">ahsandzikra@gmail.com</a>
+            <span class="text-center" data-i18n="footer-contact">Hubungi saya di:</span>
+            <a class="text-center" href="mailto:ahsandzikra@email.com" data-i18n="footer-email">ahsandzikra@gmail.com</a>
           </p>
         </div>
         <div class="social-icons mb-2">
