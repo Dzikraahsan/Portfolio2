@@ -319,6 +319,16 @@
       filter: invert(1);
     }
 
+    /* untuk multibahasa */
+    [data-i18n] {
+      transition: opacity 0.3s ease;
+      opacity: 1;
+    }
+
+    [data-i18n].fade-out {
+      opacity: 0;
+    }
+
     /* kode responsive */
     @media (max-width: 768px) {
       html {
@@ -421,21 +431,27 @@
         <div class="container d-flex justify-content-between align-items-center flex-wrap pon">
 
             <!-- Tombol Kembali -->
-            <a href="{{ url_for('home') }}" class="btn dynamic-btn mb-2 mb-lg-0 navv">Kembali</a>
+            <a href="{{ url_for('home') }}" class="btn dynamic-btn mb-2 mb-lg-0 navv text center" data-i18n="button-back">Kembali</a>
 
             <!-- Navigation Menu -->
             <div class="d-flex align-items-center flex-wrap justify-content-end">
               <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
                   <li class="nav-item box me-3">
-                    <a class="nav-link {% if request.endpoint == 'profile' %}active{% endif %}" href="{{ url_for('profile') }}">Profile</a>
+                    <a class="nav-link {% if request.endpoint == 'profile' %}active{% endif %} text center" href="{{ url_for('profile') }}" data-i18n="nav-profile">Profil</a>
                   </li>
                   <li class="nav-item box me-3">
-                    <a class="nav-link {% if request.endpoint == 'project' %}active{% endif %}" href="{{ url_for('project') }}">Project</a>
+                    <a class="nav-link {% if request.endpoint == 'project' %}active{% endif %} text center" href="{{ url_for('project') }}" data-i18n="nav-project">Projek</a>
                   </li>
                   <li class="nav-item box me-3">
-                    <a class="nav-link {% if request.endpoint == 'kontak' %}active{% endif %}" href="{{ url_for('kontak') }}">Kontak</a>
+                    <a class="nav-link {% if request.endpoint == 'kontak' %}active{% endif %} text center" href="{{ url_for('kontak') }}" data-i18n="nav-contact" data-i18n="nav-contact text center">Kontak</a>
                   </li>
               </ul>
+
+                <div class="lang-switcher text-center p-3">
+                  <button class="dynamic-btn text center" style="border-radius: 5%;" onclick="setLanguage('id')">ID</button>
+                  <button class="dynamic-btn text center" style="border-radius: 5%;" onclick="setLanguage('en')">EN</button>
+                </div>
+
               <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
             </div>
 
@@ -445,45 +461,45 @@
   <!-- Profil Section -->
   <section id="profil" class="container" style="margin-top: 2.75rem;" data-aos="fade-up">
     <div class="container shadow p-5 mb-5 bg-body-tertiary rounded">
-      <h2 class="section-title text-center" style="font-weight: 700;">PROFIL DIRI</h2>
+      <h2 class="section-title text-center" style="font-weight: 700;" data-i18n="bio-profile">PROFIL DIRI</h2>
 
       <!-- Biodata Start -->
       <div class="row justify-content-center mt-4" data-aos="fade-up">
         <div class="col-md-10 biodata-grid"data-aos="fade-up">
           <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-aos="fade-up">NAMA LENGKAP</div>
+            <div class="label text center" data-aos="fade-up" data-i18n="bio-name">NAMA LENGKAP</div>
             <div class="value" data-aos="fade-up">DZIKRA AHSAN IMAWAN</div>
           </div>
           <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-aos="fade-up">Tempat, Tanggal Lahir</div>
+            <div class="label text center" data-aos="fade-up" data-i18n="bio-tgl">Tempat, Tanggal Lahir</div>
             <div class="value" data-aos="fade-up">Majalengka, 27 September 2008</div>
           </div>
           <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-aos="fade-up">Alamat</div>
+            <div class="label text center" data-aos="fade-up" data-i18n="bio-address">Alamat</div>
             <div class="value" data-aos="fade-up">Desa Sindangkerta, Kec. Maja, Kab. Majalengka, Jawa Barat</div>
           </div>
           <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-aos="fade-up">Email</div>
+            <div class="label text center" data-aos="fade-up" data-i18n="bio-email">Email</div>
             <div class="value" data-aos="fade-up">ahsandzikra@email.com</div>
           </div>
           <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-aos="fade-up">Status</div>
-            <div class="value" data-aos="fade-up">Pelajar (Kelas 12)</div>
+            <div class="label text center" data-aos="fade-up" data-i18n="bi0-status">Status</div>
+            <div class="value text center" data-aos="fade-up" data-i18n="bio-student">Pelajar (Kelas 12)</div>
           </div>
           <div class="biodata-item">
-            <div class="label">Minat</div>
-            <div class="value">Web Development, UI/UX Design, Front-End Performance</div>
+            <div class="label text center" data-i18n="bio-interest">Minat</div>
+            <div class="value text center" data-i18n="bio-interested">Web Development, UI/UX Design, Front-End Performance</div>
           </div>
           <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-aos="fade-up">Skill</div>
+            <div class="label text center" data-aos="fade-up" data-i18n="bio-skill">Skill</div>
             <div class="value" data-aos="fade-up">HTML, CSS, JavaScript, PHP, Python, Flask</div>
           </div>
           <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-aos="fade-up">Tools</div>
+            <div class="label text center" data-aos="fade-up" data-i18n="bio-tools">Tools</div>
             <div class="value" data-aos="fade-up">VS Code, Git, Figma, Railway</div>
           </div>
           <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-aos="fade-up">Bahasa Pemrograman</div>
+            <div class="label text center" data-aos="fade-up" data-i18n="bio-language">Bahasa Pemrograman</div>
             <div class="value" data-aos="fade-up">JavaScript, PHP, Python</div>
           </div>
           <div class="biodata-item" data-aos="fade-up">
@@ -503,7 +519,7 @@
      <div class="container shadow p-5 mb-5 bg-body-tertiary rounded" data-aos="fade-up">
         <section class="py-5 text-body" id="riwayat">
           <div class="container" data-aos="fade-up">
-            <h2 class="text-center mb-5" style="font-weight: 700;" data-aos="fade-up">RIWAYAT SEKOLAH</h2>
+            <h2 class="text-center mb-5" style="font-weight: 700;" data-aos="fade-up" data-i18n="sec-school">RIWAYAT PENDIDIKAN</h2>
             <div class="row g-4 justify-content-center">
 
               <!-- Card TK -->
@@ -571,7 +587,7 @@
                       <i class="fa-solid fa-school" data-aos="fade-up"></i>
                     </div>
                     <h5 class="card-title fw-semibold" data-aos="fade-up">SMK</h5>
-                    <h6 class="card-title fw-medium" style="opacity: 80%;" data-aos="fade-up">2023 - Sekarang</h6>
+                    <h6 class="card-title fw-medium" style="opacity: 80%;" data-aos="fade-up" data-i18n="sec-year">2023 - Sekarang</h6>
                     <a href="https://maps.app.goo.gl/zRz3DkhrrAgyYV9NA" 
                       target="_blank" 
                       class="badge dynamic-btn mt-2 px-3 py-2 text-decoration-none"
@@ -593,7 +609,7 @@
 
       <div class="container shadow p-5 mb-0 bg-body-tertiary rounded" data-aos="fade-up">
         <div class="text-center mb-0 mt-3">
-          <h2 style="font-weight: 700; margin-top: -1rem;" data-aos="fade-up">SKILLS</h2>
+          <h2 style="font-weight: 700; margin-top: -1rem;" data-aos="fade-up"data-i18n="sec-skills">SKILLS</h2>
         </div>
           <div class="skill-section h-100 mb-0" data-aos="fade-up">
 
@@ -686,7 +702,7 @@
    <div class="container" data-aos="fade-up">
       <div class="container shadow p-5 mb-5 mt-5 bg-body-tertiary rounded">
         <div class="text-center ">
-          <h2 style="font-weight: 700;" data-aos="fade-up">SERTIFIKAT</h2>
+          <h2 style="font-weight: 700;" data-aos="fade-up"data-i18n="sec-certificate">SERTIFIKAT</h2>
         </div>
 
         <!-- Sertifikat Grid Start -->
@@ -747,14 +763,17 @@
   <footer style="margin-top: 5rem;" data-aos="fade-up">
     <div class="container">
       <div class="mb-3">
-        <p class="mb-1 pp">Hubungi saya di: <a href="mailto:ahsandzikra@email.com">ahsandzikra@gmail.com</a></p>
+        <p class="mb-1 pp">
+          <span class="text-center" data-i18n="footer-call">Hubungi saya di:</span>
+          <a class="text-center" href="mailto:ahsandzikra@email.com" data-i18n="footer-call-email">ahsandzikra@gmail.com</a>
+        </p>
       </div>
       <div class="social-icons">
         <a href="https://github.com/Dzikraahsan"><i class="bi bi-github"></i></a>
         <a href="https://www.instagram.com/dzii27/?__pwa=1"><i class="bi bi-instagram"></i></a>
         <a href="https://wa.me/6285703153305"><i class="bi bi-whatsapp"></i></a>
       </div>
-      <small class="text-body-secondary d-block mt-3">© 2025 Dzikra Ahsan Imawan. All Right Reserved.</small>
+      <small class="text-body-secondary d-block mt-3 text center"data-i18n="footer-copyright">© 2025 Dzikra Ahsan Imawan. All Right Reserved.</small>
     </div>
   </footer>
 
@@ -791,6 +810,85 @@
             fill.style.width = percent + '%';
           }, 200);
         });
+      });
+
+      // script untuk multibahasa
+      const translations = {
+        "id": {
+          "button-back": "Kembali",
+          "nav-profile": "Profil",
+          "nav-project": "Projek",
+          "nav-contact": "Kontak",
+          "bio-profile": "Profile Diri",
+          "bio-name": "Nama Lengkap",
+          "bio-tgl": "Tempat, Tanggal Lahir",
+          "bio-address": "Alamat",
+          "bio-email": "Surel",
+          "bio-status": "Status",
+          "bio-interest": "Minat",
+          "bio-interested": "Web Development, UI/UX Design, Front-End Performance",
+          "bio-student": "Pelajar (Kelas 12)",
+          "bio-skill": "Keahlian",
+          "bio-language": "Bahasa Pemrograman",
+          "sec-school": "Riwayat Pendidikan",
+          "sec-year": "2023 - Sekarang",
+          "sec-skills": "Keahlian",
+          "sec-certificate": "Sertifikat",
+          "footer-call": "Hubungi Saya Di:",	
+          "footer-call-email": "ahsandzikra@gmail.com",
+          "footer-copyright": "© 2025 Dzikra Ahsan Imawan. Semua Hak Dilindungi."
+          },
+
+          "en": {
+          "button-back": "Back",
+          "nav-profile": "Profile",
+          "nav-project": "Project",
+          "nav-contact": "Contact",
+          "bio-profile": "Self Profile",
+          "bio-name": "Full Name",
+          "bio-tgl": "Place, date of birth",
+          "bio-address": "Address",
+          "bio-email": "Email",
+          "bio-status": "Status",
+          "bio-interest": "Interest",
+          "bio-interested": "Web Development, UI/UX Design, Front-End Performance",
+          "bio-student": "Students (Grade 12)",
+          "bio-skill": "Skills",
+          "bio-language": "Programming Language",
+          "sec-school": "Education History",
+          "sec-year": "2023 - Now",
+          "sec-skills": "Skills",
+          "sec-certificate": "Certificate",
+          "footer-call": "Contact Me At:",	
+          "footer-call-email": "ahsandzikra@gmail.com",
+          "footer-copyright": "© 2025 Dzikra Ahsan Imawan. All Right Reserved."
+        }
+      };
+
+      function setLanguage(lang) {
+        localStorage.setItem('lang', lang);
+        const elements = document.querySelectorAll('[data-i18n]');
+
+        // Step 1: Fade out
+        elements.forEach(el => {
+          el.classList.add('fade-out');
+        });
+
+        // Step 2: Tunggu transisi, lalu ganti isi dan fade in
+        setTimeout(() => {
+          elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key]) {
+              el.innerHTML = translations[lang][key];
+            }
+            el.classList.remove('fade-out');
+          });
+        }, 300); // waktu sesuai CSS transition
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('lang') || 'id';
+        setLanguage(savedLang);
       });
 
   </script>
