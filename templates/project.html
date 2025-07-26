@@ -397,6 +397,7 @@
       });
 
       // script untuk multibahasa
+      const animateFixKeys = ['design']; // tambahin kalo ada elemen lain
       const translations = {
         "id": {
           "button-back": "Kembali",
@@ -429,7 +430,7 @@
         }
       };
 
-      function setLanguage(lang) {
+     function setLanguage(lang) {
         localStorage.setItem('lang', lang);
         const elements = document.querySelectorAll('[data-i18n]');
 
@@ -438,13 +439,25 @@
           el.classList.add('fade-out');
         });
 
-        // Step 2: Tunggu transisi, lalu ganti isi dan fade in
+        // Step 2: Ganti teks dan handle animasi masuk
         setTimeout(() => {
           elements.forEach(el => {
             const key = el.getAttribute('data-i18n');
-            if (translations[lang][key]) {
-              el.innerHTML = translations[lang][key];
+            const translated = translations[lang][key];
+
+            if (translated) {
+              el.innerHTML = translated;
+
+              // Handle ulang AOS untuk elemen tertentu
+              if (animateFixKeys.includes(key)) {
+                el.classList.remove('aos-animate');
+                el.style.opacity = '0'; // reset visibilitas
+                void el.offsetWidth;    // paksa repaint
+                el.style.opacity = '';  // kembalikan supaya muncul
+                AOS.refresh();          // trigger ulang AOS
+              }
             }
+
             el.classList.remove('fade-out');
           });
         }, 300); // waktu sesuai CSS transition
@@ -453,6 +466,11 @@
       document.addEventListener('DOMContentLoaded', () => {
         const savedLang = localStorage.getItem('lang') || 'id';
         setLanguage(savedLang);
+      });
+
+      AOS.init({
+        duration: 600,
+        once: false, // biar bisa animasi ulang
       });
 
   </script>

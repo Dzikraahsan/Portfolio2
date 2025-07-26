@@ -813,9 +813,10 @@
         });
       });
 
-      // script untuk multibahasa
+      const animateFixKeys = ['sec-school', 'sec-year', 'sec-skills', 'sec-certificate'];
+
       const translations = {
-        "id": {
+        id: {
           "button-back": "Kembali",
           "nav-profile": "Profil",
           "nav-project": "Projek",
@@ -836,12 +837,11 @@
           "sec-year": "2023 - Sekarang",
           "sec-skills": "Keahlian",
           "sec-certificate": "Sertifikat",
-          "footer-call": "Hubungi Saya Di:",	
+          "footer-call": "Hubungi Saya Di:",
           "footer-call-email": "ahsandzikra@gmail.com",
           "footer-copyright": "© 2025 Dzikra Ahsan Imawan. Semua Hak Dilindungi."
-          },
-
-          "en": {
+        },
+        en: {
           "button-back": "Back",
           "nav-profile": "Profile",
           "nav-project": "Project",
@@ -862,7 +862,7 @@
           "sec-year": "2023 - Now",
           "sec-skills": "Skills",
           "sec-certificate": "Certificate",
-          "footer-call": "Contact Me At:",	
+          "footer-call": "Contact Me At:",
           "footer-call-email": "ahsandzikra@gmail.com",
           "footer-copyright": "© 2025 Dzikra Ahsan Imawan. All Right Reserved."
         }
@@ -875,33 +875,37 @@
         elements.forEach(el => {
           const key = el.getAttribute('data-i18n');
           const translated = translations[lang][key];
+          if (!translated) return;
 
-          if (translated) {
-            console.log(`✅ ${key} found`);
-          } else {
-            console.warn(`⚠️ ${key} NOT FOUND`);
-          }
-        });
+          el.classList.add('fade-out'); // mulai fade out
 
-        // Step 1: Fade out
-          elements.forEach(el => {
-          el.classList.add('fade-out');
-        });
-
-        setTimeout(() => {
-          elements.forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (translations[lang][key]) {
-              el.innerText = translations[lang][key]; // pake innerText lebih aman
-            }
+          setTimeout(() => {
+            el.innerText = translated;
             el.classList.remove('fade-out');
-          });
-        }, 300); // waktu sesuai CSS transition
+
+            // Fix AOS reanimasi untuk elemen bandel
+            if (animateFixKeys.includes(key)) {
+              el.classList.remove('aos-animate');
+              el.style.opacity = '0';
+
+              setTimeout(() => {
+                el.style.opacity = '1';
+                el.classList.add('aos-animate');
+                AOS.refresh();
+              }, 10);
+            }
+          }, 300); // waktu fade
+        });
       }
 
       document.addEventListener('DOMContentLoaded', () => {
         const savedLang = localStorage.getItem('lang') || 'id';
         setLanguage(savedLang);
+      });
+
+      AOS.init({
+        duration: 600,
+        once: false,
       });
 
   </script>
