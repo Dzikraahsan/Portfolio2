@@ -120,24 +120,34 @@
 
         /* untuk tulisan navbar */
         .nav-link.active {
-        position: relative;
-        font-weight: bold;
+            position: relative;
+            font-weight: bold;
         }
 
         .nav-link.active::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 6px;
-        height: 2px;
-        background-color: #000; /* default terang */
-        border-radius: 2px;
-        transition: all 0.3s ease-in-out;
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 6px;
+            height: 2px;
+            background-color: #000; /* default terang */
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
         }
 
         [data-bs-theme="dark"] .nav-link.active::after {
-        background-color: #fff;
+            background-color: #fff;
+        }
+
+        /* untuk multibahasa */
+        [data-i18n] {
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+
+        [data-i18n].fade-out {
+            opacity: 0;
         }
 
         /* kode responsive */
@@ -229,28 +239,34 @@
         <div class="container d-flex justify-content-between align-items-center flex-wrap pon">
 
             <!-- Tombol Kembali -->
-            <a href="{{ url_for('home') }}" class="btn dynamic-btn mb-2 mb-lg-0 navv">Kembali</a>
+            <a href="{{ url_for('home') }}" class="btn dynamic-btn mb-2 mb-lg-0 navv" data-i18n="button-back">Kembali</a>
 
             <!-- Navigation Menu -->
             <div class="d-flex align-items-center flex-wrap justify-content-end">
                 <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
                     <li class="nav-item box me-3">
-                    <a class="nav-link {% if request.endpoint == 'profile' %}active{% endif %}" href="{{ url_for('profile') }}">Profile</a>
+                    <a class="nav-link {% if request.endpoint == 'profile' %}active{% endif %}" href="{{ url_for('profile') }}" data-i18n="nav-profile">Profile</a>
                     </li>
                     <li class="nav-item box me-3">
-                    <a class="nav-link {% if request.endpoint == 'project' %}active{% endif %}" href="{{ url_for('project') }}">Project</a>
+                    <a class="nav-link {% if request.endpoint == 'project' %}active{% endif %}" href="{{ url_for('project') }}" data-i18n="nav-project">Project</a>
                     </li>
                     <li class="nav-item box me-3">
-                    <a class="nav-link {% if request.endpoint == 'kontak' %}active{% endif %}" href="{{ url_for('kontak') }}">Kontak</a>
+                    <a class="nav-link {% if request.endpoint == 'kontak' %}active{% endif %}" href="{{ url_for('kontak') }}" data-i18n="nav-contact">Kontak</a>
                     </li>
                 </ul>
+
+                    <div class="lang-switcher text-center p-3">
+                        <button class="dynamic-btn text center" style="border-radius: 5%;" onclick="setLanguage('id')">ID</button>
+                        <button class="dynamic-btn text center" style="border-radius: 5%;" onclick="setLanguage('en')">EN</button>
+                    </div>
+
                 <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3">🌙</button>
             </div>
 
         </div>
     </nav>
 
-    <h2 class="section-title text-center" style="margin-top: 3rem;">HUBUNGI SAYA</h2>
+    <h2 class="section-title text-center" style="margin-top: 3rem;" data-i18n="form-call">HUBUNGI SAYA</h2>
     <div class="container shadow p-4 mt-1 mb-1 bg-body-tertiary rounded pesan" style="margin-top: 5rem; width: 90%; margin-bottom: 5rem;">
             <!-- Kontak Section -->
         <section id="kontak" class="py-5 text-body">
@@ -261,18 +277,18 @@
 
                     <form action="https://portfolio-dzikra.up.railway.app/kirim" method="POST">
                     <div class="mb-3">
-                        <label for="nama" class="form-label">Nama</label>
+                        <label for="nama" class="form-label" data-i18n="form-name">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama" required>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label" data-i18n="form-email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="mb-5">
-                        <label for="message" class="form-label">Pesan</label>
-                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tulis pesan Anda..." required></textarea>
+                        <label for="message" class="form-label" data-i18n="form-message">Pesan</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="btn dynamic-btn" style="margin-bottom: -3rem; display: block; margin: 0 auto;">
+                    <button type="submit" class="btn dynamic-btn" style="margin-bottom: -3rem; display: block; margin: 0 auto;" data-i18n="button-send">
                         Kirim
                     </button>
                     </form>
@@ -285,17 +301,20 @@
     </div>
 
 <!-- Footer -->
-<footer style="margin-top: 5rem;">
+<footer style="margin-top: 5rem;" data-aos="fade-up">
     <div class="container">
         <div class="mb-3">
-            <p class="mb-1 pp">Hubungi saya di: <a href="mailto:ahsandzikra@email.com">ahsandzikra@gmail.com</a></p>
+            <p class="mb-1 pp">
+                <span class="text-center" data-i18n="footer-call">Hubungi saya di:</span>
+                <a class="text-center" href="mailto:ahsandzikra@email.com" data-i18n="footer-call-email">ahsandzikra@gmail.com</a>
+            </p>
         </div>
         <div class="social-icons">
             <a href="https://github.com/Dzikraahsan"><i class="bi bi-github"></i></a>
             <a href="https://www.instagram.com/dzii27/?__pwa=1"><i class="bi bi-instagram"></i></a>
             <a href="https://wa.me/6285703153305"><i class="bi bi-whatsapp"></i></a>
         </div>
-        <small class="text-body-secondary d-block mt-3">© 2025 Dzikra Ahsan Imawan. All Right Reserved.</small>
+        <small class="text-body-secondary d-block mt-3" data-i18n="footer-copyright">© 2025 Dzikra Ahsan Imawan. All Right Reserved.</small>
     </div>
 </footer>
 
@@ -372,6 +391,75 @@
         }, 5000);
     }
   });
+
+   // script untuk multibahasa
+      const translations = {
+        "id": {
+          "button-back": "Kembali",
+          "button-send": "Kirim",
+          "nav-profile": "Profil",
+          "nav-project": "Projek",
+          "nav-contact": "Kontak",
+          "form-call": "Kirim Pesan",
+          "form-name": "Nama",
+          "form-email": "Surel",
+          "form-message": "Pesan",
+          "footer-call": "Hubungi Saya Di:",	
+          "footer-call-email": "ahsandzikra@gmail.com",
+          "footer-copyright": "© 2025 Dzikra Ahsan Imawan. Semua Hak Dilindungi."
+          },
+
+          "en": {
+          "button-send": "Send",
+          "nav-profile": "Profile",
+          "nav-project": "Project",
+          "nav-contact": "Contact",
+          "form-call": "Send Message",
+          "form-name": "Name",
+          "form-email": "Email",
+          "form-message": "Message",
+          "footer-call": "Contact Me At:",	
+          "footer-call-email": "ahsandzikra@gmail.com",
+          "footer-copyright": "© 2025 Dzikra Ahsan Imawan. All Right Reserved."
+        }
+      };
+
+      function setLanguage(lang) {
+        localStorage.setItem('lang', lang);
+        const elements = document.querySelectorAll('[data-i18n]');
+
+        elements.forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          const translated = translations[lang][key];
+
+          if (translated) {
+            console.log(`✅ ${key} found`);
+          } else {
+            console.warn(`⚠️ ${key} NOT FOUND`);
+          }
+        });
+
+        // Step 1: Fade out
+          elements.forEach(el => {
+          el.classList.add('fade-out');
+        });
+
+        setTimeout(() => {
+          elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key]) {
+              el.innerText = translations[lang][key]; // pake innerText lebih aman
+            }
+            el.classList.remove('fade-out');
+          });
+        }, 300); // waktu sesuai CSS transition
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('lang') || 'id';
+        setLanguage(savedLang);
+      });
+
 </script>
 
 
