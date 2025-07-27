@@ -462,37 +462,34 @@
         }
       };
 
-     function setLanguage(lang) {
+    function setLanguage(lang) {
         localStorage.setItem('lang', lang);
         const elements = document.querySelectorAll('[data-i18n]');
 
-        // Step 1: Fade out
         elements.forEach(el => {
-          el.classList.add('fade-out');
-        });
+          const key = el.getAttribute('data-i18n');
+          const translated = translations[lang][key];
+          if (!translated) return;
 
-        // Step 2: Ganti teks dan handle animasi masuk
-        setTimeout(() => {
-          elements.forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            const translated = translations[lang][key];
+          el.classList.add('fade-out'); // mulai fade out
 
-            if (translated) {
-              el.innerHTML = translated;
-
-              // Handle ulang AOS untuk elemen tertentu
-              if (animateFixKeys.includes(key)) {
-                el.classList.remove('aos-animate');
-                el.style.opacity = '0'; // reset visibilitas
-                void el.offsetWidth;    // paksa repaint
-                el.style.opacity = '';  // kembalikan supaya muncul
-                AOS.refresh();          // trigger ulang AOS
-              }
-            }
-
+          setTimeout(() => {
+            el.innerText = translated;
             el.classList.remove('fade-out');
-          });
-        }, 300); // waktu sesuai CSS transition
+
+            // Fix AOS reanimasi untuk elemen bandel
+            if (animateFixKeys.includes(key)) {
+              el.classList.remove('aos-animate');
+              el.style.opacity = '0';
+
+              setTimeout(() => {
+                el.style.opacity = '1';
+                el.classList.add('aos-animate');
+                AOS.refresh();
+              }, 10);
+            }
+          }, 300); // waktu fade
+        });
       }
 
       document.addEventListener('DOMContentLoaded', () => {
@@ -502,7 +499,7 @@
 
       AOS.init({
         duration: 600,
-        once: false, // biar bisa animasi ulang
+        once: false,
       });
 
       let currentLang = localStorage.getItem('lang') || 'id';
