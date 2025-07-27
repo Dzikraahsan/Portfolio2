@@ -510,6 +510,19 @@
           icon.alt = currentLang === 'id' ? 'Bahasa Indonesia' : 'English';
         }
 
+         function preloadFlagImages() {
+          const idFlag = new Image();
+          idFlag.src = 'https://res.cloudinary.com/da4fjxm1e/image/upload/v1753613721/indonesia_square_icon_640_nk2ous.png';
+
+          const enFlag = new Image();
+          enFlag.src = 'https://res.cloudinary.com/da4fjxm1e/image/upload/v1753613688/england_square_icon_640_jgioyc.png';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+          preloadFlagImages();      // ⏩ Preload icon
+          updateLangIcon();         // 🏳️ Tampilkan icon awal
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
           updateLangIcon(); // pasang bendera saat pertama kali halaman dibuka
         });
