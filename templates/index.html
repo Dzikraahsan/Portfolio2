@@ -132,16 +132,14 @@
           align-items: center;
           justify-content: center;
           z-index: 1;
-          filter: drop-shadow(0 0 15px #ffffffc8);
+          filter: drop-shadow(0 0 10px #ffffffc8);
         }
 
         .glow-ring::before {
           content: '';
           position: absolute;
-          top: -4px;
-          left: -4px;
-          width: calc(100% + 8px);
-          height: calc(100% + 8px);
+          width: calc(100% + 4px);
+          height: calc(100% + 4px);
           border-radius: 50%;
           background: conic-gradient(
             lime,
@@ -154,7 +152,7 @@
           animation: spinGradient 3s linear infinite;
           will-change: transform;
           z-index: -1;
-          opacity: 0.8; 
+          opacity: 0.75; 
         }
 
         .photo-inner {
