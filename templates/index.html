@@ -92,15 +92,17 @@
 
         /* Mode gelap, jika pakai Bootstrap 5.3 */
         [data-bs-theme="dark"] .dynamic-btn {
-          color: #f8f9fa;
-          border: 1px solid #f8f9fa;
+          color: #c0c8ca;
+          border: 1px solid #c0c8ca;
           background-color: transparent;
+          transition: all 0.3s ease-in-out;
         }
 
         [data-bs-theme="dark"] .dynamic-btn:hover {
-          background-color: #f8f9fa;
+          background-color: #c0c8ca;
           color: #000;
-        }
+          transition: all 0.3s ease-in-out;
+        }  
 
         /* garis */
         .burdir {
@@ -334,7 +336,7 @@
           <!-- button multilanguage -->
             <div class="lang-switcher text-center p-3" data-aos="zoom-in">
               <button id="langToggleBtn" class="dynamic-btn" style="border-radius: 5%;" onclick="toggleLanguage()">
-                <img id="langIcon" src="" alt="Flag" width="24" height="24" />
+                <img id="langIcon" src="" alt="Flag" width="24" height="24" data-aos="zoom-in"/>
               </button>
             </div>
 
