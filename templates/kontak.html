@@ -279,13 +279,13 @@
             <div class="d-flex align-items-center flex-wrap justify-content-end">
                 <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
                     <li class="nav-item box me-3">
-                    <a class="nav-link {% if request.endpoint == 'profile' %}active{% endif %}" href="{{ url_for('profile') }}" data-i18n="nav-profile">Profile</a>
+                        <a class="nav-link" href="templates/profile.html" data-i18n="nav-profile">Profile</a>
                     </li>
                     <li class="nav-item box me-3">
-                    <a class="nav-link {% if request.endpoint == 'project' %}active{% endif %}" href="{{ url_for('project') }}" data-i18n="nav-project">Project</a>
+                        <a class="nav-link" href="templates/project.html" data-i18n="nav-project">Project</a>
                     </li>
                     <li class="nav-item box me-3">
-                    <a class="nav-link {% if request.endpoint == 'kontak' %}active{% endif %}" href="{{ url_for('kontak') }}" data-i18n="nav-contact">Kontak</a>
+                        <a class="nav-link" href="templates/kontak.html" data-i18n="nav-contact">Kontak</a>
                     </li>
                 </ul>
 
@@ -311,7 +311,7 @@
                 <div class="col-md-9">
                     <div id="notif-placeholder" class="mb-4"></div>
 
-                    <form action="https://portfolio-dzikra.up.railway.app/kirim" method="POST">
+                    <form action="" method="POST">
                     <div class="mb-3">
                         <label for="nama" class="form-label" data-i18n="form-name">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama" required>

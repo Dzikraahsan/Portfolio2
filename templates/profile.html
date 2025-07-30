@@ -482,16 +482,16 @@
             <!-- Navigation Menu -->
             <div class="d-flex align-items-center flex-wrap justify-content-end">
               <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
-                  <li class="nav-item box me-3">
-                    <a class="nav-link {% if request.endpoint == 'profile' %}active{% endif %} text center" href="{{ url_for('profile') }}" data-i18n="nav-profile">Profil</a>
-                  </li>
-                  <li class="nav-item box me-3">
-                    <a class="nav-link {% if request.endpoint == 'project' %}active{% endif %} text center" href="{{ url_for('project') }}" data-i18n="nav-project">Projek</a>
-                  </li>
-                  <li class="nav-item box me-3">
-                    <a class="nav-link {% if request.endpoint == 'kontak' %}active{% endif %} text center" href="{{ url_for('kontak') }}" data-i18n="nav-contact" data-i18n="nav-contact text center">Kontak</a>
-                  </li>
-              </ul>
+                    <li class="nav-item box me-3">
+                        <a class="nav-link" href="templates/profile.html" data-i18n="nav-profile">Profile</a>
+                    </li>
+                    <li class="nav-item box me-3">
+                        <a class="nav-link" href="templates/project.html" data-i18n="nav-project">Project</a>
+                    </li>
+                    <li class="nav-item box me-3">
+                        <a class="nav-link" href="templates/kontak.html" data-i18n="nav-contact">Kontak</a>
+                    </li>
+                </ul>
 
                 <!-- button multilanguage -->
                 <div class="lang-switcher text-center p-3">
