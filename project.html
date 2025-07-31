@@ -435,7 +435,7 @@
         </div>
 
         <!-- Design Diary Start -->
-          <div class="swiper mySwiper mt-4">
+          <div class="swiper mySwiper1 mt-4">
             <div class="swiper-wrapper" data-aos="zoom-in">
 
               <div class="swiper-slide">
@@ -458,8 +458,8 @@
 
           </div>
 
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next next-2"></div>
+          <div class="swiper-button-prev prev-2"></div>
 
         <!-- Design Diary End -->
 
@@ -474,7 +474,7 @@
         </div>
 
         <!-- Design Diary Start -->
-          <div class="swiper mySwiper mt-4">
+          <div class="swiper mySwiper2 mt-4">
             <div class="swiper-wrapper" data-aos="zoom-in">
 
               <div class="swiper-slide">
@@ -494,8 +494,8 @@
 
           </div>
 
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next next-2"></div>
+          <div class="swiper-button-prev prev-2"></div>
 
         <!-- Design Diary End -->
 
@@ -666,21 +666,38 @@
         }
 
         // swipper photo
-        const swiper = new Swiper(".mySwiper", {
+        const swiper1 = new Swiper(".mySwiper1", {
           slidesPerView: 1,
           spaceBetween: 20,
           navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".next1",
+            prevEl: ".prev1",
           },
-          effect: "slide", // bisa diganti 'fade', 'coverflow', 'flip', dll
           grabCursor: true,
           breakpoints: {
             768: {
-              slidesPerView: 2, // tablet ke atas 2 slide
+              slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 3, // laptop ke atas 3 slide
+              slidesPerView: 3,
+            },
+          },
+        });
+
+        const swiper2 = new Swiper(".mySwiper2", {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          navigation: {
+            nextEl: ".next2",
+            prevEl: ".prev2",
+          },
+          grabCursor: true,
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
             },
           },
         });
