@@ -244,8 +244,6 @@
       border-radius: 50%;
       transition: all 0.3s ease;
       top: 50%;
-      width: 1rem;
-      height: 1rem;
 
       /* Button always on */
       opacity: 1 !important;
@@ -264,6 +262,11 @@
       transform: scale(1.1);
     }
 
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      display: none;
+    }
+
     .b-1 {
       left: 0;
       transform: translate(-100%, -50%);
@@ -272,6 +275,16 @@
     .b-2 {
       right: 0;
       transform: translate(100%, -50%);
+    }
+
+    .b-logo {
+      transition: filter 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    /* Saat dark mode aktif */
+    [data-bs-theme="dark"] .b-logo {
+      filter: invert(1); /* Jadi putih */
     }
 
     /* kode responsive */
@@ -465,8 +478,12 @@
 
           </div>
 
-          <div class="swiper-button-next next1"></div>
-          <div class="swiper-button-prev prev1"></div>
+          <div class="swiper-button-next next1">
+            <img class="b-logo" src="https://api.iconify.design/mdi:arrow-right-circle.svg" alt="next" width="35" height="25">
+          </div>
+          <div class="swiper-button-prev prev1">
+            <img class="b-logo" src="https://api.iconify.design/mdi:arrow-left-circle.svg" alt="prev" width="35" height="25">
+          </div>
 
         <!-- Design Diary End -->
 
@@ -501,8 +518,12 @@
 
           </div>
 
-          <div class="swiper-button-next next2"></div>
-          <div class="swiper-button-prev prev2"></div>
+          <div class="swiper-button-next next2">
+            <img class="b-logo" src="https://api.iconify.design/mdi:arrow-right-circle.svg" alt="next" width="35" height="25">
+          </div>
+          <div class="swiper-button-prev prev2">
+            <img class="b-logo" src="https://api.iconify.design/mdi:arrow-left-circle.svg" alt="prev" width="35" height="25">
+          </div>
 
         <!-- Design Diary End -->
 
