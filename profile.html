@@ -33,6 +33,12 @@
   <link rel="stylesheet" href="static/css/style.css">
   <link rel="preload" href="/static/fonts/Organetto-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
+  <!-- swiper css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <style>
     
     body {
@@ -375,6 +381,76 @@
       animation: zoomInSmooth 0.8s ease forwards;
     }
 
+    /* swipper photo */
+
+    .swiper {
+      padding: 20px 0;
+      position: relative;
+    }
+
+    .swiper-slide {
+      background: var(--bs-body-bg);
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.4s ease;
+    }
+
+    .swiper-slide:hover {
+      transform: scale(1.02);
+    }
+
+    /* Custom tombol panah */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: var(--bs-body-color);
+      background-color: transparent;
+      padding: 12px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      top: 50%;
+
+      /* Button always on */
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999 !important;  
+      pointer-events: auto !important;
+      position: absolute;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background-color: transparent;
+      transform: scale(1.1);
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      display: none;
+    }
+
+    .b-1 {
+      left: 0;
+      transform: translate(-100%, -50%);
+    }
+
+    .b-2 {
+      right: 0;
+      transform: translate(100%, -50%);
+    }
+
+    .b-logo {
+      transition: filter 0.3s ease;
+      margin-top: 2.5rem;
+    }
+
+    /* Saat dark mode aktif */
+    [data-bs-theme="dark"] .b-logo {
+      filter: invert(1); /* Jadi putih */
+    }
+
     /* kode responsive */
     @media (max-width: 768px) {
       html {
@@ -463,6 +539,13 @@
       }
       .skill .percent {
         align-self: flex-end;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 0.9375rem;
+        height: 0.9375rem;
+        top: 50%;
       }
 
     }
@@ -566,7 +649,7 @@
   <div class="container" data-aos="fade-up">
 
      <div class="container shadow p-5 mb-5 bg-body-tertiary rounded" data-aos="fade-up">
-        <section class="py-5 text-body" id="riwayat">
+        <section class="py-3 text-body" id="riwayat">
           <div class="container" data-aos="fade-up">
             <h2 class="text-center mb-5" style="font-weight: 700;" data-aos="fade-up" data-i18n="sec-school">RIWAYAT PENDIDIKAN</h2>
             <div class="row g-4 justify-content-center">
@@ -657,7 +740,7 @@
   <div class="container" data-aos="fade-up">
 
      <div class="container shadow p-5 mb-5 bg-body-tertiary rounded" data-aos="fade-up">
-        <section class="py-5 text-body" id="riwayat">
+        <section class="py-3 text-body" id="riwayat">
           <div class="container" data-aos="fade-up">
             <h2 class="text-center mb-5" style="font-weight: 700;" data-aos="fade-up" data-i18n="sec-exp">Pengalaman</h2>
             <div class="row g-4 justify-content-center">
@@ -673,7 +756,7 @@
                     <h6 class="card-title fw-medium" style="opacity: 80%;" data-aos="fade-up" data-i18n="sec-dis">4 Agustus - WBD</h6>
                     <a href="https://maps.app.goo.gl/7shqPE17wYzWYEqq6" 
                       target="_blank" 
-                      class="badge dynamic-btn mt-2 mb-1  px-3 py-2 text-decoration-none"
+                      class="badge dynamic-btn mt-2 mb-1 px-3 py-2 text-decoration-none"
                       data-aos="fade-up">
                       Disdik Majalnegka
                     </a>
@@ -857,62 +940,45 @@
    </div>
 
    <!-- sertifikat -->
-   <div class="container" data-aos="fade-up">
-      <div class="container shadow p-5 mb-5 mt-5 bg-body-tertiary rounded">
-        <div class="text-center ">
-          <h2 style="font-weight: 700;" data-aos="fade-up"data-i18n="sec-certificate">SERTIFIKAT</h2>
+   <div class="container">
+      <div class="container shadow p-5 mb-5 mt-5 bg-body-tertiary rounded" data-aos="zoom-in">
+        <div class="text-center">
+          <h2 style="font-weight: 700; margin-bottom: -0.75rem;" data-aos="zoom-in" data-i18n="sec-certificate">SERTIFIKAT</h2>
         </div>
 
-        <!-- Sertifikat Grid Start -->
-          <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+        <!-- Design Diary Start -->
+          <div class="swiper mySwiper1 mt-4">
+            <div class="swiper-wrapper" data-aos="zoom-in">
 
-            <!-- Sertifikat 1 -->
-            <div class="col" data-aos="fade-up">
-              <div class="card h-100 shadow-sm border-0 text-center">
-                <a href="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898058/HTML_CSS_dasar_ezaeyu.jpg" target="_blank">
-                  <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898058/HTML_CSS_dasar_ezaeyu.jpg"
-                      class="card-img-top object-fit-contain p-3"
-                      alt="Sertifikat HTML & CSS">
-                </a>
+              <div class="swiper-slide">
+                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898101/PENGGUNAAN_DATABASE_wq6k1k.jpg" class="img-fluid p-3" alt="Design 1" />
               </div>
-            </div>
 
-            <!-- Sertifikat 2 -->
-            <div class="col" data-aos="fade-up">
-              <div class="card h-100 shadow-sm border-0 text-center">
-                <a href="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898074/JAVASCRIPT_dasar_geei67.jpg" target="_blank">
-                  <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898074/JAVASCRIPT_dasar_geei67.jpg"
-                      class="card-img-top object-fit-contain p-3"
-                      alt="Sertifikat JavaScript">
-                </a>
+              <div class="swiper-slide">
+                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898089/PENGENALAN_DATABASE_vjuluf.jpg" class="img-fluid p-3" alt="Design 2" />
               </div>
-            </div>
 
-            <!-- Sertifikat 3 -->
-            <div class="col" data-aos="fade-up">
-              <div class="card h-100 shadow-sm border-0 text-center">
-                <a href="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898089/PENGENALAN_DATABASE_vjuluf.jpg" target="_blank">
-                  <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898089/PENGENALAN_DATABASE_vjuluf.jpg"
-                      class="card-img-top object-fit-contain p-3"
-                      alt="Sertifikat Pengenalan Database">
-                </a>
+              <div class="swiper-slide">
+                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898074/JAVASCRIPT_dasar_geei67.jpg" class="img-fluid p-3" alt="Design 3" />
               </div>
-            </div>
 
-            <!-- Sertifikat 4 -->
-            <div class="col" data-aos="fade-up">
-              <div class="card h-100 shadow-sm border-0 text-center">
-                <a href="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898101/PENGGUNAAN_DATABASE_wq6k1k.jpg" target="_blank">
-                  <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898101/PENGGUNAAN_DATABASE_wq6k1k.jpg"
-                      class="card-img-top object-fit-contain p-3"
-                      alt="Sertifikat Penggunaan Database">
-                </a>
+              <div class="swiper-slide">
+                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752898058/HTML_CSS_dasar_ezaeyu.jpg" class="img-fluid p-3" alt="Design 4" />
               </div>
+
+
             </div>
 
           </div>
 
-        <!-- Sertifikat Grid End -->
+          <div class="swiper-button-next next1">
+            <img class="b-logo" src="https://api.iconify.design/mdi:arrow-right-circle.svg" alt="next" width="35" height="25">
+          </div>
+          <div class="swiper-button-prev prev1">
+            <img class="b-logo" src="https://api.iconify.design/mdi:arrow-left-circle.svg" alt="prev" width="35" height="25">
+          </div>
+
+        <!-- Design Diary End -->
 
       </div>
    </div>
@@ -1112,6 +1178,43 @@
           void icon.offsetWidth; // Hack untuk retrigger animasi
           icon.classList.add('flag-animate');
         }
+
+        // swipper photo
+        const swiper1 = new Swiper(".mySwiper1", {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          navigation: {
+            nextEl: ".next1",
+            prevEl: ".prev1",
+          },
+          grabCursor: true,
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          },
+        });
+
+        const swiper2 = new Swiper(".mySwiper2", {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          navigation: {
+            nextEl: ".next2",
+            prevEl: ".prev2",
+          },
+          grabCursor: true,
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          },
+        });
 
   </script>
 
