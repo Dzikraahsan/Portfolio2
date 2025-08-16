@@ -138,33 +138,18 @@
 
         .glow-ring {
           position: relative;
-          width: 240px;
-          height: 240px;
+          width: 260px;
+          height: 260px;
           display: flex;
           align-items: center;
           justify-content: center;
           z-index: 1;
-          filter: drop-shadow(0 0 10px #ffffffc8);
+          filter: drop-shadow(0 0 20px #000000c8);
         }
 
-        .glow-ring::before {
-          content: '';
-          position: absolute;
-          width: calc(100% + 4px);
-          height: calc(100% + 4px);
-          border-radius: 50%;
-          background: conic-gradient(
-            lime,
-            cyan,
-            rgb(77, 169, 255),
-            cyan,
-            lime
-          );
-          transform-origin: center;
-          animation: spinGradient 3s linear infinite;
-          will-change: transform;
-          z-index: -1;
-          opacity: 0.75; 
+        [data-bs-theme="dark"] .glow-ring {
+          filter: drop-shadow(0 0 20px #ffffffc8);
+          transition: 0s ease-in-out;
         }
 
         .photo-inner {
@@ -328,6 +313,7 @@
 
           .navv2 {
             margin-left: -5px;
+            font-size: 1.3rem;
           }
 
         }
