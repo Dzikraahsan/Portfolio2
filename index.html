@@ -41,6 +41,14 @@
             font-display: swap;
         }
 
+        @font-face {
+            font-family: 'Organetto UltraBold SemiExt';
+            src: url('/static/fonts/Organetto-UltraBoldSemiExt.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
         .navbar {
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
@@ -175,23 +183,33 @@
         /* style navv */
 
         .navv {
-          font-size: 2rem;
-          font-weight: bold;
-          background: linear-gradient(
-            90deg,
-            lime,
-            cyan,
-            rgb(77, 169, 255),
-            cyan,
-            lime
-          );
-          background-size: 300% auto;
-          background-position: 0 0;
-          background-clip: text;
-          -webkit-background-clip: text;
-          color: transparent;
-          -webkit-text-fill-color: transparent;
-          animation: textShine 6s linear infinite;
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(
+              90deg,
+              lime,
+              cyan,
+              rgb(77, 169, 255),
+              cyan,
+              lime
+            );
+            background-size: 300% auto;
+            background-position: 0 0;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            animation: textShine 6s linear infinite;
+        }
+
+        .navv2 {
+            font-family: 'Organetto UltraBold SemiExt';
+            src: url('/static/fonts/Organetto-UltraBoldSemiExt.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+
+            margin-left: -0.5rem;
         }
 
         @keyframes textShine {
@@ -320,7 +338,7 @@
 
     <nav class="navbar bg-body sticky-top" data-aos="zoom-in">
       <div class="container d-flex justify-content-between align-items-center flex-wrap" data-aos="zoom-in">
-        <a class="navbar-brand fw-bold navv" data-aos="zoom-in" data-i18n="brand">Dzii27</a>
+        <a class="navbar-brand fw-bold navv" data-aos="zoom-in" data-i18n="brand">Dzii <b class="navv2">27</b> </a>
 
         <div class="d-flex align-items-center flex-wrap justify-content-end" data-aos="zoom-in">
            <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur" data-aos="zoom-in">
