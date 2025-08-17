@@ -223,7 +223,10 @@
 
     .swiper {
       padding: 20px 0;
+      padding-left: 10px;
+      padding-right: 10px;
       position: relative;
+      transition: transform 0.4s ease;
     }
 
     .swiper-slide {
@@ -231,6 +234,12 @@
       border-radius: 10px;
       text-align: center;
       transition: transform 0.4s ease;
+      filter: drop-shadow(0 0 5px #000000c8);
+    }
+
+    [data-bs-theme="dark"] .swiper-slide {
+      filter: drop-shadow(0 0 5px #ffffffc8);
+      transition: 0s ease-in-out;
     }
 
     .swiper-slide:hover {
