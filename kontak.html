@@ -125,21 +125,31 @@
         }
 
         /* untuk tulisan navbar */
+        .nav-link {
+        padding: 5px 10px;
+        display: inline-flex; 
+        position: relative;    
+        text-decoration: none; 
+        color: inherit;
+        width: fit-content;
+        }
+
         .nav-link.active {
-            position: relative;
-            font-weight: bold;
+        font-weight: bold;
+        position: relative;
         }
 
         .nav-link.active::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 6px;
-            height: 2px;
-            background-color: #000; /* default terang */
-            border-radius: 2px;
-            transition: all 0.3s ease-in-out;
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 3px;
+        width: 100%;            /* otomatis pas sama teks */
+        height: 2px;
+        background-color: #000;
+        opacity: 0.5;
+        border-radius: 0.5px;
+        transition: all 0.3s ease-in-out;
         }
 
         [data-bs-theme="dark"] .nav-link.active::after {
@@ -544,6 +554,13 @@
           void icon.offsetWidth; // Hack untuk retrigger animasi
           icon.classList.add('flag-animate');
         }
+
+        // untuk tulisan navbar
+        document.querySelectorAll('.nav-link').forEach(link => {
+          if(link.href === window.location.href){
+            link.classList.add('active');
+          }
+        });
 
 </script>
 
