@@ -88,8 +88,6 @@
     .social-icons a:hover {
       color: var(--bs-primary);
     }
-
-    /* Style untuk tombol kembali */
     
      /* Default: terang */
     .dynamic-btn {
@@ -104,7 +102,7 @@
       color: #fff;
     }
 
-    /* Mode gelap, jika pakai Bootstrap 5.3 */
+    /* Mode gelap */
     [data-bs-theme="dark"] .dynamic-btn {
       color: #c0c8ca;
       border: 1px solid #c0c8ca;
@@ -119,13 +117,13 @@
     }  
 
     .burdir {
-      border-color: #444 !important; /* lebih gelap dari default tapi nggak setebel #000 */
-      border-width: 1px !important;  /* tipis tapi jelas */
+      border-color: #444 !important; 
+      border-width: 1px !important;  
       opacity: 1 !important;
     }
 
     [data-bs-theme="dark"] .burdir {
-      border-color: #bbb !important; /* terang tapi gak nyilauin */
+      border-color: #bbb !important; 
     }
 
     .zoom-on-load {
@@ -142,7 +140,6 @@
       }
     }
 
-    /* untuk tulisan navbar */
     .nav-link {
       padding: 5px 10px;
       display: inline-flex; 
@@ -162,7 +159,7 @@
       position: absolute;
       left: 0;
       bottom: 3px;
-      width: 100%;            /* otomatis pas sama teks */
+      width: 100%;           
       height: 2px;
       background-color: #000;
       opacity: 0.5;
@@ -229,8 +226,6 @@
       animation: zoomInSmooth 0.6s ease forwards;
     }
 
-    /* swipper photo */
-
     .swiper {
       padding: 20px 0;
       padding-left: 10px;
@@ -256,7 +251,6 @@
       transform: scale(1.02);
     }
 
-    /* Custom tombol panah */
     .swiper-button-next,
     .swiper-button-prev {
       color: var(--bs-body-color);
@@ -303,9 +297,9 @@
       margin-top: 2.5rem;
     }
 
-    /* Saat dark mode aktif */
+   
     [data-bs-theme="dark"] .b-logo {
-      filter: invert(1); /* Jadi putih */
+      filter: invert(1); 
     }
 
     /* kode responsive */
@@ -330,7 +324,6 @@
             list-style: none;
         }
 
-          /* Tambahan spacing antar item */
         .navbar-nav .nav-item {
             margin-right: 1rem;
         }
@@ -471,7 +464,6 @@
     </section>
 
     <hr class="border dynamic-btn border-1 opacity-100 mx-auto burdir" data-aos="fade-up" style="width: 95%; margin-top: 0rem; margin-bottom: 4rem;">
-
   <!-- design diary -->
     <div class="container">
       <div class="container shadow p-5 mb-5 mt-5 bg-body-tertiary rounded" data-aos="zoom-in">
@@ -530,7 +522,7 @@
           <h2 style="font-weight: 700; margin-bottom: -0.75rem;" data-aos="fade-up" data-i18n="design-casual">Desain Kasual</h2>
         </div>
 
-        <!-- Design Diary Start -->
+        <!-- Design Casual Start -->
           <div class="swiper mySwiper2 mt-4">
             <div class="swiper-wrapper" data-aos="zoom-in">
 
@@ -558,7 +550,7 @@
             <img class="b-logo" src="https://api.iconify.design/mdi:arrow-left-circle.svg" alt="prev" width="35" height="25">
           </div>
 
-        <!-- Design Diary End -->
+        <!-- Design Casual End -->
 
       </div>
    </div>
@@ -586,6 +578,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
+
    AOS.init();
 
       const themeToggle = document.getElementById('themeToggle');
@@ -653,13 +646,12 @@
           const translated = translations[lang][key];
           if (!translated) return;
 
-          el.classList.add('fade-out'); // mulai fade out
+          el.classList.add('fade-out'); 
 
           setTimeout(() => {
             el.innerText = translated;
             el.classList.remove('fade-out');
 
-            // Fix AOS reanimasi untuk elemen bandel
             if (animateFixKeys.includes(key)) {
               el.classList.remove('aos-animate');
               el.style.opacity = '0';
@@ -711,18 +703,18 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-          preloadFlagImages();      // ⏩ Preload icon
-          updateLangIcon();         // 🏳️ Tampilkan icon awal
+          preloadFlagImages();     
+          updateLangIcon();        
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-          updateLangIcon(); // pasang bendera saat pertama kali halaman dibuka
+          updateLangIcon(); 
         });
 
         function animateFlag() {
           const icon = document.getElementById('langIcon');
-          icon.classList.remove('flag-animate'); // Reset dulu
-          void icon.offsetWidth; // Hack untuk retrigger animasi
+          icon.classList.remove('flag-animate');
+          void icon.offsetWidth; 
           icon.classList.add('flag-animate');
         }
 

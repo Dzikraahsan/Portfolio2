@@ -116,9 +116,6 @@
       transition: width 1s ease-in-out;
     }
 
-     /* Style untuk tombol kembali */
-
-     /* Default: terang */
     .dynamic-btn {
       color: #212529;
       border: 1px solid #212529;
@@ -131,7 +128,6 @@
       transition: all 0.3s ease-in-out;
     }
 
-    /* Mode gelap, jika pakai Bootstrap 5.3 */
     [data-bs-theme="dark"] .dynamic-btn {
       color: #c0c8ca;
       border: 1px solid #c0c8ca;
@@ -145,13 +141,12 @@
       transition: all 0.3s ease-in-out;
     }  
     
-    /* style untuk chart */
     h2 {
       font-weight: weight;
     }
 
     .chart-container {
-      background-color: var(--bs-body-bg); /* biar nyesuaiin sama Bootstrap theme */
+      background-color: var(--bs-body-bg); 
       border-radius: 12px;
       max-width: 1000px;
       height: 400px;
@@ -180,7 +175,7 @@
       position: absolute;
       left: 0;
       bottom: 3px;
-      width: 100%;            /* otomatis pas sama teks */
+      width: 100%;           
       height: 2px;
       background-color: #000;
       opacity: 0.5;
@@ -197,8 +192,8 @@
     }
 
     .btn-animated:hover {
-      transform: scale(1.05); /* agak gede dikit */
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* kasih bayangan */
+      transform: scale(1.05); 
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2); 
     }
 
     /* biodata */
@@ -209,12 +204,12 @@
       padding: 2rem;
       background-color: var(--bs-body-bg); 
       border-radius: 12px;
-      color: #212529; /* Warna teks untuk light mode (hitam keabu) */
+      color: #212529; 
     }
 
     .biodata-grid .label {
       font-weight: 600;
-      color: #495057; /* Label agak gelap di light mode */
+      color: #495057; 
     }
 
     .biodata-grid .value {
@@ -331,7 +326,6 @@
       --bar-fill: #0d6efd; 
     }
 
-    /* Hanya aktif di dark mode */
     [data-bs-theme="dark"] .dark-invert {
       filter: invert(1);
     }
@@ -402,8 +396,6 @@
       opacity: 50%;
     }
 
-    /* swipper photo */
-
     .swiper {
       padding: 20px 0;
       padding-left: 10px;
@@ -429,7 +421,6 @@
       transform: scale(1.02);
     }
 
-    /* Custom tombol panah */
     .swiper-button-next,
     .swiper-button-prev {
       color: var(--bs-body-color);
@@ -476,9 +467,8 @@
       margin-top: 2.5rem;
     }
 
-    /* Saat dark mode aktif */
     [data-bs-theme="dark"] .b-logo {
-      filter: invert(1); /* Jadi putih */
+      filter: invert(1); 
     }
 
     .orgn-b {
@@ -513,7 +503,6 @@
         list-style: none;
       }
 
-    /* Tambahan spacing antar item */
       .navbar-nav .nav-item {
         margin-right: 1rem;
       }
@@ -980,7 +969,6 @@
           <h2 style="font-weight: 700; margin-bottom: -0.75rem;" data-aos="zoom-in" data-i18n="sec-certificate">SERTIFIKAT</h2>
         </div>
 
-        <!-- Design Diary Start -->
           <div class="swiper mySwiper1 mt-4">
             <div class="swiper-wrapper" data-aos="zoom-in">
 
@@ -1011,8 +999,6 @@
           <div class="swiper-button-prev prev1">
             <img class="b-logo" src="https://api.iconify.design/mdi:arrow-left-circle.svg" alt="prev" width="35" height="25">
           </div>
-
-        <!-- Design Diary End -->
 
       </div>
    </div>

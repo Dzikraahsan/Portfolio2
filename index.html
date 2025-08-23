@@ -100,7 +100,7 @@
           color: #fff;
         }
 
-        /* Mode gelap, jika pakai Bootstrap 5.3 */
+        /* Mode gelap */
         [data-bs-theme="dark"] .dynamic-btn {
           color: #c0c8ca;
           border: 1px solid #c0c8ca;
@@ -116,16 +116,14 @@
 
         /* garis */
         .burdir {
-          border-color: #444 !important; /* lebih gelap dari default tapi nggak setebel #000 */
-          border-width: 1px !important;  /* tipis tapi jelas */
+          border-color: #444 !important; 
+          border-width: 1px !important;  
           opacity: 1 !important;
         }
 
         [data-bs-theme="dark"] .burdir {
-          border-color: #bbb !important; /* terang tapi gak nyilauin */
+          border-color: #bbb !important; 
         }
-
-        /* style photo */
 
         .foto {
           margin-top: -5.7rem;
@@ -451,12 +449,10 @@
         localStorage.setItem('lang', lang);
         const elements = document.querySelectorAll('[data-i18n]');
 
-        // Step 1: Fade out
         elements.forEach(el => {
           el.classList.add('fade-out');
         });
 
-        // Step 2: Tunggu transisi, lalu ganti isi dan fade in
         setTimeout(() => {
           elements.forEach(el => {
             const key = el.getAttribute('data-i18n');
@@ -465,7 +461,7 @@
             }
             el.classList.remove('fade-out');
           });
-        }, 300); // waktu sesuai CSS transition
+        }, 300); 
       }
 
       document.addEventListener('DOMContentLoaded', () => {
@@ -501,18 +497,18 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-          preloadFlagImages();      // ⏩ Preload icon
-          updateLangIcon();         // 🏳️ Tampilkan icon awal
+          preloadFlagImages();     
+          updateLangIcon();        
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-          updateLangIcon(); // pasang bendera saat pertama kali halaman dibuka
+          updateLangIcon(); 
         });
 
         function animateFlag() {
           const icon = document.getElementById('langIcon');
-          icon.classList.remove('flag-animate'); // Reset dulu
-          void icon.offsetWidth; // Hack untuk retrigger animasi
+          icon.classList.remove('flag-animate'); 
+          void icon.offsetWidth; 
           icon.classList.add('flag-animate');
         }
 
