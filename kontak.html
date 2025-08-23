@@ -399,7 +399,6 @@
     const notif = document.getElementById('notif-placeholder');
 
 
-    // Hapus query string dari URL tanpa reload
     if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.pathname);
     }
@@ -418,22 +417,19 @@
         </div>`;
     }
 
-    // ❌ Hapus query dari URL setelah notifikasi muncul
     if (window.history.replaceState) {
       window.history.replaceState(null, null, window.location.pathname);
     }
 
-    // ⏱️ Auto close notifikasi setelah 5 detik
     if (status) {
       setTimeout(() => {
         const alertEl = document.querySelector('.alert');
         if (alertEl) {
             alertEl.classList.remove('show');
             alertEl.classList.add('fade');
-            // Tunggu animasi fade selesai, lalu hapus elemen
             setTimeout(() => {
             alertEl.remove();
-            }, 300); // 300ms = durasi animasi Bootstrap
+            }, 300); 
         }
         }, 5000);
     }
@@ -489,7 +485,6 @@
           }
         });
 
-        // Step 1: Fade out
           elements.forEach(el => {
           el.classList.add('fade-out');
         });
@@ -498,11 +493,11 @@
           elements.forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (translations[lang][key]) {
-              el.innerText = translations[lang][key]; // pake innerText lebih aman
+              el.innerText = translations[lang][key]; 
             }
             el.classList.remove('fade-out');
           });
-        }, 300); // waktu sesuai CSS transition
+        }, 300);
       }
 
       document.addEventListener('DOMContentLoaded', () => {
