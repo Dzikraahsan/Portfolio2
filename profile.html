@@ -51,6 +51,16 @@
       transition: all 0.3s ease-in-out, color 0.3s ease-in-out;
     }
 
+    :root {
+      --bs-body-bg: white;
+      --bs-body-color: black;
+    }
+
+    [data-bs-theme="dark"] {
+      --bs-body-bg: rgb(21, 23, 27);  
+      --bs-body-color: white; 
+    }
+
     @font-face {
       font-family: 'Organetto';
       src: url('/static/fonts/Organetto-Regular.woff2') format('woff2');
@@ -117,14 +127,14 @@
     }
 
     .dynamic-btn {
-      color: #212529;
-      border: 1px solid #212529;
+      color: black;
+      border: 1px solid black;
       background-color: transparent;
       transition: 0.3s ease-in-out;
     }
     .dynamic-btn:hover {
-      background-color: #212529;
-      color: #fff;
+      background-color: black;
+      color: white;
       transition: all 0.3s ease-in-out;
     }
 
@@ -585,7 +595,7 @@
 <body>
 
   <!-- Navbar -->
-    <nav class="navbar bg-body sticky-top zoom-in">
+    <nav class="navbar bs-body sticky-top zoom-in">
         <div class="container d-flex justify-content-between align-items-center flex-wrap pon">
 
             <!-- Tombol Kembali -->
@@ -656,7 +666,7 @@
           </div>
           <div class="biodata-item" data-aos="fade-up">
             <div class="label" data-i18n="bio-tools">Tools</div>
-            <div class="value">VS Code, Git, Figma, Railway</div>
+            <div class="value">VS Code, Git, Figma, Railway, Canva</div>
           </div>
           <div class="biodata-item" data-aos="fade-up">
             <div class="label" data-i18n="bio-language">Bahasa Pemrograman</div>

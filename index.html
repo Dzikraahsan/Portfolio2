@@ -33,6 +33,16 @@
             transition: all 0.3s ease-in-out, background-color 0.3s ease-in-out;
         }
 
+        :root {
+          --bs-body-bg: white;
+          --bs-body-color: black;
+        }
+
+        [data-bs-theme="dark"] {
+          --bs-body-bg: rgb(21, 23, 27);  
+          --bs-body-color: white; 
+        }
+
         @font-face {
             font-family: 'Organetto';
             src: url('/static/fonts/Organetto-Regular.woff2') format('woff2');
@@ -47,6 +57,13 @@
             font-weight: bold;
             font-style: normal;
             font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Sahar';
+            src:url('static/fonts/sahar/Sahar-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
         }
 
         .navbar {
@@ -132,6 +149,7 @@
         .photo {
           margin-bottom: 1.25rem;
           margin-top: -6.5rem;
+          filter: brightness(200%) contrast(110%) saturate(140%);
         }
 
         .glow-ring {
@@ -324,7 +342,7 @@
 
   <!-- Navbar -->
 
-    <nav class="navbar bg-body sticky-top" data-aos="zoom-in">
+    <nav class="navbar bs-body sticky-top" data-aos="zoom-in">
       <div class="container d-flex justify-content-between align-items-center flex-wrap" data-aos="zoom-in">
         <a class="navbar-brand fw-bold navv" data-aos="zoom-in" data-i18n="brand">Dzii <b class="navv2">27</b> </a>
 
@@ -353,7 +371,7 @@
       </div>
     </nav>
 
-    <section class="hero bg-body text-body" style="margin-top: 5rem;" data-aos="zoom-in">
+    <section class="hero bs-body text-body" style="margin-top: 0rem;" data-aos="zoom-in">
       <div class="container">
         <div class="glow-ring mx-auto foto" data-aos="fade-up">
           <div class="photo-inner">
