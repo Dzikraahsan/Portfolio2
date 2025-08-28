@@ -87,7 +87,6 @@
       text-align: center;
       transition: background-color 0.3s ease-in-out;
     }
-
     .hero h1 {
       font-size: 3rem;
       font-weight: 700;
@@ -214,17 +213,17 @@
       padding: 2rem;
       background-color: var(--bs-body-bg); 
       border-radius: 12px;
-      color: #212529; 
+      color: black; 
     }
 
     .biodata-grid .label {
       font-weight: 600;
-      color: #495057; 
+      color: black; 
     }
 
     .biodata-grid .value {
       font-weight: 400;
-      color: #212529;
+      color: black;
     }
 
     .biodata-grid a {
@@ -234,16 +233,15 @@
 
      /* Dark Mode Styling */
     [data-bs-theme="dark"] .biodata-grid {
-      background-color: #212529;
-      color: #f8f9fa;
+      color: white;
     }
 
     [data-bs-theme="dark"] .biodata-grid .label {
-      color: #adb5bd;
+      color: white;
     }
 
     [data-bs-theme="dark"] .biodata-grid .value {
-      color: #f8f9fa;
+      color: white;
     }
 
     [data-bs-theme="dark"] .biodata-grid a {
@@ -634,49 +632,50 @@
       <h2 class="section-title text-center" style="font-weight: 700;" data-i18n="bio-profile">PROFIL DIRI</h2>
 
       <!-- Biodata Start -->
-       <div class="row justify-content-center mt-4" data-aos="fade-up">
-          <div class="col-md-10 biodata-grid">
-          <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-i18n="bio-name">NAMA LENGKAP</div>
-            <div class="value">DZIKRA AHSAN IMAWAN</div>
+          <div class="row justify-content-center mt-4" data-aos="fade-up">
+            <div class="col-md-10 shadow bs-body biodata-grid">
+              <div class="biodata-item" data-aos="fade-up">
+                <div class="label" data-i18n="bio-name">NAMA LENGKAP</div>
+                <div class="value">DZIKRA AHSAN IMAWAN</div>
+              </div>
+              <div class="biodata-item" data-aos="fade-up">
+                <div class="label" data-i18n="bio-tgl">Tempat, Tanggal Lahir</div>
+                <div class="value">Majalengka, <a class="orgn-b" style="text-decoration: none; color: var(--bs-body-color);">27</a> September <a class="orgn-b" style="text-decoration: none; color: var(--bs-body-color);">2008</a> </div>
+              </div>
+              <div class="biodata-item" data-aos="fade-up">
+                <div class="label" data-i18n="bio-address">Alamat</div>
+                <div class="value">Desa Sindangkerta, Kec. Maja, Kab. Majalengka, Jawa Barat</div>
+              </div>
+              <div class="biodata-item" data-aos="fade-up">
+                <div class="label" data-i18n="bio-email">Email</div>
+                <div class="value">ahsandzikra@email.com</div>
+              </div>
+              <div class="biodata-item" data-aos="fade-up">
+                <div class="label" data-i18n="bio-status">Status</div>
+                <div class="value" data-i18n="bio-student">Pelajar (Kelas <a class="orgn-b" style="text-decoration: none; color: var(--bs-body-color);">12</a> ) </div>
+              </div>
+              <div class="biodata-item" data-aos="fade-up">
+                <div class="label" data-i18n="bio-interest">Minat</div>
+                <div class="value">Web Development, UI/UX Design, Front-End Performance</div>
+              </div>
+              <div class="biodata-item" data-aos="fade-up">
+                <div class="label" data-i18n="bio-skill">Skill</div>
+                <div class="value">HTML, CSS, JavaScript, PHP, Python, Flask</div>
+              </div>
+              <div class="biodata-item" data-aos="fade-up">
+                <div class="label" data-i18n="bio-tools">Tools</div>
+                <div class="value">VS Code, Git, Figma, Railway, Canva</div>
+              </div>
+              <div class="biodata-item" data-aos="fade-up">
+                <div class="label" data-i18n="bio-language">Bahasa Pemrograman</div>
+                <div class="value">JavaScript, PHP, Python</div>
+              </div>
+              <div class="biodata-item" data-aos="fade-up">
+                <div class="label" data-i18n="bio-github">GitHub</div>
+                <div class="value"><a href="https://github.com/Dzikraahsan" target="_blank">https://github.com/Dzikraahsan</a></div>
+              </div>
+
           </div>
-          <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-i18n="bio-tgl">Tempat, Tanggal Lahir</div>
-            <div class="value">Majalengka, <a class="orgn-b" style="text-decoration: none; color: var(--bs-body-color);">27</a> September <a class="orgn-b" style="text-decoration: none; color: var(--bs-body-color);">2008</a> </div>
-          </div>
-          <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-i18n="bio-address">Alamat</div>
-            <div class="value">Desa Sindangkerta, Kec. Maja, Kab. Majalengka, Jawa Barat</div>
-          </div>
-          <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-i18n="bio-email">Email</div>
-            <div class="value">ahsandzikra@email.com</div>
-          </div>
-          <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-i18n="bio-status">Status</div>
-            <div class="value" data-i18n="bio-student">Pelajar (Kelas <a class="orgn-b" style="text-decoration: none; color: var(--bs-body-color);">12</a> ) </div>
-          </div>
-          <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-i18n="bio-interest">Minat</div>
-            <div class="value">Web Development, UI/UX Design, Front-End Performance</div>
-          </div>
-          <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-i18n="bio-skill">Skill</div>
-            <div class="value">HTML, CSS, JavaScript, PHP, Python, Flask</div>
-          </div>
-          <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-i18n="bio-tools">Tools</div>
-            <div class="value">VS Code, Git, Figma, Railway, Canva</div>
-          </div>
-          <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-i18n="bio-language">Bahasa Pemrograman</div>
-            <div class="value">JavaScript, PHP, Python</div>
-          </div>
-          <div class="biodata-item" data-aos="fade-up">
-            <div class="label" data-i18n="bio-github">GitHub</div>
-            <div class="value"><a href="https://github.com/Dzikraahsan" target="_blank">https://github.com/Dzikraahsan</a></div>
-          </div>
-        </div>
        </div>
       
       <!-- End Biodata -->
