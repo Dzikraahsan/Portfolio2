@@ -364,6 +364,7 @@
       padding-right: 10px;
       position: relative;
       transition: transform 0.4s ease;
+      transform: scale(1.03);
     }
 
     .swiper-slide {
@@ -371,6 +372,7 @@
       border-radius: 10px;
       text-align: center;
       transition: transform 0.4s ease;
+      transform: scale(1.03);
     }
 
     [data-bs-theme="dark"] .swiper-slide {
@@ -404,7 +406,8 @@
     .swiper-button-next:hover,
     .swiper-button-prev:hover {
       background-color: transparent;
-      transform: scale(1.1);
+      transition: transform 0.4s ease-in-out;
+      transform: scale(1.04);
     }
 
     .swiper-button-next::after,
