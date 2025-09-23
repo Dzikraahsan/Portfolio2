@@ -14,7 +14,7 @@ Ini adalah website portofolio pribadi saya yang berisi informasi tentang saya, s
 - 🌗 Mode terang & gelap
 - 📱 Desain responsif (HP sampai desktop)
 - 📊 Skill bar dengan animasi
-- 📨 *Form kontak kirim ke email via Flask
+- 📨 *Form kontak kirim pesan ke email via Flask
 - 🌐 Di-host di Vercel + custom domain
 
 ## 🛠️ Dibuat Dengan
