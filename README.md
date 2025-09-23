@@ -11,16 +11,16 @@ Ini adalah website portofolio pribadi saya yang berisi informasi tentang saya, s
 
 ## ✨ Fitur
 
-- 🌗 Mode terang & gelap otomatis
+- 🌗 Mode terang & gelap
 - 📱 Desain responsif (HP sampai desktop)
 - 📊 Skill bar dengan animasi
-- 📨 Form kontak kirim ke email via Flask
+- 📨 *Form kontak kirim ke email via Flask
 - 🌐 Di-host di Vercel + custom domain
 
 ## 🛠️ Dibuat Dengan
 
 - HTML5, CSS3, JavaScript
-- Flask (Python Backend)
+- *Flask (Python Backend)
 - Bootstrap 5
 - AOS (Animate On Scroll)
 - Iconify (untuk icon SVG)
