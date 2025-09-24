@@ -52,7 +52,6 @@ body {
   text-align: center;
   transition: background-color 0.3s ease-in-out;
 }
-
 .hero h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -72,8 +71,9 @@ body {
 
 .project-card img {
   border-radius: 0.5rem;
-  transition: 0.3s ease-in-out;
+  transition:  0.3s ease-in-out;
 }
+
 
 /* icons */
 
@@ -133,7 +133,7 @@ h2 {
 
 .nav-link.active {
   font-weight: bold;
-  position: relative;
+   position: relative;
 }
 
 .nav-link.active::after {
@@ -159,7 +159,7 @@ h2 {
 
 .btn-animated:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 /* biodata */
@@ -188,7 +188,7 @@ h2 {
 .biodata-grid a {
   color: #0d6efd;
   text-decoration: underline;
-}
+  }
 
 /* Dark Mode Styling */
 
@@ -208,12 +208,12 @@ h2 {
   color: #4dd0e1;
 }
 
-/* all skill style */
+/* all skill  */
 
 .skill-section {
   max-width: 1000px;
   margin: auto;
-  padding: 20px 20px;
+  padding: 20px 10px;
 }
 
 .section-title {
@@ -225,12 +225,13 @@ h2 {
 .skill {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 8px;
   margin-bottom: 20px;
   position: relative;
 }
 
 .skill .bar {
+  flex: 1 1 auto;
   height: 12px;
   background: #eaebed;
   border-radius: 2px;
@@ -238,10 +239,17 @@ h2 {
   max-width: 100%;
 }
 
+.skill {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .skills {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px;
   padding: 1rem;
 }
 
@@ -327,17 +335,9 @@ h2 {
 /* animation */
 
 @keyframes click-scale {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(0.85);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+  0%   { transform: scale(1); }
+  50%  { transform: scale(0.85); }
+  100% { transform: scale(1); }
 }
 
 .flag-animate {
@@ -349,7 +349,6 @@ h2 {
     opacity: 0;
     transform: scale(0.9);
   }
-
   to {
     opacity: 1;
     transform: scale(1);
@@ -512,7 +511,7 @@ footer {
   }
 
   .navbar-collapse.navbarr .dynamic-btn {
-    margin-left: 1.25rem;
+     margin-left: 1.25rem;
   }
 
   .navv {
