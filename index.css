@@ -262,7 +262,7 @@
           }
 
           .contener {
-            padding-top: 7rem;
+            padding-top: 14rem;
           }
 
           .img-fluid.image {
@@ -282,7 +282,7 @@
           .des {
             text-align: center;
             font-weight: medium;
-            width: 450px;
+            width: 400px;
             margin: 0 auto;
           }
 
@@ -338,7 +338,7 @@
           }
 
           .foot {
-            padding-top: 4rem;
+            padding-top: 10rem;
           }
 
         }
