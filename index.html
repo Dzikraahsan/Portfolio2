@@ -56,7 +56,7 @@
 
   <!-- hero -->
     <section class="about py-5">
-      <div class="container contener py-5 mb-5">
+      <div class="container contener py-5 mb-5" data-aos="zoom-in">
         <div class="row align-items-center">
 
           <!-- Foto (kiri) -->
@@ -68,7 +68,7 @@
           <!-- Teks (kanan) -->
           <div class="col-md-6">
             <h1 class="fw-bold mb-3 a-m" data-aos="zoom-in">Dzikra Ahsan Imawan</h1>
-            <p class="text-muted des" data-aos="zoom-in">
+            <p class="text-muted des" data-aos="zoom-in" data-i18n="hero-des">
             Saya adalah siswa kelas XII jurusan Rekayasa Perangkat Lunak di SMKN 1 Maja. Saya memiliki minat dalam
             pengembangan web dan terus mengasah keterampilan pemrograman. Ke depannya, saya bertekad untuk menjadi front-end developer
             profesional yang mampu menciptakan solusi digital yang bermanfaat dan inovatif.
@@ -128,6 +128,8 @@
         themeToggle.textContent = newTheme === 'light' ? '🌙' : '🌟';
       });
 
+      const animateFixKeys = ['hero-des'];
+
       // script untuk multibahasa
       const translations = {
         "id": {
@@ -135,6 +137,7 @@
           "nav-project": "Projek",
           "nav-contact": "Kontak",
           "hero-name": "Dzikra Ahsan Imawan",
+          "hero-des": "Saya adalah siswa kelas XII jurusan Rekayasa Perangkat Lunak di SMKN 1 Maja. Saya memiliki minat dalam pengembangan web dan terus mengasah keterampilan pemrograman. Ke depannya, saya bertekad untuk menjadi front-end developer profesional yang mampu menciptakan solusi digital yang bermanfaat dan inovatif.",
           "hero-title": "Web Developer | UI/UX Enthusiast",
           "btn-profile": "Lihat Profil",
           "btn-project": "Lihat Projek",
@@ -148,6 +151,7 @@
           "nav-project": "Projects",
           "nav-contact": "Contact",
           "hero-name": "Dzikra Ahsan Imawan",
+          "hero-des": "I am a grade 12 student majoring in Software Engineering at SMKN 1 Maja. I have an interest in web development and continue to hone my programming skills. In the future, I am determined to become a professional front-end developer capable of creating useful and innovative digital solutions.",
           "hero-title": "Web Developer | UI/UX Enthusiast",
           "btn-profile": "View Profile",
           "btn-project": "View Projects",
