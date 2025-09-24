@@ -233,6 +233,14 @@ body {
 
 /* style container */
 
+.profile-image {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0);
+}
+
+[data-bs-theme="dark"] .profile-image {
+  box-shadow: 0 8px 20px #eaebed;
+}
+
 .img-fluid.image {
   transition: transform 0.2s cubic-bezier(0.5, 0.1, 0.5, 1);
 }
