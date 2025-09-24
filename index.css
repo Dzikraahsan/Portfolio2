@@ -231,6 +231,23 @@ footer {
   text-align: justify;
 }
 
+/* Animasi slide-up */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+footer {
+  animation: slideUp 0.8s ease-out;
+}
+
 /* kode responsive */
 
 @media (max-width: 768px) {
@@ -342,8 +359,21 @@ footer {
     font-size: 1.4rem;
   }
 
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
   footer {
     margin-top: -2.55rem;
+    animation: slideUp 0.8s ease-out;
   }
 
 }
