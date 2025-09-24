@@ -272,7 +272,7 @@
   }
 
   .contener {
-    margin-top: -1rem;
+    margin-top: 0rem;
   }
 
   .a-m {
@@ -336,6 +336,10 @@
   .navv2 {
     margin-left: -5px;
     font-size: 1.4rem;
+  }
+
+  .foot {
+    margin-top: -1rem;
   }
 
 }
