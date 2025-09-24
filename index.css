@@ -266,7 +266,7 @@ footer {
   }
 
   .img-fluid.image {
-    width: 200px;
+    width: 240px;
     transition: transform 0.2s cubic-bezier(0.5, 0.1, 0.5, 1);
   }
 
