@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile</title>
-  
+
   <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="project.css">
-  
+
 </head>
 <body>
 
@@ -85,48 +85,52 @@
     </section>
 
     <hr class="border dynamic-btn border-1 opacity-100 mx-auto burdir" data-aos="fade-up" style="width: 95%; margin-top: 0rem; margin-bottom: 4rem;">
-  <!-- design diary -->
+  <!-- design -->
     <div class="container">
       <div class="container border border-2 p-5 mb-5 mt-5 bg-body-tertiary rounded" data-aos="zoom-in">
         <div class="text-center">
           <h2 style="font-weight: 700; margin-bottom: -0.75rem;" data-aos="zoom-in" data-i18n="design">POST MATCH RESULT HIGHLIGHTS</h2>
         </div>
 
-        <!-- Design Diary Start -->
+        <!-- Design Start -->
           <div class="swiper mySwiper1 mt-4">
             <div class="swiper-wrapper" data-aos="zoom-in">
 
               <div class="swiper-slide">
-                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1757579105/Norway_vs_Moldova_1_z6urgi.png" 
+                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1757579105/Norway_vs_Moldova_1_z6urgi.png"
                 class="img-fluid rounded" alt="Norway vs Moldova 11 - 1 | WQC" />
               </div>
-              
+
               <div class="swiper-slide">
-                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1757159239/indonesia_vs_China_Taipei-min_klsiob.png" 
+                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1757159239/indonesia_vs_China_Taipei-min_klsiob.png"
                 class="img-fluid rounded" alt="Indonesia vs Chinese Taipei 6 - 0 | Friendly" />
               </div>
 
               <div class="swiper-slide">
-                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1757402722/Macau_vs_Indonesia_-_u23_1_rwkfiv.png" 
+                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1757402722/Macau_vs_Indonesia_-_u23_1_rwkfiv.png"
                 class="img-fluid rounded" alt="Macau vs Indonesia 0 - 5 | AFC U23" />
               </div>
 
-              
               <div class="swiper-slide">
                 <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1758609969/Man_City_vs_Man_United_nypkyv.png"
                 class="img-fluid rounded" alt="Man City vs Man United 3 - 0 | EPL" />
               </div>
-              
+
               <div class="swiper-slide">
                 <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1758609959/Man_City_vs_Napoli_f8rr4s.png"
                 class="img-fluid rounded" alt="Man City vs Napoli 2 - 0 | UCL" />
               </div>
-              
+
               <div class="swiper-slide">
                 <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1758609317/Arema_vs_Persib_kszzsc.png"
                   class="img-fluid rounded" alt="AremaFC vs Persib 1 - 2 | BRI Super League" />
               </div>
-              
+
+              <div class="swiper-slide">
+                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1758710133/Ousmane_Dembele_vidf58.png"
+                  class="img-fluid rounded" alt="Ousmane Dembélé | Ballon Do'r 2025 winner" />
+              </div>
+
             </div>
 
           </div>
@@ -138,7 +142,7 @@
             <img class="b-logo" src="https://api.iconify.design/mdi:arrow-left-circle.svg" alt="prev" width="35" height="25">
           </div>
 
-        <!-- Design Diary End -->
+        <!-- Design End -->
 
       </div>
    </div>
@@ -182,7 +186,7 @@
 
       </div>
    </div>
-   
+
 
   <!-- Footer -->
   <footer data-aos="fade-up">
@@ -242,7 +246,7 @@
           "project-button": "Lihat Projek",
           "design": "desain sepakbola",
           "design-casual": "desain kasual",
-          "footer-call": "Hubungi Saya Di:",	
+          "footer-call": "Hubungi Saya Di:",
           "footer-call-email": "ahsandzikra@gmail.com",
           "footer-copyright": "© 2025 Dzikra Ahsan Imawan. Semua Hak Dilindungi."
           },
@@ -259,7 +263,7 @@
           "project-button": "See project",
           "design": "football design",
           "design-casual": "casual design",
-          "footer-call": "Contact Me At:",	
+          "footer-call": "Contact Me At:",
           "footer-call-email": "ahsandzikra@gmail.com",
           "footer-copyright": "© 2025 Dzikra Ahsan Imawan. All Right Reserved."
         }
@@ -274,7 +278,7 @@
           const translated = translations[lang][key];
           if (!translated) return;
 
-          el.classList.add('fade-out'); 
+          el.classList.add('fade-out');
 
           setTimeout(() => {
             el.innerText = translated;
@@ -331,18 +335,18 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-          preloadFlagImages();     
-          updateLangIcon();        
+          preloadFlagImages();
+          updateLangIcon();
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-          updateLangIcon(); 
+          updateLangIcon();
         });
 
         function animateFlag() {
           const icon = document.getElementById('langIcon');
           icon.classList.remove('flag-animate');
-          void icon.offsetWidth; 
+          void icon.offsetWidth;
           icon.classList.add('flag-animate');
         }
 
