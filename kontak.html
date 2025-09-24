@@ -44,17 +44,8 @@
                         <a class="nav-link" href="kontak.html" data-i18n="nav-contact">Kontak</a>
                     </li>
                 </ul>
-
-                    <!-- button multilanguage -->
-                    <div class="lang-switcher text-center p-3" data-aos="zoom-in">
-                        <button id="langToggleBtn" class="dynamic-btn" style="border-radius: 5%;" onclick="toggleLanguage()">
-                            <img id="langIcon" src="" alt="Flag" width="24" height="24" />
-                        </button>
-                    </div>
-
                 <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3" data-aos="zoom-in">🌙</button>
             </div>
-
         </div>
     </nav>
 
@@ -177,7 +168,7 @@
             alertEl.classList.add('fade');
             setTimeout(() => {
             alertEl.remove();
-            }, 300); 
+            }, 300);
         }
         }, 5000);
     }
@@ -196,7 +187,7 @@
           "form-email": "Surel",
           "form-message": "Pesan",
           "fungsi": "Tidak Berfungsi!",
-          "footer-call": "Hubungi Saya Di:",	
+          "footer-call": "Hubungi Saya Di:",
           "footer-call-email": "ahsandzikra@gmail.com",
           "footer-copyright": "© 2025 Dzikra Ahsan Imawan. Semua Hak Dilindungi."
           },
@@ -212,7 +203,7 @@
           "form-email": "Email",
           "form-message": "Message",
           "fungsi": "Not Working!",
-          "footer-call": "Contact Me At:",	
+          "footer-call": "Contact Me At:",
           "footer-call-email": "ahsandzikra@gmail.com",
           "footer-copyright": "© 2025 Dzikra Ahsan Imawan. All Right Reserved."
         }
@@ -241,7 +232,7 @@
           elements.forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (translations[lang][key]) {
-              el.innerText = translations[lang][key]; 
+              el.innerText = translations[lang][key];
             }
             el.classList.remove('fade-out');
           });
@@ -280,18 +271,18 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-          preloadFlagImages();     
-          updateLangIcon();         
+          preloadFlagImages();
+          updateLangIcon();
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-          updateLangIcon(); 
+          updateLangIcon();
         });
 
         function animateFlag() {
           const icon = document.getElementById('langIcon');
           icon.classList.remove('flag-animate');
-          void icon.offsetWidth; 
+          void icon.offsetWidth;
           icon.classList.add('flag-animate');
         }
 
