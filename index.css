@@ -151,9 +151,17 @@ footer {
   margin-left: -0.5rem;
 }
 
+.a-m {
+  margin-top: 0.5rem;
+}
+
+.contener {
+  margin-top: -0.75rem;
+}
+
 @keyframes textShine {
   0% {
-            background-position: 0% 0%;
+    background-position: 0% 0%;
   }
 
   100% {
