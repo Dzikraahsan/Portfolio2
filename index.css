@@ -275,7 +275,7 @@ footer {
   }
 
   .contener {
-    margin-top: -1rem;
+    margin-top: -2rem;
   }
 
   .a-m {
@@ -288,7 +288,7 @@ footer {
     font-weight: medium;
     width: 400px;
     margin: 0 auto;
-    padding-top: 0rem;
+    padding-top: -0.35rem;
   }
 
   .dynamic-btn.e {
