@@ -280,7 +280,7 @@ footer {
 
   .a-m {
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 0rem;
   }
 
   .des {
@@ -288,6 +288,7 @@ footer {
     font-weight: medium;
     width: 400px;
     margin: 0 auto;
+    padding-top: 0.5rem;
   }
 
   .dynamic-btn.e {
