@@ -262,7 +262,8 @@
           }
 
           .contener {
-            padding-top: 20rem;
+            margin-top: 10rem;
+            padding-bottom: 10rem;
           }
 
           .img-fluid.image {
@@ -335,10 +336,6 @@
           .navv2 {
             margin-left: -5px;
             font-size: 1.4rem;
-          }
-
-          .foot {
-            padding-top: 15rem;
           }
 
         }
