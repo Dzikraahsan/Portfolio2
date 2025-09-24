@@ -8,15 +8,19 @@ body {
   transition: all 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
+/* root color */
+
 :root {
-  --bs-body-bg: white;
-  --bs-body-color: black;
+  --bs-body-bg: #eaebed;
+  --bs-body-color: rgb(21, 23, 27);
 }
 
 [data-bs-theme="dark"] {
   --bs-body-bg: rgb(21, 23, 27);
-  --bs-body-color: white;
+  --bs-body-color: #eaebed;
 }
+
+/* font */
 
 @font-face {
   font-family: 'Organetto';
@@ -34,6 +38,8 @@ body {
   font-display: swap;
 }
 
+/* navbar */
+
 .navbar {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
@@ -43,10 +49,14 @@ body {
   text-align: center;
 }
 
+/* hero */
+
 .hero h1 {
   font-size: 3rem;
   font-weight: 700;
 }
+
+/* section */
 
 .section-title {
   font-size: 2rem;
@@ -54,17 +64,13 @@ body {
   margin-bottom: 2rem;
 }
 
+/* card image */
+
 .project-card img {
   border-radius: 0.5rem;
 }
 
-footer {
-  background-color: var(--bs-body-bg);
-  padding: 2rem 0;
-  text-align: center;
-  border-top: 1px solid var(--bs-border-color);
-  color: var(--bs-body-color);
-}
+/* icons */
 
 .social-icons a {
   color: var(--bs-body-color);
@@ -72,44 +78,48 @@ footer {
   font-size: 1.25rem;
 }
 
-/* Default: terang */
-        .dynamic-btn {
-  color: #212529;
-  border: 1px solid #212529;
+/* button */
+
+.dynamic-btn {
+  color: rgb(21, 23, 27);
+  border: 1px solid rgb(21, 23, 27);
   background-color: transparent;
   animation: 0.5s ease-in-out;
 }
 
 .dynamic-btn:hover {
-  background-color: #212529;
+  background-color: rgb(21, 23, 27);
   animation: 0.5s ease-in-out;
-  color: #fff;
+  color: #eaebed;
 }
 
-/* Mode gelap */
+/* button dark dode */
 [data-bs-theme="dark"] .dynamic-btn {
-  color: #c0c8ca;
-  border: 1px solid #c0c8ca;
+  color: #eaebed;
+  border: 1px solid #eaebed;
   background-color: transparent;
   transition: all 0.3s ease-in-out;
 }
 
 [data-bs-theme="dark"] .dynamic-btn:hover {
-  background-color: #c0c8ca;
-  color: #000;
+  background-color: #eaebed;
+  color: rgb(21, 23, 27);
   transition: all 0.3s ease-in-out;
 }
 
-/* garis */
+/* line */
+
 .burdir {
-  border-color: #444 !important;
+  border-color: rgb(21, 23, 27) !important;
   border-width: 1px !important;
   opacity: 1 !important;
 }
 
 [data-bs-theme="dark"] .burdir {
-  border-color: #bbb !important;
+  border-color: #eaebed !important;
 }
+
+/* photo */
 
 .foto {
   margin-top: -4.6rem;
@@ -121,7 +131,7 @@ footer {
   filter: brightness(200%) contrast(110%) saturate(140%);
 }
 
-/* style navv */
+/* style text */
 
 .navv {
   font-size: 2rem;
@@ -170,7 +180,7 @@ footer {
 
 }
 
-/* multibahasa */
+/* multi-language */
 
 [data-i18n] {
   transition: opacity 0.3s ease;
@@ -215,9 +225,13 @@ footer {
   }
 }
 
+/* flag language */
+
 .flag-animate {
   animation: click-scale 0.2s ease;
 }
+
+/* style container */
 
 .img-fluid.image {
   transition: transform 0.2s cubic-bezier(0.5, 0.1, 0.5, 1);
@@ -244,7 +258,14 @@ footer {
   }
 }
 
+/* footer */
+
 footer {
+  background-color: var(--bs-body-bg);
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid var(--bs-border-color);
+  color: var(--bs-body-color);
   animation: slideUp 0.8s ease-out;
 }
 
