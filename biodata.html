@@ -122,6 +122,64 @@
         }
         }
 
+        .about {
+  padding: 5rem 0;
+  background: #fff; /* bisa juga diganti abu muda */
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  gap: 3rem;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  background: black;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #444;
+}
+
+
   </style>
 </head>
 
@@ -144,42 +202,29 @@
     </div>
   </nav>
 
-  <div class="container">
-    <div class="biodata-card mx-auto col-md-8 col-lg-6 text-center">
-
-      <!-- Foto dan Nama -->
-      <img src="https://via.placeholder.com/150" alt="Foto Profil" class="profile-img mb-3">
-      <h2>Nama Lengkap</h2>
-      <p class="text-muted">Web Developer | Mahasiswa Teknik Informatika</p>
-
-      <!-- Kontak -->
-      <div class="text-start">
-        <h5 class="section-title">📞 Kontak</h5>
-        <ul class="list-unstyled">
-          <li><strong>Email:</strong> nama@email.com</li>
-          <li><strong>Telepon:</strong> 0812-3456-7890</li>
-          <li><strong>Alamat:</strong> Jl. Contoh Alamat No. 123, Jakarta</li>
-        </ul>
-
-        <!-- Pendidikan -->
-        <h5 class="section-title">🎓 Pendidikan</h5>
-        <ul class="list-unstyled">
-          <li>Universitas Contoh – Teknik Informatika (2021 - Sekarang)</li>
-          <li>SMA Negeri 1 Contoh – IPA (2018 - 2021)</li>
-        </ul>
-
-        <!-- Keahlian -->
-        <h5 class="section-title">💻 Keahlian</h5>
-        <ul class="list-unstyled">
-          <li>HTML, CSS, JavaScript</li>
-          <li>Bootstrap, Tailwind CSS</li>
-          <li>PHP & MySQL, Laravel (basic)</li>
-          <li>Git & GitHub</li>
-        </ul>
+  <section class="about py-5">
+    <div class="container py-5">
+      <div class="row align-items-center">
+  
+        <!-- Foto (kiri) -->
+        <div class="col-md-5 text-center mb-4 mb-md-0">
+          <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752578913/karyawan_foto/me9qq3kyopr0le7yica8.png" alt="Foto Profil" class="img-fluid rounded-circle shadow" style="max-width: 280px;">
+        </div>
+  
+        <!-- Teks (kanan) -->
+        <div class="col-md-7">
+          <h2 class="fw-bold mb-3">About Me</h2>
+          <p class="text-muted mb-4">
+            Halo! Saya Bro, seorang web developer yang fokus pada
+            pengembangan aplikasi berbasis Python & PHP.
+            Saya suka bikin website dengan desain minimalis dan fungsi optimal.
+          </p>
+          <a href="#contact" class="btn btn-dark px-4">Kontak Saya</a>
+        </div>
+  
       </div>
     </div>
-  </div>
-
+  </section>
 
   <!-- Footer -->
   <footer style="margin-top: 9rem;">

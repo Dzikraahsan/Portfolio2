@@ -55,24 +55,30 @@
       </div>
     </nav>
 
-    <section class="hero bs-body text-body" style="margin-top: 0rem;" data-aos="zoom-in">
-      <div class="container">
-        <div class="glow-ring mx-auto foto" data-aos="fade-up">
-          <div class="photo-inner">
-            <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752578913/karyawan_foto/me9qq3kyopr0le7yica8.png" class="w-100 h-100 object-fit-cover rounded-circle" alt="">
+    <!-- hero -->
+    <section class="about py-5">
+      <div class="container py-5 mb-5">
+        <div class="row align-items-center">
+
+          <!-- Foto (kiri) -->
+          <div class="col-md-5 text-center mb-4 mb-md-0">
+            <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1752578913/karyawan_foto/me9qq3kyopr0le7yica8.png"
+              alt="Foto Profil" class="img-fluid image rounded shadow"
+              style="max-width: 280px;"
+              data-aos="zoom-in">
           </div>
+
+          <!-- Teks (kanan) -->
+          <div class="col-md-6">
+            <h1 class="fw-bold mb-3 a-m" data-aos="zoom-in">Dzikra Ahsan Imawan</h1>
+            <p class="text-muted des" data-aos="zoom-in">
+              Halo! Saya seorang web developer yang fokus pada
+              pengembangan web berbasis Python & PHP.
+              Saya suka bikin website dengan desain minimalis dan fungsi optimal.
+            </p>
+          </div>
+
         </div>
-
-        <hr class="border border-1 opacity-75 mx-auto burdir" style="width: 50%; margin-top: 2.25rem; margin-bottom: 1.75rem;">
-
-        <h2 class="container col-md-15 h2 text-center" style="font-weight: 700; margin: 0 auto;" data-i18n="hero-name">Dzikra Ahsan Imawan</h2>
-        <p class="lead text-body-secondary pe text-center" data-i18n="hero-title">Web Developer | UI/UX Enthusiast</p>
-      </div>
-
-      <div class="d-flex flex-column flex-md-row justify-content-center gap-2">
-        <a href="profile.html" class="btn dynamic-btn e mt-3 text-center" data-i18n="btn-profile">Lihat Profile</a>
-        <a href="project.html" class="btn dynamic-btn e mt-3 text-center" data-i18n="btn-project">Lihat Project</a>
-        <a href="kontak.html" class="btn dynamic-btn e mt-3 text-center" data-i18n="btn-contact">Kontak</a>
       </div>
     </section>
 
@@ -163,7 +169,7 @@
             }
             el.classList.remove('fade-out');
           });
-        }, 300); 
+        }, 300);
       }
 
       document.addEventListener('DOMContentLoaded', () => {
@@ -199,18 +205,18 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-          preloadFlagImages();     
-          updateLangIcon();        
+          preloadFlagImages();
+          updateLangIcon();
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-          updateLangIcon(); 
+          updateLangIcon();
         });
 
         function animateFlag() {
           const icon = document.getElementById('langIcon');
-          icon.classList.remove('flag-animate'); 
-          void icon.offsetWidth; 
+          icon.classList.remove('flag-animate');
+          void icon.offsetWidth;
           icon.classList.add('flag-animate');
         }
 
