@@ -270,6 +270,10 @@
             transform: scale(1.05);
           }
 
+          .contener {
+            margin-top: -2.5rem;
+          }
+
           .a-m {
             text-align: center;
             padding-top: 2rem;
