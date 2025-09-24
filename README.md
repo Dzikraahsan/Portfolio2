@@ -7,7 +7,7 @@ Ini adalah website portofolio pribadi saya yang berisi informasi tentang saya, s
 
 ## 📸 Tampilan
 
-![Tampilan Portfolio](https://res.cloudinary.com/da4fjxm1e/image/upload/v1758622003/Screenshot_2025-09-23_170745_ndxs0o.png)
+![Tampilan Portfolio](https://res.cloudinary.com/da4fjxm1e/image/upload/v1758700234/Screenshot_2025-09-24_145126_xvogbh.png)
 
 ## ✨ Fitur
 
@@ -15,7 +15,7 @@ Ini adalah website portofolio pribadi saya yang berisi informasi tentang saya, s
 - 📱 Desain responsif (HP sampai desktop)
 - 📊 Skill bar dengan animasi
 - 📨 *Form kontak kirim pesan ke email via Flask
-- 🌐 Di-host di Vercel + custom domain
+- 🌐 Di hosting di Vercel + custom domain
 
 ## 🛠️ Dibuat Dengan
 
@@ -32,6 +32,6 @@ Cek langsung di: [https://portfoliodzikra.vercel.app/](https://portfoliodzikra.v
 
 ## 📬 Kontak
 
-📧 ahsandzikra@gamil.com  
-📱 Instagram: [@dzii27](https://www.instagram.com/dzii27/?__pwa=1)  
+📧 ahsandzikra@gamil.com
+📱 Instagram: [@dzii27](https://www.instagram.com/dzii27/?__pwa=1)
 
