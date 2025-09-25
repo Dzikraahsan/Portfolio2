@@ -242,8 +242,7 @@ h2 {
 .skill {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 7.55px;
 }
 
 .skills {
@@ -552,6 +551,11 @@ footer {
     align-items: flex-start;
   }
 
+  .span {
+   margin-left: 3rem;
+   margin-top: -2.25rem;
+  }
+
   .skill img {
     width: 28px;
     height: 28px;
@@ -563,6 +567,8 @@ footer {
 
   .skill .percent {
     align-self: flex-end;
+    margin-top: -3.25rem;
+    margin-bottom: 2rem;
   }
 
   .swiper-button-next,
