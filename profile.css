@@ -288,12 +288,12 @@ h2 {
 
 /* Default */
 :root {
-  --bar-fill: #0d6efd;
+  --bar-fill: rgb(0, 187, 255);;
 }
 
 /* Dark mode */
 [data-bs-theme="dark"] {
-  --bar-fill: rgb(0, 140, 255);
+  --bar-fill: rgb(0, 187, 255);
   background: var(--bs-body-bg);
 }
 

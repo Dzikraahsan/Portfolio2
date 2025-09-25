@@ -270,8 +270,8 @@
               </div>
 
               <div class="skill" data-percent="78" data-aos="zoom-in">
-                <img class="icon dark-invert" src="https://api.iconify.design/logos:javascript.svg" alt="JavaScript">
-                <span class="span">JS</span>
+                <img class="icon" src="https://api.iconify.design/logos:javascript.svg" alt="JavaScript">
+                <span class="span" id="javascript">JS</span>
                 <div class="bar">
                   <div class="fill"></div>
                 </div>
@@ -288,7 +288,7 @@
               </div>
 
               <div class="skill" data-percent="65" data-aos="zoom-in">
-                <img class="icon dark-invert" src="https://api.iconify.design/logos:python.svg" alt="Python">
+                <img class="icon" src="https://api.iconify.design/logos:python.svg" alt="Python">
                 <span class="span">Python</span>
                 <div class="bar">
                   <div class="fill"></div>
@@ -297,7 +297,7 @@
               </div>
 
               <div class="skill" data-percent="78" data-aos="zoom-in">
-                <img class="icon dark-invert" src="https://api.iconify.design/vscode-icons:file-type-sql.svg" alt="SQL">
+                <img class="icon" src="https://api.iconify.design/vscode-icons:file-type-sql.svg" alt="SQL">
                 <span class="span">SQL</span>
                 <div class="bar">
                   <div class="fill"></div>
@@ -556,13 +556,15 @@
           const bootsrap = document.getElementById("bootstrap");
           const cloudinary = document.getElementById("cloudinary");
           if (window.innerWidth < 768) {
-            tanggal.textContent = "..--- --...",
-            bootsrap.textContent = "Bootstrap",
-            cloudinary.textContent = "Cloudinary";
+            tanggal.textContent     = "..--- --...",
+            bootsrap.textContent    = "Bootstrap",
+            javascript.textContent  = "javascript",
+            cloudinary.textContent  = "Cloudinary";
           } else {
-            tanggal.textContent = "00110010 00110111",
-            bootsrap.textContent = "B'strap",
-            cloudinary.textContent = "Cloudy";
+            tanggal.textContent     = "00110010 00110111",
+            bootsrap.textContent    = "B'strap",
+            javascript.textContent  = "JS",
+            cloudinary.textContent  = "Cloudy";
           }
         }
 
