@@ -316,7 +316,7 @@
 
               <div class="skill mb-3" data-percent="74" data-aos="zoom-in">
                 <img class="icon dark-invert" src="https://api.iconify.design/logos:bootstrap.svg" alt="Bootstrap">
-                <span>B'strap</span>
+                <span id="bootstrap">B'strap</span>
                 <div class="bar">
                   <div class="fill"></div>
                 </div>
@@ -412,7 +412,7 @@
 
                 <div class="skill" data-percent="90" data-aos="zoom-in">
                   <img class="icon dark-invert" src="https://api.iconify.design/simple-icons:cloudinary.svg" alt="TiDB">
-                  <span>Cloudy</span>
+                  <span id="cloudinary">Cloudy</span>
                   <div class="bar">
                     <div class="fill"></div>
                   </div>
@@ -549,6 +549,23 @@
           }, 200);
         });
       });
+
+      // teks responsive
+      function updateText() {
+          const bootsrap = document.getElementById("bootstrap");
+          const cloudinary = document.getElementById("cloudinary");
+          if (window.innerWidth < 768) {
+            bootsrap.textContent = "Bootstrap",
+            cloudinary.textContent = "Cloudinary";
+          } else {
+            bootsrap.textContent = "B'strap",
+            cloudinary.textContent = "Cloudy";
+          }
+        }
+
+        // jalanin pas load + resize
+        updateText();
+        window.addEventListener("resize", updateText);
 
       // swipper photo
         const swiper1 = new Swiper(".mySwiper1", {
