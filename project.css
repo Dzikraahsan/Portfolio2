@@ -324,6 +324,7 @@ body {
   max-width: 350px;
   margin: 0 auto;
   padding-bottom: 1.5rem;
+  box-sizing: border-box;
 }
 
 /* footer */
@@ -410,8 +411,8 @@ footer {
   }
 
   .swiper-project {
-    padding-left: 54px;
-    padding-right: 54px;
+    padding-left: none;
+    padding-right: none;
   }
 
   .pon {
