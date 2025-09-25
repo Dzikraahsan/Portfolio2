@@ -32,13 +32,13 @@
         <div class="d-flex align-items-center flex-wrap justify-content-end" data-aos="zoom-in">
            <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur" data-aos="zoom-in">
               <li class="nav-item box me-3">
-                <a class="nav-link" href="profile.html" data-i18n="nav-profile">Profile</a>
+                <a class="nav-link" href="profile.html">Profil</a>
               </li>
               <li class="nav-item box me-3">
-                <a class="nav-link" href="project.html" data-i18n="nav-project">Project</a>
+                <a class="nav-link" href="project.html">Projek</a>
               </li>
               <li class="nav-item box me-3">
-                <a class="nav-link" href="kontak.html" data-i18n="nav-contact">Kontak</a>
+                <a class="nav-link" href="kontak.html">Kontak</a>
               </li>
           </ul>
           <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3" data-aos="zoom-in">🌙</button>
@@ -60,16 +60,16 @@
           <!-- Teks (kanan) -->
           <div class="col-md-6">
             <h1 class="fw-bold mb-3 a-m" data-aos="zoom-in">Dzikra Ahsan Imawan</h1>
-            <p class="text-muted des" data-aos="zoom-in" data-i18n="hero-des">
+            <p class="text-muted des" data-aos="zoom-in">
             Saya adalah siswa kelas XII jurusan Rekayasa Perangkat Lunak di SMKN 1 Maja. Saya memiliki minat dalam
             pengembangan web dan terus mengasah keterampilan pemrograman. Ke depannya, saya bertekad untuk menjadi front-end developer
             profesional yang mampu menciptakan solusi digital yang bermanfaat dan inovatif.
             </p>
 
             <div class="d-flex flex-column flex-md-row justify-content-center gap-1 mt-3" data-aos="zoom-in">
-              <a href="profile.html" class="btn dynamic-btn e mt-3 text-center" data-i18n="btn-profile">Lihat Profile</a>
-              <a href="project.html" class="btn dynamic-btn e mt-3 text-center" data-i18n="btn-project">Lihat Project</a>
-              <a href="kontak.html" class="btn dynamic-btn e mt-3 text-center" data-i18n="btn-contact">Kontak</a>
+              <a href="profile.html" class="btn dynamic-btn e mt-3 text-center">Lihat Profil</a>
+              <a href="project.html" class="btn dynamic-btn e mt-3 text-center">Lihat Projek</a>
+              <a href="kontak.html" class="btn dynamic-btn e mt-3 text-center">Kontak</a>
             </div>
 
           </div>
@@ -83,8 +83,8 @@
       <div class="container bs-body foot">
         <div class="mb-3">
           <p class="mb-1 pp">
-            <span class="text-center" data-i18n="footer-contact">Hubungi saya di:</span>
-            <a class="text-center" href="mailto:ahsandzikra@email.com" data-i18n="footer-email">ahsandzikra@gmail.com</a>
+            <span class="text-center">Hubungi saya di:</span>
+            <a class="text-center" href="mailto:ahsandzikra@email.com">ahsandzikra@gmail.com</a>
           </p>
         </div>
         <div class="social-icons mb-2">
@@ -92,7 +92,7 @@
           <a href="https://www.instagram.com/dzii27/?__pwa=1"><i class="bi bi-instagram"></i></a>
           <a href="https://wa.me/6285703153305"><i class="bi bi-whatsapp"></i></a>
         </div>
-        <small class="text-body-secondary d-block" style="font-size: 0.75rem;" data-i18n="footer-copy">© 2025 Dzikra Ahsan Imawan. Semua Hak Dilindungi.</small>
+        <small class="text-body-secondary d-block" style="font-size: 0.75rem;">© 2025 Dzikra Ahsan Imawan. All Right Reserved.</small>
       </div>
     </footer>
 
@@ -120,109 +120,7 @@
         themeToggle.textContent = newTheme === 'light' ? '🌙' : '🌟';
       });
 
-      const animateFixKeys = ['hero-des'];
-
-      // script untuk multibahasa
-      const translations = {
-        "id": {
-          "nav-profile": "Profil",
-          "nav-project": "Projek",
-          "nav-contact": "Kontak",
-          "hero-name": "Dzikra Ahsan Imawan",
-          "hero-des": "Saya adalah siswa kelas XII jurusan Rekayasa Perangkat Lunak di SMKN 1 Maja. Saya memiliki minat dalam pengembangan web dan terus mengasah keterampilan pemrograman. Ke depannya, saya bertekad untuk menjadi front-end developer profesional yang mampu menciptakan solusi digital yang bermanfaat dan inovatif.",
-          "hero-title": "Web Developer | UI/UX Enthusiast",
-          "btn-profile": "Lihat Profil",
-          "btn-project": "Lihat Projek",
-          "btn-contact": "Kontak",
-          "footer-contact": "Hubungi saya di:",
-          "footer-email": "ahsandzikra@gmail.com",
-          "footer-copy": "© 2025 Dzikra Ahsan Imawan. Semua Hak Dilindungi."
-        },
-        "en": {
-          "nav-profile": "Profile",
-          "nav-project": "Projects",
-          "nav-contact": "Contact",
-          "hero-name": "Dzikra Ahsan Imawan",
-          "hero-des": "I am a grade 12 student majoring in Software Engineering at SMKN 1 Maja. I have an interest in web development and continue to hone my programming skills. In the future, I am determined to become a professional front-end developer capable of creating useful and innovative digital solutions.",
-          "hero-title": "Web Developer | UI/UX Enthusiast",
-          "btn-profile": "View Profile",
-          "btn-project": "View Projects",
-          "btn-contact": "Contact",
-          "footer-contact": "Contact me at:",
-          "footer-email": "ahsandzikra@gmail.com",
-          "footer-copy": "© 2025 Dzikra Ahsan Imawan. All Rights Reserved."
-        }
-      };
-
-      function setLanguage(lang) {
-        localStorage.setItem('lang', lang);
-        const elements = document.querySelectorAll('[data-i18n]');
-
-        elements.forEach(el => {
-          el.classList.add('fade-out');
-        });
-
-        setTimeout(() => {
-          elements.forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (translations[lang][key]) {
-              el.innerHTML = translations[lang][key];
-            }
-            el.classList.remove('fade-out');
-          });
-        }, 300);
-      }
-
-      document.addEventListener('DOMContentLoaded', () => {
-        const savedLang = localStorage.getItem('lang') || 'id';
-        setLanguage(savedLang);
-      });
-
-
-      let currentLang = localStorage.getItem('lang') || 'id';
-
-        function toggleLanguage() {
-          const newLang = currentLang === 'id' ? 'en' : 'id';
-          currentLang = newLang;
-          setLanguage(currentLang);
-          updateLangIcon();
-          animateFlag();
-        }
-
-        function updateLangIcon() {
-          const icon = document.getElementById('langIcon');
-          icon.src = currentLang === 'id'
-            ? 'https://res.cloudinary.com/da4fjxm1e/image/upload/v1753613721/indonesia_square_icon_640_nk2ous.png'
-            : 'https://res.cloudinary.com/da4fjxm1e/image/upload/v1753613688/england_square_icon_640_jgioyc.png';
-          icon.alt = currentLang === 'id' ? 'Bahasa Indonesia' : 'English';
-        }
-
-         function preloadFlagImages() {
-          const idFlag = new Image();
-          idFlag.src = 'https://res.cloudinary.com/da4fjxm1e/image/upload/v1753613721/indonesia_square_icon_640_nk2ous.png';
-
-          const enFlag = new Image();
-          enFlag.src = 'https://res.cloudinary.com/da4fjxm1e/image/upload/v1753613688/england_square_icon_640_jgioyc.png';
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-          preloadFlagImages();
-          updateLangIcon();
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-          updateLangIcon();
-        });
-
-        function animateFlag() {
-          const icon = document.getElementById('langIcon');
-          icon.classList.remove('flag-animate');
-          void icon.offsetWidth;
-          icon.classList.add('flag-animate');
-        }
-
   </script>
 
 </body>
-
 </html>

@@ -29,16 +29,16 @@
         <div class="container d-flex justify-content-between align-items-center flex-wrap pon">
 
             <!-- Tombol Kembali -->
-            <a href="index.html" class="btn dynamic-btn mb-2 mb-lg-0 navv" data-i18n="button-back">Kembali</a>
+            <a href="index.html" class="btn dynamic-btn mb-2 mb-lg-0 navv"><i class="fa-solid fa-arrow-left"></i></a>
 
             <!-- Navigation Menu -->
             <div class="d-flex align-items-center flex-wrap justify-content-end">
                 <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
                     <li class="nav-item box me-3">
-                        <a class="nav-link" href="profile.html" data-i18n="nav-profile">Profile</a>
+                        <a class="nav-link" href="profile.html" data-i18n="nav-profile">Profil</a>
                     </li>
                     <li class="nav-item box me-3">
-                        <a class="nav-link" href="project.html" data-i18n="nav-project">Project</a>
+                        <a class="nav-link" href="project.html" data-i18n="nav-project">Projek</a>
                     </li>
                     <li class="nav-item box me-3">
                         <a class="nav-link" href="kontak.html" data-i18n="nav-contact">Kontak</a>
@@ -128,163 +128,49 @@
         themeToggle.textContent = newTheme === 'light' ? '🌙' : '🌟';
         });
 
-  </script>
 
-  <!-- script untuk send message from python -->
-  <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const status = params.get('status');
-    const notif = document.getElementById('notif-placeholder');
+        <!-- script untuk send message from python -->
+        window.addEventListener('DOMContentLoaded', () => {
+          const params = new URLSearchParams(window.location.search);
+          const status = params.get('status');
+          const notif = document.getElementById('notif-placeholder');
 
 
-    if (window.history.replaceState) {
-    window.history.replaceState(null, null, window.location.pathname);
-    }
+          if (window.history.replaceState) {
+          window.history.replaceState(null, null, window.location.pathname);
+          }
 
-    if (status === 'success') {
-      notif.innerHTML = `
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          ✅ Pesan berhasil dikirim!
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>`;
-    } else if (status === 'error') {
-      notif.innerHTML = `
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          ❌ Gagal mengirim pesan. Coba lagi nanti.
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>`;
-    }
+          if (status === 'success') {
+            notif.innerHTML = `
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                ✅ Pesan berhasil dikirim!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>`;
+          } else if (status === 'error') {
+            notif.innerHTML = `
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                ❌ Gagal mengirim pesan. Coba lagi nanti.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>`;
+          }
 
-    if (window.history.replaceState) {
-      window.history.replaceState(null, null, window.location.pathname);
-    }
+          if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.pathname);
+          }
 
-    if (status) {
-      setTimeout(() => {
-        const alertEl = document.querySelector('.alert');
-        if (alertEl) {
-            alertEl.classList.remove('show');
-            alertEl.classList.add('fade');
+          if (status) {
             setTimeout(() => {
-            alertEl.remove();
-            }, 300);
-        }
-        }, 5000);
-    }
-  });
-
-   // script untuk multibahasa
-      const translations = {
-        "id": {
-          "button-back": "Kembali",
-          "button-send": "Kirim",
-          "nav-profile": "Profil",
-          "nav-project": "Projek",
-          "nav-contact": "Kontak",
-          "form-call": "Kirim Pesan",
-          "form-name": "Nama",
-          "form-email": "Surel",
-          "form-message": "Pesan",
-          "fungsi": "Tidak Berfungsi!",
-          "footer-call": "Hubungi Saya Di:",
-          "footer-call-email": "ahsandzikra@gmail.com",
-          "footer-copyright": "© 2025 Dzikra Ahsan Imawan. Semua Hak Dilindungi."
-          },
-
-          "en": {
-          "button-back": "Back",
-          "button-send": "Send",
-          "nav-profile": "Profile",
-          "nav-project": "Project",
-          "nav-contact": "Contact",
-          "form-call": "Send Message",
-          "form-name": "Name",
-          "form-email": "Email",
-          "form-message": "Message",
-          "fungsi": "Not Working!",
-          "footer-call": "Contact Me At:",
-          "footer-call-email": "ahsandzikra@gmail.com",
-          "footer-copyright": "© 2025 Dzikra Ahsan Imawan. All Right Reserved."
-        }
-      };
-
-      function setLanguage(lang) {
-        localStorage.setItem('lang', lang);
-        const elements = document.querySelectorAll('[data-i18n]');
-
-        elements.forEach(el => {
-          const key = el.getAttribute('data-i18n');
-          const translated = translations[lang][key];
-
-          if (translated) {
-            console.log(`✅ ${key} found`);
-          } else {
-            console.warn(`⚠️ ${key} NOT FOUND`);
+              const alertEl = document.querySelector('.alert');
+              if (alertEl) {
+                  alertEl.classList.remove('show');
+                  alertEl.classList.add('fade');
+                  setTimeout(() => {
+                  alertEl.remove();
+                  }, 300);
+              }
+              }, 5000);
           }
         });
-
-          elements.forEach(el => {
-          el.classList.add('fade-out');
-        });
-
-        setTimeout(() => {
-          elements.forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (translations[lang][key]) {
-              el.innerText = translations[lang][key];
-            }
-            el.classList.remove('fade-out');
-          });
-        }, 300);
-      }
-
-      document.addEventListener('DOMContentLoaded', () => {
-        const savedLang = localStorage.getItem('lang') || 'id';
-        setLanguage(savedLang);
-      });
-
-      let currentLang = localStorage.getItem('lang') || 'id';
-
-        function toggleLanguage() {
-          const newLang = currentLang === 'id' ? 'en' : 'id';
-          currentLang = newLang;
-          setLanguage(currentLang);
-          updateLangIcon();
-          animateFlag();
-        }
-
-        function updateLangIcon() {
-          const icon = document.getElementById('langIcon');
-          icon.src = currentLang === 'id'
-            ? 'https://res.cloudinary.com/da4fjxm1e/image/upload/v1753613721/indonesia_square_icon_640_nk2ous.png'
-            : 'https://res.cloudinary.com/da4fjxm1e/image/upload/v1753613688/england_square_icon_640_jgioyc.png';
-          icon.alt = currentLang === 'id' ? 'Bahasa Indonesia' : 'English';
-        }
-
-         function preloadFlagImages() {
-          const idFlag = new Image();
-          idFlag.src = 'https://res.cloudinary.com/da4fjxm1e/image/upload/v1753613721/indonesia_square_icon_640_nk2ous.png';
-
-          const enFlag = new Image();
-          enFlag.src = 'https://res.cloudinary.com/da4fjxm1e/image/upload/v1753613688/england_square_icon_640_jgioyc.png';
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-          preloadFlagImages();
-          updateLangIcon();
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-          updateLangIcon();
-        });
-
-        function animateFlag() {
-          const icon = document.getElementById('langIcon');
-          icon.classList.remove('flag-animate');
-          void icon.offsetWidth;
-          icon.classList.add('flag-animate');
-        }
 
         // untuk tulisan navbar
         document.querySelectorAll('.nav-link').forEach(link => {
@@ -294,11 +180,7 @@
         });
 
 </script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
-</html>
 </body>
 </html>
