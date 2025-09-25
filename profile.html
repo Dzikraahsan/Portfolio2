@@ -78,7 +78,7 @@
               </div>
               <div class="biodata-item" data-aos="fade-up">
                 <div class="label">Tempat, Tanggal Lahir</div>
-                <div class="value">Majalengka, <a class="orgn-b" style="text-decoration: none; color: var(--bs-body-color);">00110010 00110111</a> September <a class="orgn-b" style="text-decoration: none; color: var(--bs-body-color);">2008</a> </div>
+                <div class="value">Majalengka, <a id="tanggal" class="orgn-b" style="text-decoration: none; color: var(--bs-body-color);">00110010 00110111</a> September <a class="orgn-b" style="text-decoration: none; color: var(--bs-body-color);">2008</a> </div>
               </div>
               <div class="biodata-item" data-aos="fade-up">
                 <div class="label">Alamat</div>
@@ -90,7 +90,7 @@
               </div>
               <div class="biodata-item" data-aos="fade-up">
                 <div class="label">Status</div>
-                <div class="value">Pelajar (Kelas <a class="orgn-b" style="text-decoration: none; color: var(--bs-body-color);">12</a> ) </div>
+                <div class="value">Pelajar ( Kelas <a class="orgn-b" style="text-decoration: none; color: var(--bs-body-color);">12</a> )</div>
               </div>
               <div class="biodata-item" data-aos="fade-up">
                 <div class="label">Minat</div>
@@ -552,12 +552,15 @@
 
       // teks responsive
       function updateText() {
+          const tanggal = document.getElementById("tanggal");
           const bootsrap = document.getElementById("bootstrap");
           const cloudinary = document.getElementById("cloudinary");
           if (window.innerWidth < 768) {
+            tanggal.textContent = "..--- --...",
             bootsrap.textContent = "Bootstrap",
             cloudinary.textContent = "Cloudinary";
           } else {
+            tanggal.textContent = "00110010 00110111",
             bootsrap.textContent = "B'strap",
             cloudinary.textContent = "Cloudy";
           }
