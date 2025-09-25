@@ -234,15 +234,15 @@ body {
 
 .swiper {
   padding: 20px 0;
-  padding-left: 26px;
-  padding-right: 26px;
+  padding-left: 20px;
+  padding-right: 20px;
   position: relative;
   transition: transform 0.4s ease;
 }
 
 .swiper-project {
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .swiper-slide {
@@ -265,7 +265,7 @@ body {
 .swiper-button-prev {
   color: var(--bs-body-color);
   background-color: transparent;
-  padding: 30px;
+  padding: 25px;
   border-radius: 50%;
   transition: all 0.3s ease;
   top: 50%;
