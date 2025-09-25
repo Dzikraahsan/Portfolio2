@@ -240,6 +240,11 @@ body {
   transition: transform 0.4s ease;
 }
 
+.swiper-project {
+  padding-left: 64px;
+  padding-right: 64px;
+}
+
 .swiper-slide {
   background: var(--bs-body-bg);
   border-radius: 10px;
@@ -260,7 +265,7 @@ body {
 .swiper-button-prev {
   color: var(--bs-body-color);
   background-color: transparent;
-  padding: 12px;
+  padding: 30px;
   border-radius: 50%;
   transition: all 0.3s ease;
   top: 50%;
@@ -288,7 +293,7 @@ body {
 }
 
 .b-1 {
-  left: -0;
+  left: 0;
   transform: translate(-100%, -50%);
 }
 
@@ -302,8 +307,16 @@ body {
   margin-top: 2.5rem;
 }
 
+.b-logo2 {
+  transition: filter 0.3s ease;
+  margin-top: -1rem;
+}
 
 [data-bs-theme="dark"] .b-logo {
+  filter: invert(1);
+}
+
+[data-bs-theme="dark"] .b-logo2 {
   filter: invert(1);
 }
 
