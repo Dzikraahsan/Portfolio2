@@ -409,6 +409,11 @@ footer {
     font-size: clamp(0.9rem, 3vw, 1.1rem);
   }
 
+  .swiper-project {
+    padding-left: 54px;
+    padding-right: 54px;
+  }
+
   .pon {
     font-size: clamp(0.75rem, 1rem, 1.1rem);
   }
