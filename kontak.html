@@ -122,14 +122,13 @@
             once: true
         });
 
-      window.addEventListener("beforeunload", () => {
-            sessionStorage.setItem("scrollY", window.scrollY);
+        window.addEventListener("beforeunload", () => {
+            history.replaceState({ scrollY: window.scrollY }, "");
         });
 
         window.addEventListener("load", () => {
-            const scrollY = sessionStorage.getItem("scrollY");
-            if (scrollY !== null) {
-                window.scrollTo(0, parseInt(scrollY));
+            if (history.state && history.state.scrollY) {
+                window.scrollTo(0, history.state.scrollY);
             }
         });
 

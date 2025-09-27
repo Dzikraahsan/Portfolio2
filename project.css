@@ -258,6 +258,14 @@ body {
   transition: transform 0.4s ease;
 }
 
+.swiper-project img {
+  transition: transform 0.25s ease;
+}
+
+.swiper-project img:hover {
+  transform: scale(1.01);
+}
+
 .swiper-project {
   padding-left: 30px;
   padding-right: 30px;

@@ -163,6 +163,11 @@
               </div>
 
               <div class="swiper-slide">
+                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1758978300/Manchester_derby_u18_gwxxrg.png"
+                  class="img-fluid rounded" alt="Man United vs Man City 2 - 4 | EPL U18" />
+              </div>
+
+              <div class="swiper-slide">
                 <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1758609969/Man_City_vs_Man_United_nypkyv.png"
                 class="img-fluid rounded" alt="Man City vs Man United 3 - 0 | EPL" />
               </div>
@@ -174,12 +179,12 @@
 
               <div class="swiper-slide">
                 <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1758609317/Arema_vs_Persib_kszzsc.png"
-                  class="img-fluid rounded" alt="AremaFC vs Persib 1 - 2 | BRI Super League" />
+                class="img-fluid rounded" alt="AremaFC vs Persib 1 - 2 | BRI Super League" />
               </div>
 
               <div class="swiper-slide">
                 <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1758710133/Ousmane_Dembele_vidf58.png"
-                  class="img-fluid rounded" alt="Ousmane Dembélé | Ballon Do'r 2025 winner" />
+                class="img-fluid rounded" alt="Ousmane Dembélé | Ballon Do'r 2025 winner" />
               </div>
 
             </div>
@@ -210,15 +215,18 @@
             <div class="swiper-wrapper" data-aos="zoom-in">
 
               <div class="swiper-slide">
-                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1753697679/design_t-shirt_dzikra_lx4yer.png" class="img-fluid rounded" alt="Design T-shirt" />
+                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1753697679/design_t-shirt_dzikra_lx4yer.png"
+                class="img-fluid rounded" alt="Design T-shirt" />
               </div>
 
               <div class="swiper-slide">
-                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1753697619/design_marketplace_dzikra_e6mwe5.png" class="img-fluid rounded" alt="Design Marketplace" />
+                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1753697619/design_marketplace_dzikra_e6mwe5.png"
+                class="img-fluid rounded" alt="Design Marketplace" />
               </div>
 
               <div class="swiper-slide">
-                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1753697599/design_poster_dzikra_knqrcp.png" class="img-fluid rounded" alt="Design Poster" />
+                <img src="https://res.cloudinary.com/da4fjxm1e/image/upload/v1753697599/design_poster_dzikra_knqrcp.png"
+                class="img-fluid rounded" alt="Design Poster" />
               </div>
 
             </div>
@@ -270,15 +278,14 @@
       });
 
       window.addEventListener("beforeunload", () => {
-          sessionStorage.setItem("scrollY", window.scrollY);
-        });
+        history.replaceState({ scrollY: window.scrollY }, "");
+      });
 
-        window.addEventListener("load", () => {
-          const scrollY = sessionStorage.getItem("scrollY");
-          if (scrollY !== null) {
-            window.scrollTo(0, parseInt(scrollY));
-          }
-        });
+      window.addEventListener("load", () => {
+        if (history.state && history.state.scrollY) {
+          window.scrollTo(0, history.state.scrollY);
+        }
+      });
 
       const themeToggle = document.getElementById('themeToggle');
       const html = document.documentElement;

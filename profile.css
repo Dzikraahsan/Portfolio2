@@ -427,6 +427,14 @@ h2 {
   display: none;
 }
 
+.swiper-project img {
+  transition: transform 0.25s ease;
+}
+
+.swiper-project img:hover {
+  transform: scale(1.01);
+}
+
 .b-1 {
   left: 0;
   transform: translate(-100%, -50%);
