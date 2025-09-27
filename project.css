@@ -320,6 +320,12 @@ body {
   filter: invert(1);
 }
 
+/* icon */
+
+[data-bs-theme="dark"] .dark-invert {
+  filter: invert(1);
+}
+
 .project-card {
   max-width: 350px;
   margin: 0 auto;
