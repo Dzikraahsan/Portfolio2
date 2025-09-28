@@ -11,13 +11,13 @@ body {
 /* root color */
 
 :root {
-    --bs-body-bg: #eaebed;
+    --bs-body-bg: #f8f9fa;
     --bs-body-color: rgb(21, 23, 27);
 }
 
 [data-bs-theme="dark"] {
     --bs-body-bg: rgb(21, 23, 27);
-    --bs-body-color: #eaebed;
+    --bs-body-color: #f8f9fa;
 }
 
 /* font */
