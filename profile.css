@@ -559,7 +559,12 @@ footer {
   }
 
   .pp {
-    font-size: 85%;
+    font-size:
+     85%;
+  }
+
+  .p {
+    font-size: 0.8rem;
   }
 
   .skill {
