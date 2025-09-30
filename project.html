@@ -249,6 +249,12 @@
       </div>
    </div>
 
+  <!-- Popup container -->
+    <div class="image-popup" id="popup">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <img src="" alt="Popup Image" id="popupImg">
+    </div>
+
 
   <!-- Footer -->
   <footer data-aos="fade-up">
@@ -369,6 +375,31 @@
         document.querySelectorAll('.nav-link').forEach(link => {
           if(link.href === window.location.href){
             link.classList.add('active');
+          }
+        });
+
+        // untuk pop up gambar
+        const popup = document.getElementById("popup");
+        const popupImg = document.getElementById("popupImg");
+        const closeBtn = document.getElementById("closeBtn");
+
+        // Semua gambar swiper
+        document.querySelectorAll(".swiper-slide img").forEach(img => {
+          img.addEventListener("click", () => {
+            popup.style.display = "flex";
+            popupImg.src = img.src;
+          });
+        });
+
+        // Klik close button
+        closeBtn.addEventListener("click", () => {
+          popup.style.display = "none";
+        });
+
+        // Klik luar gambar
+        popup.addEventListener("click", (e) => {
+          if (e.target === popup) {
+            popup.style.display = "none";
           }
         });
 

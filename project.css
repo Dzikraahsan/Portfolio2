@@ -359,6 +359,76 @@ body {
   box-sizing: border-box;
 }
 
+/* Overlay popup */
+.image-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.image-popup img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
+  animation: zoomIn 0.3s ease;
+  cursor: zoom-out;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.swiper-slide img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Close button */
+.image-popup .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.image-popup .close-btn:hover {
+  transform: scale(1.2);
+  color: #ff4d4d;
+}
+
+/* Animasi tambahan */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 /* footer */
 
 footer {
@@ -472,6 +542,11 @@ footer {
 
   .b-logo {
     margin-top: 3.5rem;
+  }
+
+  .image-popup img {
+    max-width: 95%;
+    max-height: 70%; /* lebih pendek biar nggak nutup full layar */
   }
 
 }
