@@ -344,6 +344,15 @@
                 <span class="percent orgn-b">7.5%</span>
               </div>
 
+              <div class="skill mb-3" data-percent="4" data-aos="zoom-in">
+                <img class="icon dark-invert" src="https://api.iconify.design/logos:typescript.svg" alt="Node Js">
+                <span id="ts" class="span">TS</span>
+                <div class="bar">
+                  <div class="fill"></div>
+                </div>
+                <span class="percent orgn-b">4%</span>
+              </div>
+
               <div class="skill mb-3" data-percent="5" data-aos="zoom-in">
                 <img class="icon dark-invert" src="https://api.iconify.design/logos:nodejs.svg" alt="Node Js">
                 <span class="span">Node JS</span>
@@ -583,15 +592,19 @@
 
       // teks responsive
       function updateText() {
+          const ts = document.getElementById("ts")
           const tanggal = document.getElementById("tanggal");
           const bootsrap = document.getElementById("bootstrap");
+          const javascript = document.getElementById("javascript");
           const cloudinary = document.getElementById("cloudinary");
           if (window.innerWidth < 768) {
+            ts.textContent          = "TypeScript",
             tanggal.textContent     = "27",
             bootsrap.textContent    = "Bootstrap",
             javascript.textContent  = "javascript",
             cloudinary.textContent  = "Cloudinary";
           } else {
+            ts.textContent = "ts",
             tanggal.textContent     = "27",
             bootsrap.textContent    = "B'strap",
             javascript.textContent  = "JS",
