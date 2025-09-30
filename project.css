@@ -544,10 +544,13 @@ footer {
     margin-top: 3.5rem;
   }
 
+  .image-popup {
+    padding: 2rem;
+  }
+
   .image-popup img {
     max-width: 95%;
     max-height: 70%;
-    padding: 2rem;
   }
 
 }
