@@ -366,7 +366,6 @@ body.popup-open {
 
 /* Overlay popup */
 
-
 .image-popup {
   display: none;
   position: fixed;
@@ -431,7 +430,6 @@ body.popup-open {
     opacity: 1;
   }
 }
-
 
 /* footer */
 

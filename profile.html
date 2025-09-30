@@ -520,6 +520,12 @@
       </div>
    </div>
 
+  <!-- Popup container -->
+    <div class="image-popup" id="popup">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <img src="" alt="Popup Image" id="popupImg">
+    </div>
+
   <!-- Footer -->
   <footer class="bs-body" style="margin-top: 5rem;" data-aos="fade-up">
     <div class="container">
@@ -656,6 +662,45 @@
         document.querySelectorAll('.nav-link').forEach(link => {
           if (link.href === window.location.href) {
             link.classList.add('active');
+          }
+        });
+
+        // untuk pop up gambar
+        const popup = document.getElementById("popup");
+        const popupImg = document.getElementById("popupImg");
+        const closeBtn = document.getElementById("closeBtn");
+
+        document.querySelectorAll(".swiper-slide img").forEach(img => {
+          img.addEventListener("click", () => {
+            popup.style.display = "flex";
+            popupImg.src = img.src;
+          });
+        });
+
+        closeBtn.addEventListener('click', () => {
+          popup.style.display = 'none';
+        });
+
+        popup.addEventListener("click", (e) => {
+          if (e.target === popup) {
+            popup.style.display = "none";
+          }
+        });
+
+        // Open popup
+        document.querySelectorAll('.swiper-slide img').forEach(img => {
+          img.addEventListener('click', () => {
+            document.querySelector('.image-popup').style.display = 'flex';
+            document.querySelector('.image-popup img').src = img.src;
+            document.body.classList.add('popup-open'); // kunci scroll
+          });
+        });
+
+        // Close popup
+        document.querySelector('.image-popup').addEventListener('click', e => {
+          if (e.target.tagName !== 'IMG') {
+            document.querySelector('.image-popup').style.display = 'none';
+            document.body.classList.remove('popup-open'); // balikin scroll
           }
         });
 
