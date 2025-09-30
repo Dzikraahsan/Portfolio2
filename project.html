@@ -383,7 +383,6 @@
         const popupImg = document.getElementById("popupImg");
         const closeBtn = document.getElementById("closeBtn");
 
-        // Semua gambar swiper
         document.querySelectorAll(".swiper-slide img").forEach(img => {
           img.addEventListener("click", () => {
             popup.style.display = "flex";
@@ -391,15 +390,30 @@
           });
         });
 
-        // Klik close button
         closeBtn.addEventListener("click", () => {
           popup.style.display = "none";
         });
 
-        // Klik luar gambar
         popup.addEventListener("click", (e) => {
           if (e.target === popup) {
             popup.style.display = "none";
+          }
+        });
+
+        // Open popup
+        document.querySelectorAll('.swiper-slide img').forEach(img => {
+          img.addEventListener('click', () => {
+            document.querySelector('.image-popup').style.display = 'flex';
+            document.querySelector('.image-popup img').src = img.src;
+            document.body.classList.add('popup-open'); // kunci scroll
+          });
+        });
+
+        // Close popup
+        document.querySelector('.image-popup').addEventListener('click', e => {
+          if (e.target.tagName !== 'IMG') {
+            document.querySelector('.image-popup').style.display = 'none';
+            document.body.classList.remove('popup-open'); // balikin scroll
           }
         });
 
