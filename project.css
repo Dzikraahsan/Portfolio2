@@ -546,7 +546,8 @@ footer {
 
   .image-popup img {
     max-width: 95%;
-    max-height: 70%; /* lebih pendek biar nggak nutup full layar */
+    max-height: 70%;
+    padding: 2rem;
   }
 
 }
