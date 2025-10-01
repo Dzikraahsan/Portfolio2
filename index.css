@@ -48,15 +48,21 @@ body {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
+  min-height: 60px;
 }
 
 .atur {
+  display: flex;
   justify-content: center;
-  margin: 0 auto;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-nav .nav-item .nav-link {
   font-weight: 600;
+  line-height: 1.2;
+  padding: 0.5rem 0.75rem;
 }
 
 /* hero */
@@ -315,6 +321,18 @@ footer {
     list-style: none;
   }
 
+  .nav-grid {
+    grid-template-columns: auto 1fr auto;
+    min-height: 50px;
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  #themeToggle, .navv {
+    padding: 0.35rem 0.5rem;
+  }
+
   .navv {
     font-size: 1.3rem;
     font-weight: 600;
@@ -404,20 +422,22 @@ footer {
   }
 
   @keyframes slideUp {
-    from {
-      transform: translateY(100%);
-      opacity: 0;
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
-    to {
-      transform: translateY(0);
-      opacity: 1;
+    footer {
+      margin-top: -2.55rem;
+      animation: slideUp 0.8s ease-out;
     }
-  }
 
-  footer {
-    margin-top: -2.55rem;
-    animation: slideUp 0.8s ease-out;
   }
 
 }
