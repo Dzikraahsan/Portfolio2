@@ -701,6 +701,12 @@ footer {
     font-size: clamp(0.8rem, 2.5vw, 1rem);
   }
 
+  .github-stats {
+    margin: 0 auto !important;
+    display: block;
+    align-items: center;
+  }
+
   .stats {
     width: 355px;
     align-items: center;
