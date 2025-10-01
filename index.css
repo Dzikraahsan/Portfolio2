@@ -316,23 +316,31 @@ footer {
   }
 
   .nav-grid {
-    grid-template-columns: auto 1fr auto; /* tetap sejajar */
-    min-height: 50px; /* agak lebih kecil */
+    grid-template-columns: auto 1fr auto;
+    min-height: 50px;
+    margin: 0 auto;
+    margin-left: -10px;
   }
 
   .nav-link {
-    margin-top: -5px;
+    margin-top: 0px;
   }
 
   .navv {
     font-size: 1.3rem;
     font-weight: 600;
+    margin-left: 10px;
+  }
+
+  .theme {
+    left: 40%;
   }
 
   .atur {
     margin-top: 0.5625rem;
     font-size: 0.75rem;
-    font-weight: 600
+    font-weight: 600;
+    margin: 0 auto;
   }
 
   .img-fluid.image {

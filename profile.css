@@ -41,7 +41,6 @@ body {
 /* navbar */
 
 .navbar {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -603,6 +602,7 @@ footer {
       grid-template-columns: auto 1fr auto;
       min-height: 50px;
       margin: 0 auto;
+      margin-left: 12.5px;
 
     .nav-link {
       margin-top: -5px;
