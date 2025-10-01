@@ -708,15 +708,14 @@ footer {
   }
 
   .stats {
-    width: 355px;
+    width: 345px;
     margin: 0 auto !important;
     display: block;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 2rem !important;
     margin-left: -0.45rem !important;
   }
 
   .bahasa {
-    padding-top: 1rem;
     margin-left: 0.45rem !important;
   }
 
