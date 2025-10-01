@@ -178,6 +178,8 @@ body {
 
 .a-m {
   margin-top: 0.5rem;
+  text-align: center;
+  font-size: 2.825rem;
 }
 
 .contener {
@@ -359,6 +361,7 @@ footer {
   .a-m {
     text-align: center;
     padding-top: -1.5rem;
+    font-size: 2.325rem;
   }
 
   .des {
