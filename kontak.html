@@ -31,83 +31,86 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar bs-body sticky-top zoom-in">
-        <div class="container d-flex justify-content-between align-items-center flex-wrap pon">
+        <nav class="navbar bs-body sticky-top zoom-in">
+            <div class="container nav-grid">
 
-            <!-- Tombol Kembali -->
-            <a href="index.html" class="btn dynamic-btn mb-2 mb-lg-0 navv"><i class="fa-solid fa-arrow-left"></i></a>
+                <!-- Tombol Kembali -->
+                <a href="index.html" class="btn dynamic-btn navv">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
 
-            <!-- Navigation Menu -->
-            <div class="d-flex align-items-center flex-wrap justify-content-end">
-                <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 atur">
+                <!-- Navigation Menu -->
+                <ul class="navbar-nav d-flex flex-row mb-0 atur">
                     <li class="nav-item box me-3">
-                        <a class="nav-link" href="profile.html" data-i18n="nav-profile">Profil</a>
+                        <a class="nav-link" href="profile.html">PROFIL</a>
                     </li>
                     <li class="nav-item box me-3">
-                        <a class="nav-link" href="project.html" data-i18n="nav-project">Projek</a>
+                        <a class="nav-link" href="project.html">PROJEK</a>
                     </li>
-                    <li class="nav-item box me-3">
-                        <a class="nav-link" href="kontak.html" data-i18n="nav-contact">Kontak</a>
+                    <li class="nav-item box">
+                        <a class="nav-link" href="kontak.html">KONTAK</a>
                     </li>
                 </ul>
-                <button id="themeToggle" class="btn btn-sm dynamic-btn ms-3" data-aos="zoom-in">🌙</button>
+
+                <!-- Theme Toggle -->
+                <button id="themeToggle" class="btn btn-sm dynamic-btn">🌙</button>
+
             </div>
-        </div>
-    </nav>
+        </nav>
 
     <!-- form send message -->
-    <h2 class="section-title text-center" style="margin-top: 3rem;" data-aos="zoom-in">Kirim Pesan</h2>
-    <h6 class="text-center mb-5" style="opacity: 75%;" data-aos="zoom-in" data-i18n="fungsi">Tidak Berfungsi!</h6>
-    <div class="container border border-2 p-4 mt-1 mb-1 bg-body-tertiary rounded pesan" style="margin-top: 5rem; width: 90%; margin-bottom: 5rem;">
-            <!-- Kontak Section -->
-        <section id="kontak" class="py-5 text-body">
-            <div class="container zoom-on-load">
-                <div class="row justify-content-center" style="margin-top: -1rem;">
-                <div class="col-md-9">
-                    <div id="notif-placeholder" class="mb-4"></div>
+        <h2 class="section-title text-center" style="margin-top: 3rem;" data-aos="zoom-in">Kirim Pesan</h2>
+        <h6 class="text-center mb-5" style="opacity: 75%;" data-aos="zoom-in" data-i18n="fungsi">Tidak Berfungsi!</h6>
+        <div class="container border border-2 p-4 mt-1 mb-1 bg-body-tertiary rounded pesan" style="margin-top: 5rem; width: 90%; margin-bottom: 5rem;">
+                <!-- Kontak Section -->
+            <section id="kontak" class="py-5 text-body">
+                <div class="container zoom-on-load">
+                    <div class="row justify-content-center" style="margin-top: -1rem;">
+                    <div class="col-md-9">
+                        <div id="notif-placeholder" class="mb-4"></div>
 
-                    <form action="" method="POST">
-                    <div class="mb-3">
-                        <label for="nama" class="form-label" data-i18n="form-name">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label" data-i18n="form-email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="message" class="form-label" data-i18n="form-message">Pesan</label>
-                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn dynamic-btn" style="margin-bottom: -5rem; display: block; margin: 0 auto;" data-i18n="button-send">
-                        Kirim
-                    </button>
-                    </form>
+                        <form action="" method="POST">
+                        <div class="mb-3">
+                            <label for="nama" class="form-label" data-i18n="form-name">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label" data-i18n="form-email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+                        </div>
+                        <div class="mb-5">
+                            <label for="message" class="form-label" data-i18n="form-message">Pesan</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn dynamic-btn" style="margin-bottom: -5rem; display: block; margin: 0 auto;" data-i18n="button-send">
+                            Kirim
+                        </button>
+                        </form>
 
+                    </div>
+                    </div>
                 </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
-    </div>
+        </div>
 
 <!-- Footer -->
-<footer class="bs-body" style="margin-top: 5rem;" data-aos="fade-up">
-    <div class="container">
-        <div class="mb-3">
-            <p class="mb-1 pp">
-                <span class="text-center" data-i18n="footer-call">Hubungi saya di:</span>
-                <a class="text-center" href="mailto:dzikraahsan10@email.com" data-i18n="footer-call-email">dzikraahsan10@gmail.com</a>
-            </p>
+    <footer class="bs-body" style="margin-top: 5rem;" data-aos="fade-up">
+        <div class="container">
+            <div class="mb-3">
+                <p class="mb-1 pp">
+                    <span class="text-center" data-i18n="footer-call">Hubungi saya di:</span>
+                    <a class="text-center" href="mailto:dzikraahsan10@email.com" data-i18n="footer-call-email">dzikraahsan10@gmail.com</a>
+                </p>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/Dzikraahsan"><i class="bi bi-github"></i></a>
+                <a href="https://www.instagram.com/dzii27/?__pwa=1"><i class="bi bi-instagram"></i></a>
+                <a href="https://wa.me/6285703153305"><i class="bi bi-whatsapp"></i></a>
+            </div>
+            <small class="text-body-secondary d-block mt-3" style="font-size: 0.75rem;" data-i18n="footer-copyright">© 2025 Dzikra Ahsan Imawan. All Right Reserved.</small>
         </div>
-        <div class="social-icons">
-            <a href="https://github.com/Dzikraahsan"><i class="bi bi-github"></i></a>
-            <a href="https://www.instagram.com/dzii27/?__pwa=1"><i class="bi bi-instagram"></i></a>
-            <a href="https://wa.me/6285703153305"><i class="bi bi-whatsapp"></i></a>
-        </div>
-        <small class="text-body-secondary d-block mt-3" style="font-size: 0.75rem;" data-i18n="footer-copyright">© 2025 Dzikra Ahsan Imawan. All Right Reserved.</small>
-    </div>
-</footer>
+    </footer>
 
 <!-- Script -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
