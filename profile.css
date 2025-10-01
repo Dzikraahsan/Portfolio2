@@ -709,13 +709,15 @@ footer {
 
   .stats {
     width: 355px;
-    align-items: center;
-    margin: 0 auto;
+    margin: 0 auto !important;
+    display: block;
     margin-bottom: 1.5rem !important;
   }
 
   .languages {
     padding-top: 1rem;
+    margin: 0 auto !important;
+    display: block;
   }
 
   .item {
