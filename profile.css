@@ -712,12 +712,12 @@ footer {
     margin: 0 auto !important;
     display: block;
     margin-bottom: 1.5rem !important;
-    margin-left: -0.5rem !important;
+    margin-left: -0.35rem !important;
   }
 
   .bahasa {
     padding-top: 1rem;
-    margin-left: -1.5rem !important;
+    margin-left: -0.5rem !important;
   }
 
   .item {
