@@ -203,8 +203,13 @@ h2 {
   color: rgb(21, 23, 27);
 }
 
+.item {
+  width: 390px;
+}
+
 .item2 {
-  padding-left: 5rem;
+  padding-left: 0rem;
+  margin-left: 0rem;
 }
 
 .biodata-grid a {
@@ -655,8 +660,14 @@ footer {
     font-size: clamp(0.8rem, 2.5vw, 1rem);
   }
 
+  .item {
+    margin-left: -5rem;
+    padding-left: 5rem;
+  }
+
   .item2 {
     margin-left: -5rem;
+    padding-left: 5rem;
   }
 
   .pon {
