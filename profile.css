@@ -235,6 +235,47 @@ h2 {
   color: #4dd0e1;
 }
 
+/* github stats */
+
+.github-stats img {
+  margin: 0 auto;
+  align-items: center;
+  transition: transform 0.4s ease;
+  background: transparent !important;
+}
+
+[data-bs-theme="dark"] .github-stats img {
+  box-shadow: 0 0px 20px rgba(255, 255, 255, 0.5);
+}
+
+.github-stats img:hover {
+  animation: smoothZoomIn 0.4s ease forwards;
+}
+
+.github-stats img:not(:hover) {
+  animation: smoothZoomOut 0.4s ease forwards;
+}
+
+@keyframes smoothZoomIn {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.025);
+  }
+}
+
+@keyframes smoothZoomOut {
+  from {
+    transform: scale(1.025);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
 /* all skill  */
 
 .skill-section {
@@ -658,6 +699,17 @@ footer {
   .biodata-grid .value {
     grid-template-columns: 1fr;
     font-size: clamp(0.8rem, 2.5vw, 1rem);
+  }
+
+  .stats {
+    width: 355px;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .languages {
+    padding-top: 1rem;
   }
 
   .item {
