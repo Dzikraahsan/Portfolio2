@@ -712,11 +712,13 @@ footer {
     margin: 0 auto !important;
     display: block;
     margin-bottom: 1.5rem !important;
+    margin-left: -0.75rem !important;
   }
 
   .languages {
     padding-top: 1rem;
     margin: 0 auto !important;
+    margin-left: -1.5rem !important;
     display: block;
   }
 
