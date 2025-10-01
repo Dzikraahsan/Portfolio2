@@ -59,16 +59,16 @@ body {
   font-weight: 600;
 }
 
-.hero {
-  padding: 6rem 0;
-  text-align: center;
-}
-
 /* hero */
 
 .hero h1 {
   font-size: 3rem;
   font-weight: 700;
+}
+
+.hero {
+  padding: 6rem 0;
+  text-align: center;
 }
 
 /* section */
@@ -313,6 +313,15 @@ footer {
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
+  }
+
+  .nav-grid {
+    grid-template-columns: auto 1fr auto; /* tetap sejajar */
+    min-height: 50px; /* agak lebih kecil */
+  }
+
+  .nav-link {
+    margin-top: -5px;
   }
 
   .navv {

@@ -301,15 +301,14 @@ footer {
     }
 
     .nav-grid {
-        grid-template-columns: auto 1fr auto;
-        min-height: 50px;
+      grid-template-columns: auto 1fr auto;
+      min-height: 50px;
+      margin: 0 auto;
 
     .nav-link {
-        font-size: 0.9rem;
+      margin-top: -5px;
     }
 
-    #themeToggle, .navv {
-        padding: 0.35rem 0.5rem;
-    }
   }
+
 }
