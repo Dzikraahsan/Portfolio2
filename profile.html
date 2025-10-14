@@ -496,6 +496,15 @@
         </div>
 
         <div class="skill" data-percent="85" data-aos="zoom-in">
+          <img class="icon dark-invert" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/phpmyadmin-icon.svg" alt="TiDB">
+          <span class="span" id="php">PHPmyAdmin</span>
+          <div class="bar">
+            <div class="fill"></div>
+          </div>
+          <span class="percent orgn-b">85%</span>
+        </div>
+
+        <div class="skill" data-percent="85" data-aos="zoom-in">
           <img class="icon dark-invert" src="https://api.iconify.design/simple-icons:firebase.svg" alt="TiDB">
           <span class="span">Firebase</span>
           <div class="bar">
@@ -660,19 +669,22 @@
 
       // teks responsive
       function updateText() {
-          const ts = document.getElementById("ts")
+          const ts = document.getElementById("ts");
+          const php = document.getElementById("php");
           const tanggal = document.getElementById("tanggal");
           const bootsrap = document.getElementById("bootstrap");
           const javascript = document.getElementById("javascript");
           const cloudinary = document.getElementById("cloudinary");
           if (window.innerWidth < 768) {
             ts.textContent          = "TypeScript",
+            php.textContent         = "PHPmyAdmin",
             tanggal.textContent     = "27",
             bootsrap.textContent    = "Bootstrap",
             javascript.textContent  = "javascript",
             cloudinary.textContent  = "Cloudinary";
           } else {
             ts.textContent          = "ts",
+            php.textContent         = "PHPmy'",
             tanggal.textContent     = "27",
             bootsrap.textContent    = "B'strap",
             javascript.textContent  = "JS",
