@@ -49,6 +49,12 @@ body.popup-open {
 
 /* navbar */
 
+.navbar {
+  transition: background-color 0.3s ease-in-out;
+  background: transparent;
+  backdrop-filter: blur(1.5px);
+}
+
 .nav-grid {
   display: grid;
   grid-template-columns: auto 1fr auto;
