@@ -242,6 +242,8 @@ body {
 
 .des {
   text-align: justify;
+  text-align-last: center;
+  color: rgba(21, 23, 27, 0.85);
 }
 
 /* Animasi slide-up */

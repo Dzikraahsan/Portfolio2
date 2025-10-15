@@ -250,6 +250,10 @@ h2 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.stats-img:hover {
+  transform: scale(1.03);
+}
+
 /* all skill  */
 
 .skill-section {
@@ -683,6 +687,11 @@ footer {
   .stats-img:hover {
     transform: scale(1.03);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .g-t {
+    width:
+    400px;
   }
 
   .bahasa {
