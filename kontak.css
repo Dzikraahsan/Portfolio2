@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+html::-webkit-scrollbar {
+    display: none !important;
+}
+
 body {
     font-family: 'Organetto';
     font-optical-sizing: auto;
