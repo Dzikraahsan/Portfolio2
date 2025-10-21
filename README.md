@@ -28,7 +28,7 @@ Ini adalah website portofolio pribadi saya yang berisi informasi tentang saya, s
 
 ## 🔗 Demo
 
-Cek langsung di: [https://portfoliodzikra.vercel.app/](https://portfoliodzikra.vercel.app/)
+Cek langsung di: [https://portfoliodzikra-2.vercel.app/](https://portfoliodzikra-2.vercel.app/)
 
 ## 📬 Kontak
 
